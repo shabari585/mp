@@ -1,0 +1,374 @@
+      <div class="gig-f-vp">
+          <input type="button" value="Order Service" id="res-order-btn">
+          <div class="width-desktop">
+            <h2 class="bold g-title">
+              Title
+            </h2>
+            <div class="g-t-two-line">
+              <span class="by">by <a routerLink='/seller' class="bold">Seller</a></span>
+            </div>
+            <div class="g-t-three-line">
+              <span class="bold" style="color:#8b809e;"><i class="fa fa-map-marker" aria-hidden="true" style="margin-right:10px;font-size:98%;"></i>Country</span>
+               <a routerLink='/categories'><span class="name-category bold" style="margin-left:20px;color:#8b809e;"><i class="fa fa-tag" aria-hidden="true" style="margin-right:10px;font-size:98%;"></i>Category</span></a>
+            </div>
+            <div class="gig-top-main">
+              <div class="swiper-core">
+                <div class="slide-home">
+                  <img name="slide" id="m_img">
+                  <div class="sub_slide">
+                    <button id="left" class="d_btns"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
+                    <img id="sub_one" class="sub_imgs">
+                    <img id="sub_two" class="sub_imgs">
+                    <img id="sub_three" class="sub_imgs">
+                    <button id="right" class="d_btns"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="g-other-dets">
+                <div class="cost-dets"><span class="small-red">FROM</span><span class="cost">$200</span></div>
+                <div class="av-options-btn-div"><input type="button" id="av-op-btn" value="See Available Packages"></div>
+                <hr>
+                <div class="g-table-div">
+                  <table class="g-table">
+                    <tr>
+                      <td>Reviews</td>
+                      <td class="bold"><span class="t-rating"><select class="rrating">
+                <option value=""></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+          </select></span></td>
+                      <td style="vertical-align:middle"><span class="rnum">20 Reviews</span></td>
+                    </tr>
+                    <tr>
+                      <td>Delivery</td>
+                      <td class="bold">6 hours</td>
+                    </tr>
+                    <tr>
+                      <td>Revisions</td>
+                      <td class="bold">All levels</td>
+                    </tr>
+                    <tr>
+                      <td>Language</td>
+                      <td class="bold">English</td>
+                    </tr>
+                  </table>
+                  <a routerLink='/inbox'>
+                    <div id="ask-qstn" style="color:rgba(0,0,0,0.7)">Ask a question</div>
+                  </a>
+                    <button id="add-fav-btn">
+              <i class="fa fa-heart" aria-hidden="true" style="color:#f00"></i>Added to favorites
+            </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="clear-both"></div>
+      <div class="gig-s-vp">
+        <div class="fixed-menu">
+          <ul class="fixed-menu-ul">
+            <li id="packages-i" class="f-menu-opt selected">Packages</li>
+            <li id="extras-i" class="f-menu-opt">Extras</li>
+            <li id="about-i" class="f-menu-opt">About</li>
+            <li id="questions-i" class="f-menu-opt">Questions</li>
+            <li id="support-i" class="f-menu-opt">Support team</li>
+            <li id="reviews-i" class="f-menu-opt">Reviews</li>
+            <li class="dets-li">
+              <div class="order-service-div">
+                <h4 class="order-h-four">
+                  Dummy Title
+                </h4>
+
+                  <h5 class="order-from-cost">Total A$<span id="select-cost">0</span></h5>
+                  <button id="order-service-btn" class="f-menu-opt">ORDER SERVICE</button>
+                    <!-- <h5 class="order-from-cost">Total A$<span id="select-cost">0</span></h5>
+                    <button id="dum-order-service-btn" class="f-menu-opt">Order Service</button>
+                      <h5 class="order-from-cost">Total A$<span id="select-cost">0</span></h5>
+                      <button id="order-service-btn" class="f-menu-opt">Order Service</button> -->
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="width-desktop">
+          <div class="total-err-div">
+            <div class="total-err-main">
+              You cannot buy your own gig !
+            </div>
+          </div>
+          <div class="packages-div">
+            <h3 class="h">PACKAGES</h3>
+            <table class="packages-table">
+              <tr>
+                <td class="left-t-header" rowspan="2"></td>
+                <td>
+                  <div class="t-left-align"><span class="package-cost">$<span id="std-p"></span></span><br><span class="package-name">Standard</span></div>
+                </td>
+                <td>
+                  <div class="t-left-align"><span class="package-cost">$<span id="pre-p"></span></span><br><span class="package-name">Premium</span></div>
+                </td>
+                <td>
+                  <div class="t-left-align"><span class="package-cost">$<span id="pro-p"></span></span><br><span class="package-name">Pro</span></div>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="package-details">Description one</span></td>
+                <td><span class="package-details">Description two</span></td>
+                <td><span class="package-details">Description three</span></td>
+              </tr>
+              <tr>
+                <td class="left-t-header">
+                  <div class="l-t-header">Seperate Files</div>
+                </td>
+                <td>
+                <td>
+                  <i class='fa fa-check' aria-hidden='true' style='color:#00b22d;'></i>
+                </td>
+                <td>
+                 <i class='fa fa-check' aria-hidden='true' style='color:#00b22d;'></i>
+              </tr>
+              <tr>
+                <td class="left-t-header">
+                  <div class="l-t-header">HQ Files</div>
+                </td>
+                <td>
+                <td>
+                <td>
+                  -
+                </td>
+              </tr>
+              <tr>
+                <td class="left-t-header">
+                  <div class="l-t-header">Word Included</div>
+                </td>
+                <td>
+                  Yes
+                </td>
+                <td>
+                  Yes
+                </td>
+                <td>
+                  Yes
+                </td>
+              </tr>
+              <tr>
+                <td class="left-t-header">
+                  <div class="l-t-header">Revisions</div>
+                </td>
+                <td>
+                  Yes
+                </td>
+                <td>
+                  Yes
+                </td>
+                <td>
+                  Yes
+                </td>
+              </tr>
+              <tr>
+                <td class="left-t-header">
+                  <div class="l-t-header">Delivery Time</div>
+                </td>
+                <td>
+                  2 days
+                </td>
+                <td>
+                  2 days
+                </td>
+                <td>
+                  3 days
+                </td>
+              </tr>
+              <tr>
+                <td class="left-t-header"></td>
+                <td>
+                  <button class="package-select-btns pack-selected" id="standard-select-btn">Selected <i class='fa fa-check' aria-hidden='true'></i></button>
+                </td>
+                <td>
+                  <button class="package-select-btns" id="premium-select-btn">Select</button>
+                  <td>
+                    <button class="package-select-btns" id="pro-select-btn">Select</button>
+                  </td>
+              </tr>
+            </table>
+          </div>
+            <div class="extras-div">
+              <h3 class="h">CHECKOUT MY GIG EXTRAS</h3>
+              <div class="extras-container">
+                  <div class="extra">
+                    <input type="text" style="display:none" value="" class="exid">
+                    <input type="text" style="display:none" value="" class="ext-p">
+                    <div class="extra-desc">
+                      <h4>
+                         DescDescDesc Desc DescDesc Desc DescDescDesc Desc DescDesc Desc
+                      </h4>
+                      <h6>in 3 days</h6>
+                    </div>
+                    <div class="add-btn-div">
+                      <button class="add-btn">
+                <ul class="horizantal-ul" style="margin:0">
+                  <li><span class="plus-area"><i class='fa fa-plus-circle' aria-hidden='true' style='width:auto; margin-right:6px'></i></span></li>
+                  <li>+A$20</li>
+                </ul>
+              </button>
+                    </div>
+                  </div>
+                  <div class="extra">
+                    <input type="text" style="display:none" value="" class="exid">
+                    <input type="text" style="display:none" value="" class="ext-p">
+                    <div class="extra-desc">
+                      <h4>
+                         DescDescDesc Desc DescDesc Desc
+                      </h4>
+                      <h6>in 3 days</h6>
+                    </div>
+                    <div class="add-btn-div">
+                      <button class="add-btn">
+                <ul class="horizantal-ul" style="margin:0">
+                  <li><span class="plus-area"><i class='fa fa-plus-circle' aria-hidden='true' style='width:auto; margin-right:6px'></i></span></li>
+                  <li>+A$20</li>
+                </ul>
+              </button>
+                    </div>
+                  </div>
+              </div>
+            </div>
+              <div class="about-gig-div">
+                <h3 class="h">ABOUT THIS GIG</h3>
+                <div class="about-gig">
+                   DescDescDesc Desc DescDesc Desc DescDescDesc Desc DescDesc Desc
+                </div>
+              </div>
+              <div class="get-answers-div">
+                <h3 class="h">FAQS</h3>
+                <p id="get-ans-exp">We love questions almost as much as we love providing answers. here are a few samples of what we're typically
+                  asked, along with our responses.</p>
+                  <button class="acc_btn"><span class="tg-btn-q">faq</span><span class="tg-btn-ico"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></button>
+                  <div class="panel">
+                    <p>
+                    </p>
+                  </div>
+              </div>
+                <div class="support-team">
+                  <div class="sup-sup">
+                    <h3 class="h">MEET THE TEAM</h3>
+                    <div class="s-div">
+                      <a href="">
+                        <div class="support-person">
+                          <div class="support-team-img" style="background-image:url('../../assets/img/pro-pic.jpg')"></div>
+                          <h6 class="name">
+                            Firstname Lastname
+                          </h6>
+                          <hr class="half-hr">
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="reviews-div">
+                  <h3 class="h">REVIEWS</h3>
+                  <div id="main-reviews-table">
+                    <div class="rev-top-div">
+                      <div id="main-rating-div">
+                          <table>
+                            <tr style="height:20px;">
+                              <td><span>Average  Rating</span></td>
+                            </tr>
+                            <tr>
+                              <td><span class="rating" style="text-align:center">3.5</span></td>
+                            </tr>
+                            <tr>
+                              <td id="n-ratings-td"><span><select class="rrating"> 
+                <option value=""></option>
+                <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option></select><span class="num-rats">5 ratings</span></span>
+                              </td>
+                            </tr>
+                          </table>
+                      </div>
+                      <div class="exp-ratings-div">
+                
+                          <table id="exp-rating-table">
+                            <tr>
+                              <!-- <td class="s-w-td">5 Stars</td> -->
+                              <td>
+                                <div class="total-percent">
+                                  <div class="fill-percent" id="five-star"></div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td class="s-w-td">4 Stars</td> -->
+                              <td>
+                                <div class="total-percent">
+                                  <div class="fill-percent" id="four-star" style="width:0"></div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td class="s-w-td">3 Stars</td> -->
+                              <td>
+                                <div class="total-percent">
+                                  <div class="fill-percent" id="three-star" style="width:30%"></div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td class="s-w-td">2 Stars</td> -->
+                              <td>
+                                <div class="total-percent">
+                                  <div class="fill-percent" id="two-star" style="width:10%"></div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <!-- <td class="s-w-td">1 Star</td> -->
+                              <td>
+                                <div class="total-percent">
+                                  <div class="fill-percent" id="one-star" style="width:60%"></div>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                      </div>
+                    </div>
+                      <div class="rev-div">
+                        <table class="u-details">
+                          <tr>
+                            <td colspan="2"><img src="../../assets/img/pro-pic.jpg" class="reviewer-pic">
+                              <div class="u-dets"><span class="u-name">Name</span><br><span class="posted-time">posted 16 days ago</span></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="text-align:left">
+                              <select class="rrating">
+                  <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="u-review">
+                                 Lorem ipsum dolor sit amet, vim assum soleat vocent ea, eu amet copiosae atomorum pro. Erant sensibus ad vis. Vivendo adversarium
+                                an his. Vix ornatus habemus id, primis scriptorem nam ad, vocent consulatu an eum. Ne ius
+                                nonumy euismod adversarium, nec cibo duis democritum an. Omnesque patrioque in cum, in saepe
+                                lucilius interesset sea, at tractatos laboramus nec
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                  </div>
+                </div>
+        </div>
+      </div>

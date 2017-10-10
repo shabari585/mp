@@ -1,0 +1,1021 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+body {
+  background-color: #f9f9f9;
+  white-space: normal !important;
+}
+
+.how-con-core p {
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+#h-table tbody,
+#h-table tbody tr {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+
+/* Extra Small Devices, .visible-xs-* */
+
+@media (max-width: 767px) {
+  .how-core {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-top: 0vh;
+    background-color: #f9f9f9 !important;
+  }
+  .how-it-works-vid {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    flex-direction: column;
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 100, 0.09);
+    background-color: #800080;
+  }
+  #h-t-wrks-title {
+    position: relative;
+    display: inline-block;
+    font-size: 170%;
+    width: 80%;
+    margin: 40px 0 20px 0;
+    color: #fff;
+  }
+  #h-t-desc {
+    position: relative;
+    display: block;
+    font-size: 110%;
+    width: 80%;
+    color: #fff;
+  }
+  .how-con-core {
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+  }
+  .def-div {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 30px;
+    margin: 20px 0;
+    overflow: hidden;
+  }
+  .def-div .float-left,
+  .def-div .float-right {
+    clear: both !important;
+  }
+  .def-title-div {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    width: 90%;
+    text-align: center;
+    width: 90%;
+    margin: 10px auto;
+    clear: both !important;
+    overflow: hidden;
+  }
+  .def-title {
+    position: relative;
+    display: inline-block;
+    font-size: 160%;
+    /*width: 100%;*/
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+  }
+  .def-title::after {
+    content: "";
+    position: relative;
+    display: block;
+    top: 10px;
+    width: 50%;
+    height: 5px;
+    color: #F9BF3B;
+    background-color: #F9BF3B;
+    text-align: left;
+  }
+  .def-desc-div {
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 90%;
+    margin: 10px auto;
+    clear: both !important;
+    overflow: hidden;
+    padding-right: 0px;
+  }
+  .def-desc-div p {
+    white-space: normal !important;
+  }
+  #h-h-options-div,
+  #h-s-options-div {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #fff !important;
+    padding: 40px 0;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+  }
+  #h-table,
+  #s-table {
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 0 5%;
+  }
+  #h-table td,
+  #s-table td {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .h-options {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    flex-direction: column;
+    width: 98%;
+    padding: 50px 10px;
+    overflow: hidden;
+  }
+  .h-opt-icons {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    width: auto;
+    float: left;
+    overflow: hidden;
+  }
+  .h-opt-icons img {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+  .h-opt-desc {
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-left: 1%;
+    float: left;
+  }
+  .h-opt-desc h2 {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    color: #000;
+    font-size: 140%;
+    font-weight: bold;
+  }
+  .h-opt-desc p {
+    font-size: 90%;
+  }
+  #disc-div {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #fff !important;
+    padding: 50px 0;
+    border-top: 1px solid #ddd;
+  }
+  #disc-div h3 {
+    position: relative;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 180%;
+    color: rgba(0, 0, 0, 0.95);
+  }
+  #disc-div h5 {
+    position: relative;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 150%;
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .icon-menu-div {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    width: 90%;
+    margin: 20px auto 0px auto;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .menu-icons {
+    position: relative;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-direction: column;
+    height: 150px;
+    color: rgba(0, 0, 0, 0.6);
+    width: auto;
+    cursor: pointer;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+  }
+  .menu-icons i {
+    height: 80px;
+    font-size: 380%;
+  }
+  .menu-icons:hover {
+    border-bottom: 2px solid #f10;
+  }
+  .menu-ico-hr {
+    position: relative;
+    display: block;
+    width: 980px;
+    margin: 0px auto -20px auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    ;
+  }
+  .menu-ico-hr {
+    position: relative;
+    display: block;
+    width: 80%;
+    margin: 0px auto -20px auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    ;
+  }
+}
+
+
+/* Small Devices, .visible-sm-* */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .how-core {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-top: 0vh;
+    background-color: #f9f9f9 !important;
+  }
+  .how-it-works-vid {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    flex-direction: column;
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 100, 0.09);
+    background-color: #800080;
+  }
+  #h-t-wrks-title {
+    position: relative;
+    display: inline-block;
+    font-size: 170%;
+    width: 80%;
+    margin: 40px 0 20px 0;
+    color: #fff;
+  }
+  #h-t-desc {
+    position: relative;
+    display: block;
+    font-size: 110%;
+    width: 80%;
+    color: #fff;
+  }
+  .how-con-core {
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+  }
+  .def-div {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 30px;
+    margin: 20px 0;
+    overflow: hidden;
+  }
+  .def-title-div {
+    position: relative;
+    display: block;
+    /*display: -webkit-flex;*/
+    text-align: left;
+    /*clear: both;*/
+    align-items: center;
+    -webkit-align-items: center;
+    float: left;
+    width: 90%;
+  }
+  .def-title {
+    position: relative;
+    display: block;
+    font-size: 160%;
+    color: #000;
+    font-weight: bold;
+  }
+  .def-title::after {
+    content: "";
+    position: relative;
+    display: block;
+    top: 10px;
+    width: 7%;
+    height: 5px;
+    color: #F9BF3B;
+    background-color: #F9BF3B;
+    text-align: left;
+  }
+  .def-desc-div {
+    position: relative;
+    display: block;
+    /*clear: both !important;*/
+    float: left !important;
+    margin-top: 20px;
+    text-align: left;
+    width: 90%;
+    overflow: hidden;
+    padding-right: 13px;
+  }
+  .def-desc-div p {
+    white-space: normal !important;
+  }
+  #h-h-options-div,
+  #h-s-options-div {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #fff !important;
+    padding: 40px 0;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+  }
+  #h-table,
+  #s-table {
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 0 5%;
+  }
+  #h-table td,
+  #s-table td {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .h-options {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    flex-direction: column;
+    width: 98%;
+    padding: 50px 10px;
+    overflow: hidden;
+  }
+  .h-opt-icons {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    width: auto;
+    float: left;
+    overflow: hidden;
+  }
+  .h-opt-icons img {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+  .h-opt-desc {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-left: 1%;
+  }
+  .h-opt-desc h2 {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    color: #000;
+    font-size: 140%;
+    font-weight: bold;
+  }
+  .h-opt-desc p {
+    font-size: 90%;
+  }
+  #disc-div {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #fff !important;
+    padding: 50px 0;
+    border-top: 1px solid #ddd;
+  }
+  #disc-div h3 {
+    position: relative;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 180%;
+    color: rgba(0, 0, 0, 0.95);
+  }
+  #disc-div h5 {
+    position: relative;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 150%;
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .icon-menu-div {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    width: 90%;
+    margin: 20px auto 0px auto;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .menu-icons {
+    position: relative;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-direction: column;
+    height: 150px;
+    color: rgba(0, 0, 0, 0.6);
+    width: auto;
+    cursor: pointer;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+  }
+  .menu-icons i {
+    height: 80px;
+    font-size: 380%;
+  }
+  .menu-icons:hover {
+    border-bottom: 2px solid #f10;
+  }
+  .menu-ico-hr {
+    position: relative;
+    display: block;
+    width: 980px;
+    margin: 0px auto -20px auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    ;
+  }
+  .menu-ico-hr {
+    position: relative;
+    display: block;
+    width: 80%;
+    margin: 0px auto -20px auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    ;
+  }
+  #s-table tbody,
+  #s-table tr {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+}
+
+
+/* Medium Devices, .visible-md-* */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  how-core {
+    position: relative;
+    display: block;
+    margin-top: 11vh;
+    background-color: #f9f9f9 !important;
+  }
+  .how-it-works-vid {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-direction: column;
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 100, 0.09);
+    background-color: #800080;
+  }
+  #h-t-wrks-title {
+    position: relative;
+    display: inline-block;
+    font-size: 250%;
+    margin: 40px 0 20px 0;
+    color: #fff;
+  }
+  #h-t-desc {
+    position: relative;
+    display: block;
+    font-size: 140%;
+    color: #fff;
+  }
+  .how-con-core {
+    position: relative;
+    display: block;
+    width: 80vw;
+    margin: 20px auto;
+  }
+  .def-div {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 30px;
+    margin: 20px 0;
+    overflow: hidden;
+  }
+  .def-title-div {
+    position: relative;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    text-align: left;
+    align-items: center;
+    -webkit-align-items: center;
+    float: left;
+    width: 30%;
+  }
+  .def-title {
+    position: relative;
+    display: block;
+    font-size: 160%;
+    color: #000;
+    font-weight: bold;
+  }
+  .def-title::after {
+    content: "";
+    position: relative;
+    display: block;
+    top: 10px;
+    width: 50%;
+    height: 5px;
+    color: #F9BF3B;
+    background-color: #F9BF3B;
+    text-align: left;
+  }
+  .def-desc-div {
+    position: relative;
+    display: inline-block;
+    float: left;
+    text-align: left;
+    width: 70%;
+    overflow: hidden;
+    padding-right: 13px;
+  }
+  .def-desc-div p {
+    white-space: normal !important;
+    font-size: 105%;
+    line-height: 1.4;
+  }
+  #h-h-options-div,
+  #h-s-options-div {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #fff !important;
+    padding: 40px 0;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+  }
+  #h-table,
+  #s-table {
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 0 5%;
+  }
+  #h-table td,
+  #s-table td {
+    position: relative;
+    display: inline-block;
+    width: 48%;
+  }
+  .h-options {
+    position: relative;
+    display: block;
+    width: 98%;
+    padding: 50px 10px;
+    overflow: hidden;
+  }
+  .h-opt-icons {
+    position: relative;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    width: 25%;
+    float: left;
+    overflow: hidden;
+  }
+  .h-opt-icons img {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+  .h-opt-desc {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 73%;
+    margin-left: 1%;
+    float: left;
+  }
+  .h-opt-desc h2 {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 0;
+    color: #000;
+    font-size: 140%;
+    font-weight: bold;
+  }
+  .h-opt-desc p {
+    font-size: 90%;
+  }
+  #disc-div {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #fff !important;
+    padding: 50px 0;
+    border-top: 1px solid #ddd;
+  }
+  #disc-div h3 {
+    position: relative;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 180%;
+    color: rgba(0, 0, 0, 0.95);
+  }
+  #disc-div h5 {
+    position: relative;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 150%;
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .icon-menu-div {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    width: 90%;
+    margin: 20px auto 0px auto;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .menu-icons {
+    position: relative;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-direction: column;
+    height: 150px;
+    color: rgba(0, 0, 0, 0.6);
+    width: auto;
+    cursor: pointer;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+  }
+  .menu-icons i {
+    height: 80px;
+    font-size: 380%;
+  }
+  .menu-icons:hover {
+    border-bottom: 2px solid #f10;
+  }
+  .menu-ico-hr {
+    position: relative;
+    display: block;
+    width: 980px;
+    margin: 0px auto -20px auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    ;
+  }
+  .menu-ico-hr {
+    position: relative;
+    display: block;
+    width: 80%;
+    margin: 0px auto -20px auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    ;
+  }
+}
+
+
+/* Large Devices, .visible-lg-* */
+
+@media (min-width: 1200px) {
+  .how-core {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-top: 11vh;
+    background-color: #f9f9f9 !important;
+  }
+  .how-it-works-vid {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    flex-direction: column;
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 100, 0.09);
+    background-color: #800080;
+  }
+  #h-t-wrks-title {
+    position: relative;
+    display: inline-block;
+    font-size: 250%;
+    margin: 40px 0 20px 0;
+    color: #fff;
+  }
+  #h-t-desc {
+    position: relative;
+    display: block;
+    font-size: 140%;
+    color: #fff;
+  }
+  .how-con-core {
+    position: relative;
+    display: block;
+    width: 980px;
+    margin: 20px auto;
+  }
+  .def-div {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 30px 0;
+    margin: 20px 0;
+    overflow: hidden;
+  }
+  .def-title-div {
+    position: relative;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    text-align: left;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    float: left;
+    width: 30%;
+  }
+  .def-title {
+    position: relative;
+    display: block;
+    font-size: 160%;
+    color: #000;
+    font-weight: bold;
+  }
+  .def-title::after {
+    content: "";
+    position: relative;
+    display: block;
+    top: 10px;
+    width: 50%;
+    height: 5px;
+    color: #F9BF3B;
+    background-color: #F9BF3B;
+    text-align: left;
+  }
+  .def-desc-div {
+    position: relative;
+    display: inline-block;
+    float: left;
+    text-align: left;
+    width: 70%;
+    overflow: hidden;
+    padding-right: 13px;
+  }
+  .def-desc-div p {
+    white-space: normal !important;
+    font-size: 105%;
+    line-height: 1.4;
+  }
+  #h-h-options-div,
+  #h-s-options-div {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #fff !important;
+    padding: 40px 0;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+  }
+  #h-table,
+  #s-table {
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 0 5%;
+  }
+  #h-table td,
+  #s-table td {
+    position: relative;
+    display: inline-block;
+    width: 48%;
+  }
+  .h-options {
+    position: relative;
+    display: block;
+    width: 98%;
+    padding: 50px 10px;
+    overflow: hidden;
+  }
+  .h-opt-icons {
+    position: relative;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    width: 25%;
+    float: left;
+    overflow: hidden;
+  }
+  .h-opt-icons img {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+  .h-opt-desc {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    width: 73%;
+    margin-left: 1%;
+    float: left;
+  }
+  .h-opt-desc h2 {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 0;
+    color: #000;
+    font-size: 140%;
+    font-weight: bold;
+  }
+  .h-opt-desc p {
+    font-size: 90%;
+  }
+  #disc-div {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #fff !important;
+    padding: 50px 0;
+    border-top: 1px solid #ddd;
+  }
+  #disc-div h3 {
+    position: relative;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 180%;
+    color: rgba(0, 0, 0, 0.95);
+  }
+  #disc-div h5 {
+    position: relative;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 150%;
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .icon-menu-div {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    width: 980px;
+    margin: 20px auto 0px auto;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .menu-icons {
+    position: relative;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-direction: column;
+    height: 150px;
+    color: rgba(0, 0, 0, 0.6);
+    width: auto;
+    cursor: pointer;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+  }
+  .menu-icons i {
+    height: 80px;
+    font-size: 380%;
+  }
+  .menu-icons:hover {
+    border-bottom: 2px solid #f10;
+  }
+  .menu-ico-hr {
+    position: relative;
+    display: block;
+    width: 980px;
+    margin: 0px auto -20px auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    ;
+  }
+  .menu-ico-hr {
+    position: relative;
+    display: block;
+    width: 80%;
+    margin: 0px auto -20px auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+  }
+}
+
