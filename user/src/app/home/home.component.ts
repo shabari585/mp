@@ -17,11 +17,11 @@ export class HomeComponent implements OnInit {
     this.title.setTitle('Market Place - Home');
 
     $("#get-started-button").click(function () {
-      window.location.href = "category-details.php";
+      // window.location.href = "category-details.php";
     });
 
     $("#find-services-btn").click(function () {
-      window.location.href = "category-details.php";
+      // window.location.href = "category-details.php";
     });
     var options = {
       strings: ["marketers build landing pages.", "landers build marketing pages.", "pages build landers and marketers."],
