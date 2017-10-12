@@ -1,7 +1,7 @@
 
       <div class="top-image">
         <div class="d-back"></div>
-        <div class="width-control">
+        <div class="w-control">
           <h2 id="top-cat-title">
           </h2>
           <button class="play-vid-btn" onClick="toggleVideo();">
@@ -18,7 +18,7 @@
         <i class="fa fa-times-circle-o" aria-hidden="true"></i>
       </span>
       </div>
-      <div class="c-main-container">
+      <div class="c-main-container w-control">
         <div class="categories-div">
           <table class="categories-table cat-tables bb">
             <tr>
@@ -215,70 +215,48 @@
               <li><button id="list-ico"><i class="fa fa-th-list" width="20"></i></button></li>
             </ul>
           </div>
-          <div class="gigs-core featured-gigs-div">
-            <a class="gig-links">
-              <div class="featured-gigs">
-                <table class="featured-gigs-table">
-                  <tr>
-                    <td colspan="2">
-                      <div class="gig-pic" style="background-image:url('../../assets/img/gig-pic.png')"></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="2">
+          <div class="gigs-core gigs-div">
+                <a class="gig-links">
+      
+                  <div class="gig">
+      
+                    <div class="gig-pic"></div>
+                    <div class="gig-dets">
                       <h4>
-                         TitleTitle TitleTitle TitleTitle TitleTitle
+                        Title
                       </h4>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="2"><span class="gig-credits">By &nbsp;Seller</span></td>
-                  </tr>
-                  <tr class="absolute-down-tr">
-                    <td><span class="float-left enrolled-num"><i class="fa fa-users people-icon"></i><span class="en-num-center">20</span></span>
-                    </td>
-                    <td>
-                      <div class="float-right"><span class="cost">$200</span></div>
-                    </td>
-                  </tr>
-                </table>
-                <span class="ongid" style="display:none"></span>
-              </div>
-              <div class="div-on-gig-hover visible-lg">
-                <div class="on-gig-top">
-                  <h4 class="hf" style="text-align:center;">
-                    TitleTitle TitleTitle TitleTitle TitleTitle
-                  </h4>
-                  <h5>ITEM PRICE:$ 200
-                  </h5>
-                </div>
-                <div class="on-gig-opts">
-                  <span class="on-gig-span">
-              <span class="view-gig-span span">
-                <span class="ongid" style="display:none"></span>
-                  <i class="fa fa-tag" aria-hidden="true"></i>
-                  </span>
-                  <span class="on-gig-opt">Go to item</span>
-                  </span>
-                  <span class="on-gig-span">
-            <span class="add-fav-btn span">
-              <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-            </span>
-                  <span class="on-gig-opt">Favorites+</span>
-                  </span>
-                </div>
-                <div class="on-gig-bottom">
-                  <i class="fa fa-user-md" aria-hidden="true"></i>
-                  <h5>BY : Seller
-                  </h5>
-                </div>
-              </div>
-            </a>
-            <a class="empty-gigs"></a>
-            <a class="empty-gigs"></a>
-            <a class="empty-gigs"></a>
-            <a class="empty-gigs"></a>
-            <a class="empty-gigs"></a>
+                      <h5 class="gig-credits">
+                        Seller
+                      </h5>
+                    </div>
+      
+                    <div class="gig-footer">
+                        <div class="dets">Details</div>
+                        <div class="cost">$ 200</div>
+                    </div>
+      
+                  </div>
+                  <div class="gig-details-container">
+                    <div class="gig-dets-top">
+      
+                    </div>
+                    <div class="gig-dets-btm">
+                      <button class="dets-add-to-cart-btn">
+                        Add to cart
+                      </button>
+      
+                      <button class="dets-add-fav-btn">
+                          <i class="fa fa-heart-o" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+      
+                <a class="empty-gigs"></a>
+                <a class="empty-gigs"></a>
+                <a class="empty-gigs"></a>
+                <a class="empty-gigs"></a>
+                <a class="empty-gigs"></a>
           </div>
           <div class="h-gigs-div">
 
@@ -298,14 +276,14 @@
                       </li>
                       <li>
                         <span class="h-rating">
-          <select class="rating">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-          <span class="tot-rating-num">(3)</span>
+                        <select class="rating">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                        <span class="tot-rating-num">(3)</span>
                         </span>
                       </li>
                       <li>
