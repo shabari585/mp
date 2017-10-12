@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-.main-header .main-nav-btns {
+*{
   font-family: 'Roboto',sans-serif !important;
 }
-#sign-in-btn{
-    font-family: 'Roboto',sans-serif !important;
-}
+
 

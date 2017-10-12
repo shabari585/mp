@@ -45,7 +45,9 @@ a {
 .horizantal-ul li {
   display: inline-block;
 }
-
+.left-float-ul li, .right-float-ul li{
+  display: inline-flex;
+}
 .center {
   position: absolute;
   display: inline-block;
@@ -85,4 +87,194 @@ input[type=number] {
 .fa {
   display: inline-block !important;
   width: auto;
+}
+
+/* Gigs styles */
+.gigs-div {
+  position: relative;
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  text-align: left;
+  width: 100%;
+  height: auto;
+  white-space: normal;
+  margin: 20px auto;
+}
+
+.empty-gigs {
+  visibility: hidden;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0;
+}
+
+.gigs-div a {
+  text-align: left;
+  position: relative;
+  display: inline-block;
+  margin: 20px 0px 20px 0px !important;
+  height: 320px;
+  width: 240px;
+  color: rgba(80, 80, 80, 1);
+  white-space: normal;
+  font-size: 110%;
+  border-radius: 2px;
+  background-color: #fff !important;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+.gig {
+  z-index: 10;
+  text-align: left;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  color: rgba(80, 80, 80, 1);
+  white-space: normal;
+  font-size: 110%;
+  background-color: #fff !important;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.gig:hover,
+{
+  box-shadow: 0 0 3px 0.1px rgba(128, 128, 128, 0.5);
+}
+
+.gig-pic {
+  position: relative;
+  display: inline-block;
+  height: 50%;
+  width: 100%;
+  background-image: url("../../assets/img/gig-pic.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+.gig-dets{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 30%;
+  padding: 0 20px;
+}
+
+.gig h4 {
+  position: relative;
+  font-size: 90%;
+  color: #000;
+  margin: 20px 0px 0px 0px;
+  padding: 0;
+  word-break: keep-all;
+}
+
+.gig .gig-credits {
+  position: relative;
+  display: inline-block;
+  color: rgba(128, 128, 128, 0.9);
+  margin: 10px 0px 0px 0px;
+  padding: 0;
+  font-size: 85%;
+}
+
+.gig .gig-footer{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 20%;
+  width: 100%;
+  margin:0;
+  padding: 0 20px;
+}
+.gig-details-container{
+  z-index: 100;
+  position: absolute;
+  display: block;
+  display: none;
+  opacity: 0;
+  padding: 20px;
+  top: -10%;
+  left: 104%;
+  height: 400px;
+  width: 300px;
+  background-color: #fff;
+  border:none;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-in;
+}
+.gig-details-container::before{
+  content: '';
+  position: absolute;
+  display: block;
+  top:50%;
+  left:0%;
+  transform: translate(-100%,-50%);
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid rgba(0, 0, 0, 0.2);
+  border-top: 10px solid transparent;
+}
+.gig-details-container::after{
+  content: '';
+  position: absolute;
+  display: block;
+  top:50%;
+  left:0%;
+  transform: translate(-100%,-50.6%);
+  border-bottom: 9px solid transparent;
+  border-left: 9px solid transparent;
+  border-right: 9px solid #fff; 
+  border-top: 9px solid transparent;
+}
+.gig-dets-top{
+  position: relative;
+  display: block;
+  height: 80%;
+  /* border-bottom: 1px solid #666; */
+}
+.gig-dets-btm{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 20%;
+}
+.gig-dets-btm button{
+  border:none;
+  background-color: transparent;
+  margin: 0;
+}
+.gig-dets-btm .dets-add-to-cart-btn{
+  height: 60%;
+  width: 65%;
+  background-color: #33A91C;
+  color: #fff;
+  font-size: 90%;
+  font-weight: normal;
+  border-radius: 2px;
+}
+.gig-dets-btm .dets-add-to-cart-btn:hover{
+  background-color: #2F9C1B;
+}
+.dets-add-fav-btn{
+  width: 20%;
+  font-size: 200%;
+  color: #666;
+}
+.dets-add-fav-btn:hover{
+  color: #fa0000;
+}
+.gig-links:hover > .gig-details-container{
+  display: block;
+  opacity: 1;
 }

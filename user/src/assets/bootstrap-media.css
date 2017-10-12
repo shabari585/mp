@@ -1,6 +1,11 @@
 body {
   padding: 0 !important;
 }
+/* Global width */
+.w-control{
+  width: 1200px;
+  margin: 0 auto;
+}
 .main-header .left-float-ul,
 .main-header ul {
   margin-bottom: 0 !important;
@@ -17,13 +22,13 @@ body {
 .res-menu {
   display: none !important;
 }
+
 /* Header */
 
 .l-header-control {
   position: relative;
   display: block;
   height: 100%;
-  width: 1120px;
   margin: 0 auto;
   overflow: visible !important;
 }
@@ -31,28 +36,6 @@ body {
   position: relative;
   display: block;
   height: 100%;
-  width: 1120px;
-  margin: 0 auto;
-  overflow: visible !important;
-}
-.width-control {
-  position: relative;
-  display: flex;
-  display: -webkit-flex;
-  width: 1120px;
-  margin: 40px auto;
-  justify-content: center;
-  -webkit-justify-content: center;
-  align-items: center;
-  -webkit-align-items: center;
-  flex-direction: column;
-}
-
-.width-desktop {
-  position: relative;
-  display: block;
-  height: auto;
-  width: 1120px;
   margin: 0 auto;
   overflow: visible !important;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Router, NavigationEnd } from "@angular/router";
 import Typed from 'typed.js';
 declare var $:any;
 
@@ -9,20 +10,20 @@ declare var $:any;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  
+  loggedIn = false;
 
-  constructor(private title: Title) { }
+  constructor(private title: Title,private router:Router) { }
 
   ngOnInit() {
 
     this.title.setTitle('Market Place - Home');
-
-    $("#get-started-button").click(function () {
-      // window.location.href = "category-details.php";
-    });
-
-    $("#find-services-btn").click(function () {
-      // window.location.href = "category-details.php";
-    });
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
     var options = {
       strings: ["marketers build landing pages.", "landers build marketing pages.", "pages build landers and marketers."],
       typeSpeed: 30,
@@ -31,14 +32,10 @@ export class HomeComponent implements OnInit {
     }
 
     var typed = new Typed(".ele", options);
-    // $(function () {
-    //   $(".ele").Typed({
-    //     strings: ["marketers build landing pages.", "landers build marketing pages.", "pages build landers and marketers."],
-    //     typeSpeed: 0,
-    //     showCursor: true,
-    //     loop: true
-    //   });
-    // });
+  }
+
+  navToCategories(){
+    this.router.navigateByUrl('/categories');
   }
 
 }

@@ -1,18 +1,18 @@
 <div class="first-vp">
 <div class="main-image">
   <div class="dark-cover"></div>
-  <div class="left-center">
+  <div class="left-center w-control">
     <h2>Welcome to Market Place</h2>
     <h3>We help <span class="ele"></span></h3>
     <div id="top-vp-btns-div">
       <button id="play-vid-btn">Play video</button>
-      <button id="get-started-button">Get Started</button>
+      <button id="get-started-button" (click)='navToCategories()'>Get Started</button>
     </div>
   </div>
 </div>
 </div>
 <div class="second-vp">
-<div class="width-control">
+<div class="w-control">
   <h3 id="second-vp-head">It has everything you <br> need for amazing design</h3>
   <div class="second-vp-core-div">
 
@@ -20,111 +20,109 @@
 </div>
 </div>
 <div class="third-vp">
-<div class="width-control">
+<div class="w-control">
   <h2>What do you need designed ?</h2>
   <div class="tzo">
     <img src="../../assets/img/201.png" id="timg">
     <h3 class="th3">Experienced authors from India and all around the world</h3>
   </div>
-  <div class="icon-menu-div">
-    <a href="category-details.php?c=rc"><span class="menu-icons">
-    <i class="fa fa-file" id="logo-design-icon" aria-hidden="true"></i>
-    <h4 class="menu-icon-names">Resumes and <br>cover letters</h4>
-  </span></a>
-    <a href="category-details.php?c=or"><span class="menu-icons">
-    <i class="fa fa-globe" id="car-wrap-design-icon" aria-hidden="true"></i>
-    <h4 class="menu-icon-names">Online Resumes</h4>
-  </span></a>
-    <a href="category-details.php?c=vr"><span class="menu-icons">
-    <i class="fa fa-eye" id="logo-website-icon" aria-hidden="true"></i>
-    <h4 class="menu-icon-names">Visual resumes</h4>
-  </span></a>
-    <a href="category-details.php?c=lp"><span class="menu-icons">
-    <i class="fa fa-user" id="packaging-design-icon" aria-hidden="true"></i>
-    <h4 class="menu-icon-names">LinkedIn Profile</h4>
-  </span></a>
-    <a href="category-details.php?c=rc"><span class="menu-icons">
-    <i class="fa fa-book" id="brand-identity-icon" aria-hidden="true"></i>
-    <h4 class="menu-icon-names">Placeholder</h4>
-  </span></a>
-    <a href="category-details.php?c=rc"><span class="menu-icons">
-    <i class="fa fa-anchor" id="t-shirt-icon" aria-hidden="true"></i>
-    <h4 class="menu-icon-names">Placeholder</h4>
-  </span></a>
-  </div>
-  <hr class="menu-ico-hr">
-  <div class="featured-gigs-div">
-    
-      <a class="w-s-gig-link">
-        <div class="we-saved-div">
-          We saved a spot for your logo & brand identity pack design contest.
-          <button type="button" id="w-s-g-s-btn">Get Started now</button>
-        </div>
-      </a>
-    
-        <a class="gig-links">
-          <div class="featured-gigs">
-            <table class="featured-gigs-table">
-              <tr>
-                <td colspan="2">
-                  <div class="gig-pic" style="background-image:url('')"></div>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="2">
-                  <h4>
-                  </h4>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="2"><span class="gig-credits">Seller</span></td>
-              </tr>
-              <tr class="absolute-down-tr">
-                <td>
-                  <div class="float-right"><span class="cost">$</span></div>
-                </td>
-              </tr>
-            </table>
-            <span class="ongid" style="display:none"></span>
-          </div>
-          <div class="div-on-gig-hover visible-lg">
-            <div class="on-gig-top">
-              <h4 class="hf" style="text-align:center;">
-              </h4>
-              <h5>ITEM PRICE:$ 200
-              </h5>
-            </div>
-            <div class="on-gig-opts">
-              <span class="on-gig-span">
-        <span class="view-gig-span span">
-          <span class="ongid" style="display:none"></span>
-              <i class="fa fa-tag" aria-hidden="true"></i>
-              </span>
-              <span class="on-gig-opt">Go to item</span>
-              </span>
-              <span class="on-gig-span">
-
-      <span class="add-fav-btn span" style="">
-        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+  <div class="icon-menu-div w-control">
+    <a routerLink='/categories'>
+      <span class="menu-icons">
+        <i class="fa fa-file" id="logo-design-icon" aria-hidden="true"></i>
+        <h4 class="menu-icon-names">Resumes and <br>cover letters</h4>
       </span>
-              <span class="on-gig-opt">Favorites+</span>
-              </span>
-            </div>
-            <div class="on-gig-bottom">
-              <i class="fa fa-user-md" aria-hidden="true"></i>
-              <h5>BY :
-                Seller
-              </h5>
-            </div>
-          </div>
-        </a>
-          <a class="empty-gigs"></a>
-          <a class="empty-gigs"></a>
-          <a class="empty-gigs"></a>
-          <a class="empty-gigs"></a>
-          <a class="empty-gigs"></a>
+    </a>
+    <a routerLink='/categories'>
+      <span class="menu-icons">
+        <i class="fa fa-globe" id="car-wrap-design-icon" aria-hidden="true"></i>
+        <h4 class="menu-icon-names">Online Resumes</h4>
+      </span>
+    </a>
+    <a routerLink='/categories'>
+      <span class="menu-icons">
+        <i class="fa fa-eye" id="logo-website-icon" aria-hidden="true"></i>
+        <h4 class="menu-icon-names">Visual resumes</h4>
+      </span>
+    </a>
+    <a routerLink='/categories'>
+      <span class="menu-icons">
+        <i class="fa fa-user" id="packaging-design-icon" aria-hidden="true"></i>
+        <h4 class="menu-icon-names">LinkedIn Profile</h4>
+      </span>
+    </a>
+    <a routerLink='/categories'>
+      <span class="menu-icons">
+        <i class="fa fa-book" id="brand-identity-icon" aria-hidden="true"></i>
+        <h4 class="menu-icon-names">Placeholder</h4>
+      </span>
+    </a>
+    <a routerLink='/categories'>
+      <span class="menu-icons">
+        <i class="fa fa-anchor" id="t-shirt-icon" aria-hidden="true"></i>
+        <h4 class="menu-icon-names">Placeholder</h4>
+      </span>
+    </a>
   </div>
-  <a href="category-details.php">
+  <hr class="menu-ico-hr w-control">
+  <div class="w-control">
+    <div class="gigs-div">
+
+      <span *ngIf='loggedIn == false'>
+        <!-- <a class="w-s-gig-link">
+          <div class="we-saved-div">
+            We saved a spot for your logo & brand identity pack design contest.
+            <button type="button" id="w-s-g-s-btn">Get Started now</button>
+          </div>
+        </a> -->
+      </span>
+      
+      
+          <a class="gig-links">
+
+            <div class="gig">
+
+              <div class="gig-pic"></div>
+              <div class="gig-dets">
+                <h4>
+                  Title
+                </h4>
+                <h5 class="gig-credits">
+                  Seller
+                </h5>
+              </div>
+
+              <div class="gig-footer">
+                  <div class="dets">Details</div>
+                  <div class="cost">$ 200</div>
+              </div>
+
+            </div>
+            <div class="gig-details-container">
+              <div class="gig-dets-top">
+
+              </div>
+              <div class="gig-dets-btm">
+                <button class="dets-add-to-cart-btn">
+                  Add to cart
+                </button>
+
+                <button class="dets-add-fav-btn">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+
+            <a class="empty-gigs"></a>
+            <a class="empty-gigs"></a>
+            <a class="empty-gigs"></a>
+            <a class="empty-gigs"></a>
+            <a class="empty-gigs"></a>
+    </div>
+  </div>
+  
+  <a routerLink='/categories'>
     <div id="browse-all-products-btn">BROWSE ALL PRODUCTS</div>
   </a>
 </div>
@@ -132,7 +130,7 @@
 <!--</div>
 </div>-->
 <div class="fourth-vp">
-<div class="width-control">
+<div class="w-control">
   <h3 class="vp-heads">Get on the radar with companies you <br> would love to work for</h3>
   <div class="f-div">
     <div class="f-divs">
@@ -157,10 +155,10 @@
 <h2>Join our growing marketplace!</h2>
 <h6>Ever wanted to sell your digital goods? Sign up with us and we'll help you distribute your prodcuts to a wide audience.
   Get started earning money today! </h6>
-<a href="become-an-author.php">
+<a routerLink='/become-an-author'>
   <div id="ready-to-start-btn" class="container-fluid">READY TO START? &nbsp;BECOME AN AUTHOR TODAY !</div>
 </a>
-<div class="ff">
+<div class="ff w-control">
   <table>
     <tr>
       <td>
