@@ -87,7 +87,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'careers',
-    component: SettingsComponent
+    component: CareersComponent
   },
   {
     path: 'create-gig',

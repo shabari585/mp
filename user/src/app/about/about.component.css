@@ -48,15 +48,13 @@
 .a-f-header ul li {
   position: relative;
   display: inline-flex;
-  display: -webkit-inline-flex;
   align-items: center;
-  -webkit-align-items: center;
   justify-content: center !important;
-  -webkit-justify-content: center !important;
   text-align: center !important;
+  line-height: 0;
   height: 100%;
   width: auto;
-  font-weight: bold;
+  font-weight: 700;
   color: #888896;
   border-bottom: 3px solid transparent;
   cursor: pointer;
@@ -179,10 +177,11 @@
 }
 
 .ab-b-divs h4 {
-  font-size: 300%;
+  font-size: 270%;
   font-weight: bold;
   color: #fff;
-  margin: 10px 0!important;
+  text-align: center;
+  margin: 0px 0!important;
 }
 
 .ab-b-divs h5 {
@@ -193,8 +192,11 @@
 
 .ab-b-divs ul {
   color: #CCE4E5;
+  text-align: center;
 }
-
+.ab-b-divs ul li{
+  margin: 5px auto;
+}
 .ab-b-divs h6 {
   font-size: 80%;
   color: #cce4e5;
@@ -222,16 +224,16 @@
   font-size: 270%;
   font-weight: bold;
   color: #444444;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 #m-t-head::after {
   content: '';
   position: absolute;
   display: block;
-  top: 110%;
+  top: 150%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -40%);
   height: 5px;
   width: 40px;
   color: #F9BF3B;
@@ -243,7 +245,7 @@
   position: relative;
   display: block;
   text-align: center;
-  margin: 10px 0;
+  margin: 10px 0 20px 0px;
 }
 
 .a-pics-div {
@@ -281,27 +283,32 @@
   font-weight: bold;
   color: #444444;
   margin: 10px 0 !important;
-  font-size: 130%;
+  font-size: 110%;
 }
 
 .a-pic-div h4 {
   color: #CCCCD5;
-  font-size: 115%;
+  font-size: 90%;
   font-weight: bold;
 }
 
 .a-faq-div {
   position: relative;
   display: flex;
-  display: -webkit-flex;
   justify-content: center;
-  -webkit-justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #F8F8F4;
   min-height: 100vh;
   overflow: hidden;
   padding-bottom: 30px;
 }
-
+.a-faq-div h2{
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 200%;
+}
 .a-faq-div .a-width-desktop {
   position: relative;
   display: flex;
@@ -341,10 +348,10 @@
   margin: 20px auto;
 }
 
-.katha p {
-  color: #808080;
+.faq-divs p {
+  color: #463933;
   font-size: 105%;
-  line-height: 1.3;
+  line-height: 1.5;
   text-align: left;
 }
 
@@ -497,27 +504,21 @@ ol p {
   color: #666;
 }
 
-
-/* Large Devices, .visible-lg-* */
-
-@media (min-width: 1200px) {
-  .a-width-desktop {
-    position: relative;
-    display: block;
-    width: 980px;
-    margin: 0 auto;
-  }
-  .about-container {
-    position: relative;
-    display: block;
-    top: 11vh;
-    background-color: #fff;
-    height: auto;
-    width: 100%;
-    margin: 0 !important;
-    padding: 0 0 40px 0;
-    white-space: normal;
-    overflow: hidden;
-  }
+.a-width-desktop {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+.about-container {
+  position: relative;
+  display: block;
+  top: 11vh;
+  background-color: #fff;
+  height: auto;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 0 40px 0;
+  white-space: normal;
+  overflow: hidden;
 }
 
