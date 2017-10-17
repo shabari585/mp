@@ -58,61 +58,7 @@ export class CategoriesComponent implements OnInit {
         var cat = "ph2";
         var catt = "Online Resumes";
       }
-      // Price
-      // var p = $("#myRange").val();
-      var pmin = $("#slider-range").slider("values", 0);
-      var pmax = $("#slider-range").slider("values", 1);
-      var r = $("#select-rating").val();
-      // Rating
-      //alert(cat);
-      $("#top-cat-title").html(catt);
-      $(".featured-gigs-div").load('redundant/category-gigs.php?c=' + cat + '&pmin=' + pmin + '&pmax=' + pmax +
-        '&r=' + r);
-      $(".h-gigs-div").load('redundant/h-category-gigs.php?c=' + cat + '&pmin=' + pmin + '&pmax=' + pmax +
-        '&r=' + r);
-      if (id == "all-products-btn") {
-        $(".featured-gigs-div").load('redundant/category-gigs.php?pmin=' + pmin + '&pmax=' + pmax + '&r=' + r);
-        $(".h-gigs-div").load('redundant/h-category-gigs.php?pmin=' + pmin + '&pmax=' + pmax + '&r=' + r);
-      }
-    });
 
-    $(function () {
-      $('#select-rating').barrating({
-        theme: 'css-stars',
-        initialRating: null,
-        readonly: false,
-        onSelect: function (value, text, event) {
-          var pmin = $("#slider-range").slider("values", 0);
-          var pmax = $("#slider-range").slider("values", 1);
-          var r = value;
-          var id = $(".cat-selected").attr("id");
-          if (id == "rc-btn") {
-            var cat = "rc";
-          }
-          if (id == "or-btn") {
-            var cat = "or";
-          }
-          if (id == "vr-btn") {
-            var cat = "vr";
-          }
-          if (id == "lp-btn") {
-            var cat = "lp";
-          }
-          if (id == "ph1-btn") {
-            var cat = "ph1";
-          }
-          if (id == "ph2-btn") {
-            var cat = "ph2";
-          }
-        }
-      });
-    });
-    $(function () {
-      $('.rating').barrating({
-        theme: 'css-stars',
-        initialRating: null,
-        readonly: true
-      });
     });
 
     $("#grid-ico").click(function () {

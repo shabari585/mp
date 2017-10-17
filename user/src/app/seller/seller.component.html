@@ -3,7 +3,7 @@
           <div class="custom-order-core">
             <div class="custom-order-req">
               <h4 id="cust-order-head">Custom Order Request</h4>
-              <i class="fa fa-times" id="custom-order-close-btn" aria-hidden="true"></i>
+              <i class="fa fa-times" id="custom-order-close-btn" aria-hidden="true" (click)='closeCustOrder()'></i>
             </div>
             <div class="custom-order-main">
               <span class="cust-words">What are you looking for ?</span><br>
@@ -30,7 +30,7 @@
             </p>
           </div>
         </div>
-        <div class="seller-core-container">
+        <div class="seller-core-container w-control">
           <div class="seller-left">
             <div class="seller-profile-pic-main"><img src="../../assets/img/pro-pic.jpg" class="seller-pic"></div>
             <div class="seller-profile-icons">
@@ -54,11 +54,13 @@
             </div>
           </div>
           <div class="seller-middle">
-            <h2>Hey, I'm
+            <h2>Hey, I'm Siddhardha
             </h2>
             <h3>
+              Multi Stack Engineer
             </h3>
             <p>
+                Lorem ipsum dolor sit amet, nemore hendrerit consetetur pri et. Vis eu labore maluisset tincidunt. An qui tempor dolorem, pri facilis quaestio ex. At viris theophrastus mea. Vix ne esse maiestatis complectitur, ridens antiopam imperdiet an vis.
             </p>
               <p><a id="sh-more">Show more</a></p>
                 <div id="s-middle-bottom">
@@ -74,30 +76,18 @@
                         </span>
                       </td>
                       <td>
-                        <div class="s-t-r-div">
-                          <ul class="horizantal-ul">
-                            <li>
-                              <!-- <select class="rrating">
-                        <option value=""></option>
-                        <option value="1" >1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select> -->
-                            </li>
-                            <li>
-                              <!-- 20 -->
-                            </li>
-                          </ul>
-
-                          <div class="bold" style="display:block;width:100%;text-align:left">Reviews</div>
-                        </div>
+                        <span class="s-m-b-all">
+                          <span class="s-m-b-num">
+                            20
+                          </span>
+                        <br>
+                        <span class="bold">Reviews</span>
+                        </span>
                       </td>
                       <td id="no-b">
                         <span class="s-m-b-all">
                   <span class="s-m-b-num">
-                   <span style="font-size:50%;">$</span>
+                   <span style="font-size:50%;">$</span>2000
                         </span>
                         <br>
                         <span class="bold">Earned</span>
@@ -132,7 +122,7 @@
             </table>
           </div>
         </div>
-        <div class="myservices-div">
+        <div class="myservices-div w-control">
           <h2>MY SERVICES</h2>
           <div class="ser-left">
             <div class="ser-cats">
@@ -187,7 +177,47 @@
               <button id="read-cust-rev-btn">Read all the Customer Reviews</button>
             </div>
           </div>
-          <div class="featured-gigs-div">
+          <div class="gigs-div">
+              <a class="gig-links">
+                <div class="gig">
+    
+                  <div class="gig-pic"></div>
+                  <div class="gig-dets">
+                    <h4>
+                      Title
+                    </h4>
+                    <h5 class="gig-credits">
+                      Seller
+                    </h5>
+                  </div>
+    
+                  <div class="gig-footer">
+                      <div class="dets">Details</div>
+                      <div class="cost">$ 200</div>
+                  </div>
+    
+                </div>
+                <div class="gig-details-container">
+                  <div class="gig-dets-top">
+    
+                  </div>
+                  <div class="gig-dets-btm">
+                    <button class="dets-add-to-cart-btn">
+                      Add to cart
+                    </button>
+    
+                    <button class="dets-add-fav-btn">
+                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </a>
+                  
+                              <a class="empty-gigs"></a>
+                              <a class="empty-gigs"></a>
+                              <a class="empty-gigs"></a>
+                              <a class="empty-gigs"></a>
+                              <a class="empty-gigs"></a>
           </div>
           <div class="clear-both"></div>
         </div>

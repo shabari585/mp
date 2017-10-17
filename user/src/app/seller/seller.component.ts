@@ -5,7 +5,7 @@ declare var $: any;
 @Component({
   selector: 'app-seller',
   templateUrl: './seller.component.html',
-  styleUrls: ['./seller.component.css','../gig-details/gig-details.component.css']
+  styleUrls: ['./seller.component.css']
 })
 export class SellerComponent implements OnInit {
 
@@ -16,6 +16,9 @@ export class SellerComponent implements OnInit {
     $("#req-custom-order").click(function () {
         $(".custom-order-div-back").css({ 'display': 'flex' });      
     });
+  }
+  closeCustOrder(){
+    $(".custom-order-div-back").css({ 'display': 'none' });
   }
 
 }
