@@ -1,4 +1,4 @@
-      <div class="c-gig-bck">
+      <div class="c-gig-bck w-control">
           <form action="" method="post" id="form" enctype="multipart/form-data">
             <!-- c-gig-one -->
             <div class="c-gig-divs" id="c-gig-one">
@@ -23,51 +23,59 @@
                 <img src="img/g-dir.png">
               </div>
               <div class="c-gig-title">
-                <table>
-                  <tr>
-                    <td>
-                      <span class="div-nav-btns">One</span>
-                      <!-- <i class="fa fa-check-circle one-check"></i> -->
-                    </td>
-                    <td>
-                      <span class="div-nav-btns">Two</span>
-                      <!-- <i class="fa fa-check-circle two-check"></i> -->
-                    </td>
-                    <td>
-                      <span class="div-nav-btns">Three</span>
-                      <!-- <i class="fa fa-check-circle three-check"></i> -->
-                    </td>
-                    <td>
-                      <span class="div-nav-btns">Four</span>
-                      <!-- <i class="fa fa-check-circle four-check"></i> -->
-                    </td>
-                    <td>
-                      <i class="fa fa-times trl"></i>
-                    </td>
-                  </tr>
-                </table>
-              </div>
+                  <table>
+                    <tr>
+                      <td>
+                        <span class="div-nav-btns one-nav-btn" (click)="gotoNexttab('first')">One <span *ngIf='tabOneCheck == true'><i class="fa fa-check-circle one-check"></i></span> </span>
+                      </td>
+                      <td>
+                        <span class="div-nav-btns two-nav-btn" (click)="gotoNexttab('second')">Two <span *ngIf='tabTwoCheck == true'><i class="fa fa-check-circle two-check"></i></span></span>
+                      </td>
+                      <td>
+                        <span class="div-nav-btns three-nav-btn" (click)="gotoNexttab('third')">Three <span *ngIf='tabThreeCheck == true'><i class="fa fa-check-circle three-check"></i></span></span>
+                      </td>
+                      <td>
+                        <span class="div-nav-btns four-nav-btn" (click)="gotoNexttab('fourth')">Four <span *ngIf='tabFourCheck == true'><i class="fa fa-check-circle four-check"></i></span></span>
+                      </td>
+                      <td>
+                        <i class="fa fa-times trl"></i>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
               <div class="main-c-gig">
                 <table>
                   <tr>
                     <td class="td-align-right">
                       <h4>Category</h4>
                     </td>
-                    <td><select class="c-gig-inputs" id="c-gig-cat" name="category"><option disabled="true"
-                >Choose your Category</option><option value="rc">Resumes and cover letters</option>
-              <option value="or">Online Resumes</option><option value="vr">Visual Resumes</option><option value="lp">LinkedIn Profile</option><option value="ph1">Place Holder 1</option><option value="ph2">Place Holder 2</option></select></td>
+                    <td>
+                      <select class="c-gig-inputs" id="c-gig-cat" name="category">
+                        <option disabled="true">Choose your Category</option>
+                        <option value="rc">Resumes and cover letters</option>
+                        <option value="or">Online Resumes</option>
+                        <option value="vr">Visual Resumes</option>
+                        <option value="lp">LinkedIn Profile</option>
+                        <option value="ph1">Place Holder 1</option>
+                        <option value="ph2">Place Holder 2</option>
+                      </select>
+                    </td>
                   </tr>
                   <tr>
                     <td class="td-align-right">
                       <h4>Title</h4>
                     </td>
-                    <td><input type="text" id="title" name="title" class="c-gig-inputs" maxlength="80" value=""></td>
+                    <td>
+                      <input type="text" id="title" name="title" class="c-gig-inputs" maxlength="80" value="">
+                    </td>
                   </tr>
                   <tr>
                     <td class="td-align-right">
                       <h4>Description</h4>
                     </td>
-                    <td><textarea class="c-gig-inputs" id="c-gig-desc" name="description"></textarea></td>
+                    <td>
+                      <textarea class="c-gig-inputs" id="c-gig-desc" name="description"></textarea>
+                    </td>
                   </tr>
                   <tr>
                     <td class="v-center td-align-right">
@@ -78,85 +86,85 @@
                         <tr>
                           <td>
                             <label for="email">
-  											<div class="c-gig-skills">
-  												<span class="f-l">
-  													<h4>Email/Username Login</h4>
-  													<h5>Login with an email or username</h5>
-  												</span>
-  												<span>
-  													<input type="checkbox" id="email" name="skill_check[]" value="email">
-  												</span>
-  											</div>
-  										</label>
+                              <div class="c-gig-skills">
+                                <span class="f-l">
+                                  <h4>Email/Username Login</h4>
+                                  <h5>Login with an email or username</h5>
+                                </span>
+                                <span>
+                                  <input type="checkbox" id="email" name="skill_check[]" value="email">
+                                </span>
+                              </div>
+                            </label>
                           </td>
                           <td>
                             <label for="profiles">
-  											<div class="c-gig-skills">
-  												<span class="f-l">
-  													<h4>Profiles</h4>
-  													<h5>Customers can enter info about themselves</h5>
-  												</span>
-  												<span>
-  													<input type="checkbox" id="profiles" name="skill_check[]" value="profiles">
-  												</span>
-  											</div>
-  										</label>
+                              <div class="c-gig-skills">
+                                <span class="f-l">
+                                  <h4>Profiles</h4>
+                                  <h5>Customers can enter info about themselves</h5>
+                                </span>
+                                <span>
+                                  <input type="checkbox" id="profiles" name="skill_check[]" value="profiles">
+                                </span>
+                              </div>
+                            </label>
                           </td>
                         </tr>
                         <tr>
                           <td>
                             <label for="sharing-functions">
-  										<div class="c-gig-skills">
-  											<span class="f-l">
-  												<h4>Sharing Functions</h4>
-  												<h5>Share on Twitter, Facebook, Email</h5>
-  											</span>
-  											<span>
-  												<input type="checkbox" id="sharing-functions" name="skill_check[]" value="sharing">
-  											</span>
-  										</div>
-  									</label>
+                              <div class="c-gig-skills">
+                                <span class="f-l">
+                                  <h4>Sharing Functions</h4>
+                                  <h5>Share on Twitter, Facebook, Email</h5>
+                                </span>
+                                <span>
+                                  <input type="checkbox" id="sharing-functions" name="skill_check[]" value="sharing">
+                                </span>
+                              </div>
+                            </label>
                           </td>
                           <td>
                             <label for="social-login">
-  										<div class="c-gig-skills">
-  											<span class="f-l">
-  												<h4>Social Login</h4>
-  												<h5>Login w/ Twitter, Facebook, etc</h5>
-  											</span>
-  											<span>
-  												<input type="checkbox" id="social-login" name="skill_check[]" value="social-login">
-  											</span>
-  										</div>
-  									</label>
+                              <div class="c-gig-skills">
+                                <span class="f-l">
+                                  <h4>Social Login</h4>
+                                  <h5>Login w/ Twitter, Facebook, etc</h5>
+                                </span>
+                                <span>
+                                  <input type="checkbox" id="social-login" name="skill_check[]" value="social-login">
+                                </span>
+                              </div>
+                            </label>
                           </td>
                         </tr>
                         <tr>
                           <td>
                             <label for="ratings">
-  										<div class="c-gig-skills">
-  											<span class="f-l">
-  												<h4>Ratings/Reviews</h4>
-  												<h5>People leave ratings</h5>
-  											</span>
-  											<span>
-  												<input type="checkbox" id="ratings" name="skill_check[]" value="rating">
-  											</span>
-  										</div>
-  									</label>
+                              <div class="c-gig-skills">
+                                <span class="f-l">
+                                  <h4>Ratings/Reviews</h4>
+                                  <h5>People leave ratings</h5>
+                                </span>
+                                <span>
+                                  <input type="checkbox" id="ratings" name="skill_check[]" value="rating">
+                                </span>
+                              </div>
+                            </label>
                           </td>
                           <td>
                             <label for="mobile-opt">
-  										<div class="c-gig-skills">
-  											<span class="f-l">
-  												<h4>Mobile Optimized</h4>
-  												<h5>Designed to look good on mobile devices</h5>
-  											</span>
-  											<span>
-  												<input type="checkbox" id="mobile-opt" name="skill_check[]" value="mobile">
-  											</span>
-  										</div>
-  									</label>
+                              <div class="c-gig-skills">
+                                <span class="f-l">
+                                  <h4>Mobile Optimized</h4>
+                                  <h5>Designed to look good on mobile devices</h5>
+                                </span>
+                                <span>
+                                  <input type="checkbox" id="mobile-opt" name="skill_check[]" value="mobile">
+                                </span>
+                              </div>
+                            </label>
                           </td>
                         </tr>
                       </table>
@@ -166,7 +174,7 @@
               </div>
               <div class="g-err" id="g-one-all-err">All fields are required !</div>
               <div class="nav-dots">
-                <div id="f-n-btn" class="con-btns">CONTINUE</div>
+                <div id="f-n-btn" class="con-btns" (click)="gotoNexttab('second')">CONTINUE</div>
               </div>
             </div>
             <!--c-gig-two-->
@@ -207,29 +215,26 @@
                 <img src="img/g-dir.png">
               </div>
               <div class="c-gig-title">
-                <table>
-                  <tr>
-                    <td>
-                      <span class="div-nav-btns one-nav-btn">One <i class="fa fa-check-circle one-check"></i></span>
-                    </td>
-                    <td>
-                      <span class="div-nav-btns">Two</span>
-                      <!-- <i class="fa fa-check-circle two-check"></i> -->
-                    </td>
-                    <td>
-                      <span class="div-nav-btns">Three</span>
-                      <!-- <i class="fa fa-check-circle three-check"></i> -->
-                    </td>
-                    <td>
-                      <span class="div-nav-btns">Four</span>
-                      <!-- <i class="fa fa-check-circle four-check"></i> -->
-                    </td>
-                    <td>
-                      <i class="fa fa-times trl"></i>
-                    </td>
-                  </tr>
-                </table>
-              </div>
+                  <table>
+                    <tr>
+                      <td>
+                        <span class="div-nav-btns one-nav-btn">One <span *ngIf='tabOneCheck == true'><i class="fa fa-check-circle one-check"></i></span> </span>
+                      </td>
+                      <td>
+                        <span class="div-nav-btns two-nav-btn">Two <span *ngIf='tabTwoCheck == true'><i class="fa fa-check-circle two-check"></i></span></span>
+                      </td>
+                      <td>
+                        <span class="div-nav-btns three-nav-btn">Three <span *ngIf='tabThreeCheck == true'><i class="fa fa-check-circle three-check"></i></span></span>
+                      </td>
+                      <td>
+                        <span class="div-nav-btns four-nav-btn">Four <span *ngIf='tabFourCheck == true'><i class="fa fa-check-circle four-check"></i></span></span>
+                      </td>
+                      <td>
+                        <i class="fa fa-times trl"></i>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
               <div class="packages">
                 <div class="packages-div">
                   <table class="packages-table">
@@ -322,7 +327,7 @@
               <div id="pro-words-er" class="g-err">Pro Package's words field is empty.</div>
               <div id="g-2-all-err" class="g-err">*All fields are required.</div>
               <div class="nav-dots">
-                <div id="s-n-btn" class="con-btns">CONTINUE</div>
+                <div id="s-n-btn" class="con-btns" (click)="gotoNexttab('third')">CONTINUE</div>
               </div>
             </div>
             <!-- c-gig-three-->
@@ -333,28 +338,26 @@
                 <img src="img/g-dir.png">
               </div>
               <div class="c-gig-title">
-                <table>
-                  <tr>
-                    <td>
-                      <span class="div-nav-btns one-nav-btn">One <i class="fa fa-check-circle one-check"></i></span>
-                    </td>
-                    <td>
-                      <span class="div-nav-btns two-nav-btn">Two <i class="fa fa-check-circle two-check"></i></span>
-                    </td>
-                    <td>
-                      <span class="div-nav-btns">Three</span>
-                      <!-- <i class="fa fa-check-circle three-check"></i> -->
-                    </td>
-                    <td>
-                      <span class="div-nav-btns">Four</span>
-                      <!-- <i class="fa fa-check-circle four-check"></i> -->
-                    </td>
-                    <td>
-                      <i class="fa fa-times  trl"></i>
-                    </td>
-                  </tr>
-                </table>
-              </div>
+                  <table>
+                    <tr>
+                      <td>
+                        <span class="div-nav-btns one-nav-btn">One <span *ngIf='tabOneCheck == true'><i class="fa fa-check-circle one-check"></i></span> </span>
+                      </td>
+                      <td>
+                        <span class="div-nav-btns two-nav-btn">Two <span *ngIf='tabTwoCheck == true'><i class="fa fa-check-circle two-check"></i></span></span>
+                      </td>
+                      <td>
+                        <span class="div-nav-btns three-nav-btn">Three <span *ngIf='tabThreeCheck == true'><i class="fa fa-check-circle three-check"></i></span></span>
+                      </td>
+                      <td>
+                        <span class="div-nav-btns four-nav-btn">Four <span *ngIf='tabFourCheck == true'><i class="fa fa-check-circle four-check"></i></span></span>
+                      </td>
+                      <td>
+                        <i class="fa fa-times trl"></i>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
               <h3 id="oh">Offer extras to Employers(optional)</h3>
               <div id="ex-core">
                 <div class="ex-offer">
@@ -370,7 +373,10 @@
                         <span class="center">in</span>
                       </td>
                       <td class="offer-mm">
-                        <div class="ext-cost days center"><input type="text" class="days-input" name="fast-del-days"><span id="days">days(s)</span></div>
+                        <div class="ext-cost days center">
+                          <input type="text" class="days-input" name="fast-del-days">
+                          <span id="days">days(s)</span>
+                        </div>
                       </td>
                     </tr>
                   </table>
@@ -394,11 +400,15 @@
                     </tr>
                   </table>
                 </div>
+                <div id="add-more-extras-btn-div">
+                <button id="add-more-extras-btn">
+                    ADD ANOTHER EXTRA
+                </button>  
+                </div>
               </div>
-              <div id="add-more-extras-btn">ADD ANOTHER EXTRA</div>
               <div class="other-details">
                 <h3>Frequently Asked Questions</h3>
-                <h4 id="ad-faq-btn"><i class="fa fa-plus"></i> Add an FAQ</h4>
+                <h4 id="ad-faq-btn"><i class="fa fa-plus"></i> &nbsp; Add an FAQ</h4>
                 <div class="faq-core">
                   <div class="faq">
                     <h4 class="faq-head">Question</h4>
@@ -409,7 +419,7 @@
                 </div>
               </div>
               <div class="nav-dots">
-                <div id="t-n-btn" class="con-btns">CONTINUE</div>
+                <div id="t-n-btn" class="con-btns" (click)="gotoNexttab('fourth')">CONTINUE</div>
               </div>
             </div>
             <!-- c-gig-four-->
@@ -420,27 +430,26 @@
                 <img src="img/g-dir.png">
               </div>
               <div class="c-gig-title">
-                <table>
-                  <tr>
-                    <td>
-                      <span class="div-nav-btns one-nav-btn">One <i class="fa fa-check-circle one-check"></i></span>
-                    </td>
-                    <td>
-                      <span class="div-nav-btns two-nav-btn">Two <i class="fa fa-check-circle two-check"></i></span>
-                    </td>
-                    <td>
-                      <span class="div-nav-btns three-nav-btn">Three <i class="fa fa-check-circle three-check"></i></span>
-                    </td>
-                    <td>
-                      <span class="div-nav-btns">Four</span>
-                      <!-- <i class="fa fa-check-circle four-check"></i> -->
-                    </td>
-                    <td>
-                      <i class="fa fa-times trl"></i>
-                    </td>
-                  </tr>
-                </table>
-              </div>
+                  <table>
+                    <tr>
+                      <td>
+                        <span class="div-nav-btns one-nav-btn">One <span *ngIf='tabOneCheck == true'><i class="fa fa-check-circle one-check"></i></span> </span>
+                      </td>
+                      <td>
+                        <span class="div-nav-btns two-nav-btn">Two <span *ngIf='tabTwoCheck == true'><i class="fa fa-check-circle two-check"></i></span></span>
+                      </td>
+                      <td>
+                        <span class="div-nav-btns three-nav-btn">Three <span *ngIf='tabThreeCheck == true'><i class="fa fa-check-circle three-check"></i></span></span>
+                      </td>
+                      <td>
+                        <span class="div-nav-btns four-nav-btn">Four <span *ngIf='tabFourCheck == true'><i class="fa fa-check-circle four-check"></i></span></span>
+                      </td>
+                      <td>
+                        <i class="fa fa-times trl"></i>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
               <div class="portfolio-pics-div">
                 <h4>Portfolio Photos</h4>
                 <h5>Upload photos that describe or relate to your Gig.</h5>
@@ -494,7 +503,7 @@
                 <div class="g-err" id="select-main-img-err">Please upload main image.</div>
               </div>
               <div class="nav-dots">
-                <div id="fr-n-btn" class="con-btns">CONTINUE</div>
+                <div id="fr-n-btn" class="con-btns" (click)="gotoNexttab('fifth')">CONTINUE</div>
               </div>
             </div>
             <!-- c-gig-five-->
@@ -503,16 +512,16 @@
                 <table>
                   <tr>
                     <td>
-                      <span class="div-nav-btns one-nav-btn">One <i class="fa fa-check-circle one-check"></i></span>
+                      <span class="div-nav-btns one-nav-btn">One <span *ngIf='tabOneCheck == true'><i class="fa fa-check-circle one-check"></i></span> </span>
                     </td>
                     <td>
-                      <span class="div-nav-btns two-nav-btn">Two <i class="fa fa-check-circle two-check"></i></span>
+                      <span class="div-nav-btns two-nav-btn">Two <span *ngIf='tabTwoCheck == true'><i class="fa fa-check-circle two-check"></i></span></span>
                     </td>
                     <td>
-                      <span class="div-nav-btns three-nav-btn">Three <i class="fa fa-check-circle three-check"></i></span>
+                      <span class="div-nav-btns three-nav-btn">Three <span *ngIf='tabThreeCheck == true'><i class="fa fa-check-circle three-check"></i></span></span>
                     </td>
                     <td>
-                      <span class="div-nav-btns four-nav-btn">Four <i class="fa fa-check-circle four-check"></i></span>
+                      <span class="div-nav-btns four-nav-btn">Four <span *ngIf='tabFourCheck == true'><i class="fa fa-check-circle four-check"></i></span></span>
                     </td>
                     <td>
                       <i class="fa fa-times trl"></i>

@@ -441,5 +441,23 @@ h4 {
 #proceed-btn:hover {
   background-color: #6D9837;
 }
+#c-gig-two input[type="checkbox"] {
+  display: none;
+}
+
+#c-gig-two input[type="checkbox"]+label span {
+  display: inline-block;
+  width: 72px;
+  height: 37px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  background: url('../../assets/ico/no.png') top no-repeat;
+  cursor: pointer;
+}
+
+#c-gig-two input[type="checkbox"]:checked+label span {
+  background: url('../../assets/ico/yes.png') top no-repeat;
+}
+
 
 

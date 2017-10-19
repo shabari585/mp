@@ -8,8 +8,13 @@ declare var $: any;
   styleUrls: ['./create-gig.component.css']
 })
 export class CreateGigComponent implements OnInit {
-
+  
   constructor(private title: Title) { }
+  
+  tabOneCheck: boolean = false;
+  tabTwoCheck: boolean = false;
+  tabThreeCheck: boolean = false;
+  tabFourCheck: boolean = false;
 
   ngOnInit() {
 
@@ -62,26 +67,11 @@ export class CreateGigComponent implements OnInit {
       $(".helpers").hide();
       $("#skills-helper").toggle();
     });
+
+
     // Body Scroll
-    // $("html,body").animate({scrollTop:$('#c-gig-two').offset().top-150});
 
     // Navigation button
-    $("#f-n-btn").click(function () {
-      $(".helpers").hide();
-      var res = cGigOneCheck();
-      // if (res == true) {
-      //   $("#g-one-all-err").hide();
-      //   $("#c-gig-one").hide();
-      //   $("#c-gig-two").show();
-      //   $(".one-check").show();
-      //   $("#standard-price").focus();
-      //   $("html,body").animate({
-      //     scrollTop: $('#c-gig-two').offset().top - 150
-      //   });
-      // } else {
-      //   $("#g-one-all-err").show();
-      // }
-    });
     $(".one-nav-btn").click(function () {
       $(".helpers").hide();
       $(".c-gig-divs").hide();
@@ -158,9 +148,6 @@ export class CreateGigComponent implements OnInit {
       $("#package-hq-files-helper").toggle();
     });
     // Body scroll
-    // $("#package-cost-tr input").click(function(){
-    //   $("html,body").animate({scrollTop:$('#c-gig-two').offset().top-1});
-    // });
     $("#package-cost-tr input").keydown(function () {
       $("html,body").animate({
         scrollTop: $('#c-gig-two').offset().top
@@ -284,73 +271,13 @@ export class CreateGigComponent implements OnInit {
       }
     }
 
-    // Panel Three
-    // Helpers
-
-    // Adding more extras
-    $("#add-more-extras-btn").click(function () {
-      $("#ex-core").append(
-        '<div class="ex-offer"><table class="ex-offer-table"><tr class="full-tr"><td class="offer-rest"><span class=""><a href="javascript:void(0)" class="cls-btn"><i class="fa fa-times"></i></a></span><input type="text" class="ex-offer-txt" name="ex-offer[]"></td><td class="offer-sm"><div class="ext-cost center"><span id="dlr">$</span><input type="text" class="cost-input" name="ex-cost[]"></div></td><td class="offer-xsm"><span class="center">in</span></td><td class="offer-mm"><div class="ext-cost days center"><input type="text" class="days-input"name="ex-days[]"><span id="days">days(s)</span></div></td></tr></table></div>'
-      );
-    });
+    
     // Closing extras
-    $(document).on("click", ".cls-btn", function (e) {
-      e.preventDefault();
-      // Clearing the values inside the inputs
-      $(this).parent().parent().parent().parent().parent().parent().hide();
-      $(this).parent().parent().parent().find('input.cost-input').val('');
-      $(this).parent().parent().parent().find('input.days-input').val('');
-      $(this).parent().parent().parent().find('input.ex-offer-txt').val('');
-    });
+    
     // Adding extra faq's
-    $("#ad-faq-btn").click(function () {
-      var q = $.trim($(".faq_question").val());
-      var a = $.trim($(".faq_ans").val());
-      if (q == "" || a == "") {
-
-      } else {
-        $(".faq-core").prepend(
-          '<div class="faq"><h4 class="faq-head">Question</h4><input type="text" class="faq_question" name="faq_question[]" value=""><h4 class="faq-head">Answer</h4><textarea name="faq_answer[]" class="faq_ans" value=""></textarea></div></div>'
-        );
-      }
-    });
+    
     // Body scroll
-    $("#first-faq").focus(function () {
-      $("html,body").animate({
-        scrollTop: $('.other-details').offset().top - 100
-      });
-    });
-    // Navigation
-    $("#t-n-btn").click(function () {
-      $(".helpers").hide();
-      if (cGigThreeCheck()) {
-        $("#c-gig-three").hide();
-        $("#c-gig-four").show();
-        $(".three-check").show();
-        $("html,body").animate({
-          scrollTop: $('#c-gig-four').offset().top
-        });
-      } else {
 
-      }
-    });
-    // Validations
-
-    // Panel Four
-    // Navigation
-    $("#fr-n-btn").click(function () {
-      $(".helpers").hide();
-      if (cGigFourCheck()) {
-        $("#c-gig-four").hide();
-        $("#c-gig-five").show();
-        $(".four-check").show();
-        $("html,body").animate({
-          scrollTop: $('#c-gig-five').offset().top
-        });
-      } else {
-        // $("#gig-4-all-err").show();
-      }
-    });
     // Validations
     function cGigFourCheck() {
       var images = $("#file").val();
@@ -451,6 +378,54 @@ export class CreateGigComponent implements OnInit {
       // var file = $('#' + fname);
       // $('.' + fname + '_no_del_class').hide();
     });
+  }
+
+  gotoNexttab(gotoTab){
+      switch (gotoTab) {
+        case 'first':
+          $(".helpers").hide();
+          $(".c-gig-divs").hide();
+          $("#c-gig-one").show();
+          $("html,body").animate({
+            scrollTop: $('#c-gig-one').offset().top - 150
+          });
+          break;
+        case 'second':
+          $(".helpers").hide();
+          $(".c-gig-divs").hide();
+          $("#c-gig-two").show();
+          $("html,body").animate({
+            scrollTop: $('#c-gig-two').offset().top - 150
+          });
+          break;
+        case 'third':
+          $(".helpers").hide();
+          $(".c-gig-divs").hide();
+          $("#c-gig-three").show();
+          $("html,body").animate({
+            scrollTop: $('#c-gig-three').offset().top - 150
+          });
+          break;
+        case 'fourth':
+          $(".helpers").hide();
+          $(".c-gig-divs").hide();
+          $("#c-gig-four").show();
+          $("html,body").animate({
+            scrollTop: $('#c-gig-four').offset().top - 150
+          });
+          break;
+        case 'fifth':
+          $(".helpers").hide();
+          $(".c-gig-divs").hide();
+          $("#c-gig-five").show();
+          $("html,body").animate({
+            scrollTop: $('#c-gig-five').offset().top - 150
+          });
+          break;
+      
+        default:
+          break;
+      }
   }
 
 }
