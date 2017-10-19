@@ -42,6 +42,10 @@ const appRoutes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'account-deleted',
+    component: AccountDeletedComponent
+  },
+  {
     path: 'categories',
     component: CategoriesComponent
   },
