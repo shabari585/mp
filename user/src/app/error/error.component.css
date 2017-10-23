@@ -5,6 +5,9 @@
   width: 100vw;
   background-color: #216db8;
   color: #fff;
+  margin-top: 11vh;
+  padding: 0px 0!important;
+  text-align: center;
 }
 
 #whoops {
@@ -28,74 +31,16 @@
   line-height: 1.2;
   white-space: normal;
 }
-
-
-/* Extra Small Devices, .visible-xs-* */
-
-@media (max-width: 767px) {
-  .err-container {
-    top: 0vh;
-  }
-  .err-container-core {
-    position: absolute;
-    display: inline-block;
-    top: 45%;
-    left: 39%;
-    transform: translate(-50%, -50%);
-    white-space: normal;
-  }
-  .err-para {
-    font-size: 130%;
-  }
+ 
+.err-container-core {
+  position: relative;
+  display: block;
+  margin: 20px auto !important;
+  white-space: normal;
+  padding-top: 100px;
+  text-align: left;
 }
-
-
-/* Small Devices, .visible-sm-* */
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .err-container-core {
-    position: absolute;
-    display: inline-block;
-    top: 25%;
-    left: 42%;
-    transform: translate(-50%, -50%);
-    white-space: normal;
-  }
-}
-
-
-/* Medium Devices, .visible-md-* */
-
-@media (min-width: 992px) and (max-width: 1199px) {
-  .err-container {
-    top: 11vh;
-  }
-  .err-container-core {
-    position: absolute;
-    display: inline-block;
-    top: 25%;
-    left: 42%;
-    transform: translate(-50%, -50%);
-    white-space: normal;
-  }
-}
-
-
-/* Large Devices, .visible-lg-* */
-
-@media (min-width: 1200px) {
-  .err-container {
-    margin-top: 11vh;
-    padding: 0px 0!important;
-    text-align: center;
-  }
-  .err-container-core {
-    position: relative;
-    display: block;
-    width: 980px;
-    margin: 20px auto !important;
-    white-space: normal;
-    padding-top: 100px;
-    text-align: left;
-  }
+.back-arrow-div{
+  font-size: 300%;
+  cursor: pointer;
 }

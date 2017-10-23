@@ -1,0 +1,60 @@
+.portfolio-div{
+    clear:both !important;
+  }
+  .save-button{
+    float: right !important;
+    margin-top: 0px !important;
+  }
+  @media (max-width: 767px) {
+    .name-div .p-l-f-div{
+      clear: both;
+      position: relative;
+      display: block;
+      width: 100%;
+      margin : 0 auto;
+    }
+    .name-div .p-r-f-div{
+      clear: both;
+      position: relative;
+      display:block;
+      margin:0 auto;
+      width: 100%;
+      text-align: left;
+    }
+    .name-div .p-r-f-div p{
+      position: relative;
+      display: block;
+      width: 100%;
+      margin: 0 auto !important;
+    }
+    .save-button{
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+  /* Small Devices, .visible-sm-* */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .name-div .p-need{
+      position: relative;
+      display:block;
+      overflow: hidden;
+      width: 100%;
+      text-align: center;
+    }
+    .name-div .p-l-f-div{
+      position: relative;
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+    .name-div .close-acc-div{
+      position: relative;
+      display:block !important;
+      width: 70%;
+      overflow: hidden;
+      margin: 0 auto !important;
+      text-align: left;
+    }
+  }

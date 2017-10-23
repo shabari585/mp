@@ -7,7 +7,6 @@
 .manage-orders-core {
   position: relative;
   display: inline-block;
-  width: 80vw;
   margin-left: 10vw;
   margin-top: 50px;
   margin-bottom: 30px;
@@ -65,63 +64,15 @@
 }
 
 
-/* Extra Small Devices, .visible-xs-* */
-
-@media (max-width: 767px) {
-  .m-core {
-    position: relative;
-    display: block;
-    margin-top: 0vh;
-  }
-  .no-fav-div {
-    position: relative;
-    display: block;
-    width: 90%;
-    background-color: #F5F5F5;
-    padding: 20px 20px 40px 20px;
-    border-radius: 2px;
-    white-space: normal !important;
-    overflow: hidden;
-  }
+.m-core {
+  position: relative;
+  display: block;
+  margin-top: 11vh;
 }
 
-
-/* Small Devices, .visible-sm-* */
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .m-core {
-    position: relative;
-    display: block;
-    margin-top: 0vh;
-  }
-  .no-fav-div {
-    position: relative;
-    display: block;
-    width: 90%;
-    background-color: #F5F5F5;
-    padding: 20px 20px 40px 20px;
-    border-radius: 2px;
-    white-space: normal !important;
-    overflow: hidden;
-  }
-}
-
-/* Medium Devices, .visible-md-* */
-@media (min-width: 992px) and (max-width: 1199px) {}
-
-/* Large Devices, .visible-lg-* */
-@media (min-width: 1200px) {
-  .m-core {
-    position: relative;
-    display: block;
-    margin-top: 11vh;
-  }
-
-  .manage-orders-core {
-    position: relative;
-    display: block;
-    width: 980px;
-    margin: 40px auto;
-    overflow: hidden;
-  }
+.manage-orders-core {
+  position: relative;
+  display: block;
+  margin: 40px auto;
+  overflow: hidden;
 }

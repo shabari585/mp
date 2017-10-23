@@ -1,111 +1,46 @@
-
-      <div class="settings-container">
-      
-          <div class="width-desktop">
-            <div class="l-f-div">
-              <table>
-                <tr>
-                  <td>
-                    <a href="settings.php">
-                      <div class="l-f-t-d-div selected"><span class="l-f-td-words">Profile</span></div>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a href="password.php">
-                      <div class="l-f-t-d-div"><span class="l-f-td-words">Password</span></div>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a href="payment-financials.php">
-                      <div class="l-f-t-d-div"><span class="l-f-td-words">Payment & Financials</span></div>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a href="account.php">
-                      <div class="l-f-t-d-div"><span class="l-f-td-words">Account</span></div>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a href="email-notifications.php">
-                      <div class="l-f-t-d-div"><span class="l-f-td-words">Email Notifications</span></div>
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </div>
-              <div class="r-f-div">
-                <h3 class="p-need headings">Profile Details</h3>
-                <hr class="top-hr">
-                <div class="p-need profile-photo-div">
-                  <div class="p-p-div-title">
-                    <h4>PROFILE PHOTO</h4>
-                  </div>
-                  <form method="POST" action="" enctype="multipart/form-data">
-                    <div class="p-p-div-pic">
-                      <img src="" id="change-p-p">
-                      <label class="custom-p-p" for="c-p-p">CHOOSE PHOTO</label>
-                      <input type="file" value="CHOOSE PHOTO" id="c-p-p" name="c-p-p"><br>
-                      <p>This photo is your identity on fiverr<br> and appears on your profile and gigs.</p>
-                    <!-- </div> -->
-                </div>
-                <div class="name-div p-need">
-                  <div class="p-l-f-div">
-                    <span class="p-f-titles">First Name*</span><br>
-                    <input type="text" id="u-f-name" name="u-f-name" value="">
-                  </div>
-                  <div class="p-r-f-div">
-                    <span class="p-f-titles">Last Name*</span><br>
-                    <input type="text" id="u-l-name" name="u-l-name" value="">
-                  </div>
-                </div>
-                <div class="name-div p-need">
-                  <div class="p-l-f-div">
-                    <span class="p-f-titles">Designation*</span><br>
-                    <input type="text" id="u-designation" name="u-designation" value="">
-                  </div>
-                  <div class="p-l-f-div">
-                    <span class="p-f-titles">Email*</span><br>
-                    <input type="text" id="u-email" name="u-email" value="">
-                  </div>
-                </div>
-                <hr>
-                <div class="name-div p-need">
-                  <span class="p-f-titles">Enter you skills seperated by commas*</span><br>
-                  <input type="text" id="u-skills" name="u-skills" value="">
-                </div>
-                <hr>
-                <div class="address-div p-need">
-                  <span class="p-f-titles">Address*</span><br>
-                  <input type="text" id="u-address" name="u-address" value=""><br>
-                  <span class="p-f-titles">City*</span><br>
-                  <input type="text" id="u-city" name="u-city" value=""><br>
-                  <span class="p-f-titles">Country*</span><br>
-                  <input type="text" id="u-country" name="u-country" value=""><br>
-                </div>
-                <hr>
-                <div class="p-need">
-                  <h4 id="s-ab-you-title">SOMETHING ABOUT YOU (English)<br>(150-300 characters)</h4>
-                  <textarea id="s-ab-you" name="s-ab-you" style="resize:none" maxlength="300"></textarea>
-                  <div class="clear-both">
-
-                  </div>
-                  <span class="char-count"><span id="char-now"></span>/300 MAX</span>
-                </div>
-                <hr>
-                <div class="save-btn-area">
-                  <input type="submit" class="save-button" value="Save Settings">
-                </div>
-              <!-- </div> -->
-              </form>
-          </div>
-      </div>
+<div class="settings-container">
+  <div class="width-desktop w-control">
+    <div class="l-f-div">
+      <table>
+        <tr>
+          <td>
+            <a routerLink='/settings'>
+              <div class="l-f-t-d-div selected"><span class="l-f-td-words">Profile</span></div>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a routerLink='/settings/password'>
+              <div class="l-f-t-d-div"><span class="l-f-td-words">Password</span></div>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a routerLink='/settings/financials'>
+              <div class="l-f-t-d-div"><span class="l-f-td-words">Payment & Financials</span></div>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a routerLink='/settings/account'>
+              <div class="l-f-t-d-div"><span class="l-f-td-words">Account</span></div>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a routerLink='/settings/email-notifications'>
+              <div class="l-f-t-d-div"><span class="l-f-td-words">Email Notifications</span></div>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
          
 

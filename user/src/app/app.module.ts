@@ -30,6 +30,11 @@ import { ManageOrdersComponent } from './manage-orders/manage-orders.component';
 import { ManageSalesComponent } from './manage-sales/manage-sales.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { WithdrawalsComponent } from './withdrawals/withdrawals.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PasswordComponent } from './password/password.component';
+import { FinancialsComponent } from './financials/financials.component';
+import { AccountComponent } from './account/account.component';
+import { EmailNotificationsComponent } from './email-notifications/email-notifications.component';
 
 const appRoutes: Routes = [
   {
@@ -54,6 +59,14 @@ const appRoutes: Routes = [
     component: CheckoutComponent
   },
   {
+    path: 'error',
+    component: ErrorComponent
+  },
+  {
+    path: 'favorites',
+    component: FavoritesComponent
+  },
+  {
     path: 'how-it-works',
     component: HowItWorksComponent
   },
@@ -64,6 +77,10 @@ const appRoutes: Routes = [
   {
     path: 'help',
     component: HelpComponent
+  },
+  {
+    path: 'inbox',
+    component: InboxComponent
   },
   {
     path: 'about',
@@ -86,10 +103,6 @@ const appRoutes: Routes = [
     component: SellerComponent
   },
   {
-    path: 'settings',
-    component: SettingsComponent
-  },
-  {
     path: 'careers',
     component: CareersComponent
   },
@@ -101,6 +114,41 @@ const appRoutes: Routes = [
     path: 'gig',
     component: GigDetailsComponent
   },
+  {
+    path: 'withdrawals',
+    component: WithdrawalsComponent
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent,
+    children: [
+        {
+            path: '',
+            redirectTo: 'profile',
+            pathMatch: 'full',
+        },
+        {
+            path: 'account',
+            component: AccountComponent,
+        },
+        {
+            path: 'profile',
+            component: ProfileComponent,
+        },
+        {
+            path: 'password',
+            component: PasswordComponent,
+        },
+        {
+            path: 'financials',
+            component: FinancialsComponent,
+        },
+        {
+            path: 'email-notifications',
+            component: EmailNotificationsComponent,
+        },
+    ]
+},
 
 ]
 
@@ -129,7 +177,12 @@ const appRoutes: Routes = [
     ManageOrdersComponent,
     ManageSalesComponent,
     FavoritesComponent,
-    WithdrawalsComponent
+    WithdrawalsComponent,
+    ProfileComponent,
+    PasswordComponent,
+    FinancialsComponent,
+    AccountComponent,
+    EmailNotificationsComponent
   ],
   imports: [
     BrowserModule,

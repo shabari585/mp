@@ -74,7 +74,7 @@ html {
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   margin-bottom: 40px;
-  padding: 1px 15px;
+  padding: 1px 30px;
   width: 100%;
   white-space: normal;
   overflow: hidden;
@@ -136,16 +136,13 @@ html {
 .tech-det-tabs ul>li {
   position: relative;
   display: flex;
-  display: -webkit-flex;
-  align-items: center;
-  -webkit-align-items: center;
+  align-items: flex-start;
   height: auto;
-  min-height: 60px;
   width: 100%;
+  padding: 10px 0;
   border-bottom: 1px solid #ddd;
   font-size: 90%;
   overflow: hidden;
-  /*font-weight: 600;*/
 }
 #lan {
   position: relative;
@@ -177,7 +174,9 @@ html {
   position: relative;
   display: block;
   text-align: left;
-  color: rgba(0, 0, 0, 0.5);
+  color: #999;
+  font-size: 80%;
+  line-height: 1.7;
 }
 .t-d-tabs-name {
   position: relative;
@@ -189,25 +188,25 @@ html {
 .t-d-tabs-value {
   position: relative;
   display: inline-block;
-  top: 50%;
-  right: 10%;
-  transform: translate(-0%, -50%);
-  color: #000;
+  color: #333;
   font-weight: bold;
 }
 #lan {
   position: relative;
   display: block;
-  margin: 10px 0;
+  margin: 0px 0;
 }
 #lan li {
   position: relative;
   display: block;
   height: auto;
-  min-height: 10px;
-  margin: 10px 0;
+  margin: 6px 0;
+  padding: 0;
   border-bottom: none;
   text-align: right !important;
+}
+#lan li:first-child{
+  margin-top: 0px;
 }
 #dash-welcome-div {
   position: relative;
@@ -248,7 +247,7 @@ html {
   height: 300px;
   width: 100%;
   border: 1px dashed #ddd;
-  background-color: #f0f0f0;
+  background-color: #f7f7f7;
   margin: 20px 0;
   justify-content: center;
   -webkit-justify-content: center;
