@@ -21,6 +21,7 @@ body {
 .inbox-container {
   position: relative;
   display: block;
+  margin-top: 11vh;
 }
 
 .user-top-nav {

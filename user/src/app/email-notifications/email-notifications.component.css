@@ -1,3 +1,7 @@
 label{
     display: block;
 }
+.p-need{
+    width: 80% !important;
+    margin: 0 auto !important;
+}
