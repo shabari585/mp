@@ -1,3 +1,277 @@
+<!-- Login Sign up -->
+
+<div *ngIf='showDarkBack'>
+
+  <div id="dark-back">
+    <i class="fa fa-times close-mark" aria-hidden="true" (click)="closeShowBack(true)"></i>
+    <h2 id="db-main-head">Market place</h2>
+    <h3 id="db-main-caption">Universal access to the world's best market place</h3>
+    <div class="dark-core">
+      <div class="dark-index">
+        <ul id="dark-ul">
+          <li id="login-trig-btn" (click)='showBackLogin(true)'>LOG IN</li>
+          <li id="signup-trig-btn" (click)='showBackSignUp(true)'>SIGN UP</li>
+        </ul>
+      </div>
+      
+      <div *ngIf='showLoginDiv'>
+        <div class="dark-side">
+          <div class="dark-icos">
+            <img src="../assets/img/dbone.jpg" class="dbimgs">
+            <div class="dbico-core">
+              <h2 class="dbico-htwo">
+                30 DAYS MONEY BACK GUARANTEE
+              </h2>
+              <p class="dbico-p">
+                We are fairly small, flexible design studio that  designs for print and web. We work flexibly with clients.
+              </p>
+            </div>
+          </div>
+          <div class="dark-icos">
+            <img src="../assets/img/dbtwo.jpg" class="dbimgs">
+            <div class="dbico-core">
+              <h2 class="dbico-htwo">
+                NEW ITEMS ARE INCLUDED IN SAME SUBSCRIPTIONS
+              </h2>
+              <p class="dbico-p">
+                We are fairly small, flexible design studio that  designs for print and web. We work flexibly with clients.
+              </p>
+            </div>
+          </div>
+          <div class="dark-icos">
+            <img src="../assets/img/dbthree.jpg" class="dbimgs">
+            <div class="dbico-core">
+              <h2 class="dbico-htwo">
+                24/7 DEDICATED CUSTOMER SUPPORT
+              </h2>
+              <p class="dbico-p">
+                We are fairly small, flexible design studio that  designs for print and web. We work flexibly with clients.
+              </p>
+            </div>
+          </div>
+          <div class="dark-icos">
+            <img src="../assets/img/dbfour.jpg" class="dbimgs">
+            <div class="dbico-core">
+              <h2 class="dbico-htwo">
+                100% SECURED PAYMENT GATEWAY
+              </h2>
+              <p class="dbico-p">
+                We are fairly small, flexible design studio that  designs for print and web. We work flexibly with clients.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div *ngIf='showLogin'>
+            <div class="login-div">
+                <div class="l-t-icon">
+          
+                </div>
+                <h3 id="login-head">LOGIN TO RESTORED</h3>
+                <input type="email" id="d-login-email" placeholder="Email">
+                <input type="password" id="d-login-pwd" name="name" placeholder="Password">
+                <a id="forgot-pad-btn" (click)="showFp(true)">Forgot?</a>
+                <button id="login-submit-btn">LOGIN</button>
+                <p class="form-err" id="f-er-login-email">*Email is required</p>
+                <p class="form-err" id="l-em-n-exts">*That email is not registered with us.</p>
+                <p class="form-err" id="f-er-login-pwd">*Password is required</p>
+                <p class="form-err" id="wrng-cred">*Wrong Credentials</p>
+                <h5 class="nor">OR</h5>
+                <div class="social-icons">
+                  <div class="social-icon facebook-icon">
+                    <i class="fa fa-facebook-f" aria-hidden="true"></i>
+                  </div>
+                  <div class="social-icon google-icon">
+                    <i class="fa fa-google" aria-hidden="true"></i>
+                  </div>
+                  <div class="social-icon linkedin-icon">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div *ngIf='showSignUp'>
+          
+          <div class="signup-div">
+            <div class="l-t-icon">
+      
+            </div>
+            <h3 id="signup-head">CREATE YOUR ACCOUNT</h3>
+            <table id="db-radio-table">
+              <tr>
+                <td>
+                  <input type="radio" id="client-char" name="char" value="client">
+                </td>
+                <td>
+                  <label for="client-char">Client</label>
+                </td>
+                <td>
+                  <input type="radio" id="author-char" name="char" value="author">
+                </td>
+                <td>
+                  <label for="author-char">Author</label>
+                </td>
+              </tr>
+            </table>
+            <ul>
+              <li><input type="text" id="d-signup-f-name" placeholder="First Name"></li>
+              <li><input type="text" id="d-signup-l-name" placeholder="Last Name"></li>
+            </ul>
+            <!--<input type="text" id="d-signup-name" placeholder="Full Name">-->
+            <input type="text" id="d-signup-email" placeholder="Email">
+            <input type="password" name="name" id="d-signup-pwd" placeholder="Password">
+            <button id="signup-submit-btn">SIGN UP</button>
+            <p class="form-err" id="display-name-f-er">*First name is required</p>
+            <p class="form-err" id="display-name-l-er">*Last name is required</p>
+            <!--<p class="form-err" id="taken-d-name-f-er">*That Display name is already taken.</p>-->
+            <p class="form-err" id="email-f-er">*Proper Email is required</p>
+            <p class="form-err" id="taken-email-f-er">*That Email is already registered.</p>
+            <p class="form-err" id="pwd-f-er-req">*Password is required</p>
+            <p class="form-err" id="pwd-f-er-char-length">*Password length should\'t exceed more than 8 characters</p>
+            <p class="form-err" id="pwd-f-er-spl-char">*Password shouldn\'t contain special characters</p>
+            <p class="form-err" id="pwd-f-er-space">*Password shouldn\'t contain space</p>
+            <p class="form-err" id="pwd-f-er-noted-char">*Password shouldn\'t contain characters like "(),:;><@</p>
+            <p class="form-err" id="p-radio-err">*Password shouldn\'t contain space</p>
+            <h5 class="nor">OR</h5>
+            <div class="social-icons">
+              <div class="social-icon facebook-icon">
+                <i class="fa fa-facebook-f" aria-hidden="true"></i>
+              </div>
+              <div class="social-icon google-icon">
+                <i class="fa fa-google" aria-hidden="true"></i>
+              </div>
+              <div class="social-icon linkedin-icon">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div *ngIf='showFpDiv'>
+        
+        <div class="fp-div">
+          <div class="l-t-icon">
+    
+          </div>
+          <h3 id="fp-head">FORGOT PASSWORD</h3>
+          <h4 id="fp-p">Enter your email below and we'll send you the instructions on how to generate a new password.</h4>
+          <input type="email" id="d-fp-email" placeholder="Enter your email address">
+          <p class="form-err" id="prop-email-f-er">*Proper Email is required.</p>
+          <p class="form-err" id="not-email-f-er">*That email is not registered with us.</p>
+          <button id="fp-send-btn" (click)='showSentfp(true)'>SEND</button>
+        </div>
+
+      </div>
+      <div *ngIf='showFpSent'>
+
+        <div class="f-fp-div">
+          <div class="l-t-icon">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          </div>
+          <div>
+            <h3 id="f-fp-head">Check in your mail !</h3>
+            <h4 id="f-fp-p">We just emailed you with the instructions to reset your password.</h4>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+
+    <div *ngIf='showAuthorSignUp'>
+      
+      <div class="ss-dark-back">
+        <div class="ss-dark-core">
+          <h3 class="ss-head">Signup complete !</h3>
+          <h4 class="ss-capt">Let's get started ! Tell us about you and your shop.</h4>
+          <div class="ss-main">
+            <table id="ss-shop-table">
+              <tr>
+                <td>
+                  Shop Language<span class="ast">*</span>
+                </td>
+                <td>
+                  <select class="ss-language-select ss-select" name="">
+                    <option value="deu">Deutsch</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Shop Country<span class="ast">*</span>
+                </td>
+                <td>
+                  <select class="ss-country-select ss-select" name="">
+                    <option value="aus">Australia</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Shop Currency<span class="ast">*</span>
+                </td>
+                <td>
+                  <select class="ss-currency-select ss-select" name="">
+                    <option value="usd">$ United States Dollar</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+            <hr id="ss-hr">
+            <table id="ss-desc-table">
+              <tr>
+                <td id="top-al-td">
+                  <span class="fold">Which of these <br>best describes you?</span><span class="ast">*</span>
+                </td>
+                <td>
+                  <label for="ft"><input type="radio" id="ft" name="ss-desc" value="ft">Selling is my full time job</label><br>
+                  <label for="ptst"><input type="radio" id="ptst" name="ss-desc" value="ptst">I sell part time but hope to sell full-time</label><br>
+                  <label for="ptlt"><input type="radio" id="ptlt" name="ss-desc" value="ptlt">I sell part time and that's how I like it</label><br>
+                  <label for="other"><input type="radio" id="other" name="ss-desc" value="other">Other</label>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <p class="form-err" id="p-radio-err">*Password shouldn\'t contain space</p>
+          <button name="button" id="ss-create-acc-btn">CREATE MY ACCOUNT</button>
+        </div>
+      </div>
+
+    </div>
+
+    
+    <!--<div class="social-signup-dark-back">
+      <h3>Select your account type</h3>
+      <div class="social-char-select">
+        <table id="db-radio-table">
+          <tr>
+            <td>
+              <input type="radio" id="c-char" name="char" value="client">
+            </td>
+            <td>
+              <label for="c-char">Client</label>
+            </td>
+            <td>
+              <input type="radio" id="a-char" name="char" value="author">
+            </td>
+            <td>
+              <label for="author-char">Author</label>
+            </td>
+          </tr>
+        </table>
+        <button id="social-char-submit-btn">SUBMIT</button>
+      </div>
+    </div>-->
+  
+  <div class="total-er-div">
+      <div class="total-er-main">
+        That's your own gig !
+      </div>
+  </div>
+
+</div>
+
 <!-- Header -->
 <!-- When not logged in -->
 <label for="res-men-check" class="visible-xs visible-sm t-check"><span><i class="fa fa-bars res-menu-ico" aria-hidden="true"></i><input type="checkbox" id="res-men-check" name="res-men-check"></span></label>
@@ -29,7 +303,7 @@
 <header class="main-header visible-md visible-lg">
   <div class="header-control w-control">
     <a routerLink='/home'>
-      <img src="../assets/img/m_logo.png" alt="" class="logo-img">
+      <img src="../assets/../assets/img/m_logo.png" alt="" class="logo-img">
     </a>
     <ul class="horizantal-ul left-float-ul list-unstyled">
       <li>
@@ -195,10 +469,10 @@
     </ul>
     <ul class="horizantal-ul right-float-ul list-unstyled">
       <li>
-        <input type="button" class="main-nav-btns" id="main-register-btn" value="REGISTER">
+        <input type="button" class="main-nav-btns" id="main-register-btn" (click)="showBackSignUp(true)" value="REGISTER">
       </li>
       <li id="sign-in-li">
-        <input type="button" class="main-nav-btns" id="sign-in-btn" value="SIGN IN">
+        <input type="button" class="main-nav-btns" id="sign-in-btn" (click)="showBackLogin(true)" value="SIGN IN">
       </li>
     </ul>
   </div>

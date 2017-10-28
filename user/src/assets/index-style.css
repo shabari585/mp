@@ -1989,7 +1989,7 @@
 
 .login-div {
   position: relative;
-  display: none;
+  /* display: none; */
   float: left;
   height: 350px;
   width: 290px;
@@ -2121,7 +2121,7 @@
 
 .signup-div {
   position: relative;
-  display: none;
+  /* display: none; */
   float: left;
   height: 430px;
   width: 290px;
@@ -2247,7 +2247,7 @@
 
 .fp-div {
   position: relative;
-  display: none;
+  /* display: none; */
   float: left;
   min-height: 350px;
   width: 290px;
@@ -2313,7 +2313,7 @@
   position: relative;
   display: inline-flex;
   display: -webkit-inline-flex;
-  display: none;
+  /* display: none; */
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -2359,7 +2359,7 @@
   position: fixed;
   display: flex;
   display: -webkit-flex;
-  display: none;
+  /* display: none; */
   align-items: center;
   -webkit-align-items: center;
   justify-content: center;
@@ -2502,7 +2502,7 @@ label {
 #register-div,
 #become-author-div,
 #forgot-pwd-div {
-  display: none;
+  /* display: none; */
 }
 
 #sign-in-div h2,

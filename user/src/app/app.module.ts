@@ -4,7 +4,6 @@ import { FormsModule } from "@angular/forms";
 import { HttpModule, Http } from "@angular/http";
 import { RouterModule, Router, Routes } from "@angular/router"; 
 // External
-import { StarRatingModule } from 'angular-star-rating';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -188,7 +187,6 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    StarRatingModule.forRoot(),
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
