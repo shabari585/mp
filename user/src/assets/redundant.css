@@ -10,13 +10,11 @@ html {
   overflow-x: hidden;
   white-space: nowrap;
   background-color: #fff;
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Roboto', sans-serif;
 }
-
 * {
   font-size: 100%;
 }
-
 
 /* Disabling out lines when clicked on buttons */
 
