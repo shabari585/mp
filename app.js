@@ -8,9 +8,10 @@ const mongoose = require('mongoose');
 const config = require('./config/database');
 
 
+
 const app = express();
 // port
-const port = 8080;
+const port = 3000;
 
 // cors
 app.use(cors());
