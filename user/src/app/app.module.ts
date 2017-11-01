@@ -35,6 +35,10 @@ import { FinancialsComponent } from './financials/financials.component';
 import { AccountComponent } from './account/account.component';
 import { EmailNotificationsComponent } from './email-notifications/email-notifications.component';
 
+// Services
+import { AuthService } from "./services/auth.service";
+import { ValidateService } from "./services/validate.service";
+
 const appRoutes: Routes = [
   {
     path: '',
@@ -189,7 +193,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [AuthService,ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

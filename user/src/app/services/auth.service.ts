@@ -27,14 +27,14 @@ export class AuthService {
         let header = new Headers();
         header.append('Content-Type', 'application/json');
 
-        return this.http.post('http://localhost:3700/users/update-user', user, { headers: header }).map(res => res.json());
+        return this.http.post('http://localhost:8080/users/update-user', user, { headers: header }).map(res => res.json());
         // return this.http.post('users/update-user', user, { headers: header }).map(res => res.json());
     }
 
     updatePassword(pwd){
         let header = new Headers();
         header.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3700/users/update-pwd', pwd, { headers: header }).map(res => res.json());
+        return this.http.post('http://localhost:8080/users/update-pwd', pwd, { headers: header }).map(res => res.json());
         // return this.http.post('users/update-pwd', pwd, { headers: header }).map(res => res.json());
     }
 
@@ -42,19 +42,19 @@ export class AuthService {
         let header = new Headers();
         header.append('Content-Type', 'application/json');
 
-        return this.http.post('http://localhost:3700/users/register', user, { headers: header }).map(res => res.json());
+        return this.http.post('http://localhost:8080/users/register', user, { headers: header }).map(res => res.json());
         // return this.http.post('users/register', user, { headers: header }).map(res => res.json());
     }
 
     authenticateMobile(mobile: string) {
-        return this.http.get('http://localhost:3700/users/find-mobile/'+ mobile).map(res=>res.json());
+        return this.http.get('http://localhost:8080/users/find-mobile/'+ mobile).map(res=>res.json());
         // return this.http.get('users/find-mobile/'+ mobile).map(res=>res.json());
     }
 
     
     // Delete cateogry
     authenticateEmail(email: string) {
-        return this.http.get('http://localhost:3700/users/find-email/' + email).map(res => res.json());
+        return this.http.get('http://localhost:8080/users/find-email/' + email).map(res => res.json());
         // return this.http.get('users/find-email/' + email).map(res => res.json());
     }
 
@@ -62,7 +62,7 @@ export class AuthService {
         let header = new Headers();
         header.append('Content-Type', 'application/json');
 
-        return this.http.post('http://localhost:3700/users/authenticate', user, { headers: header }).map(res => res.json());
+        return this.http.post('http://localhost:8080/users/authenticate', user, { headers: header }).map(res => res.json());
         // return this.http.post('users/authenticate', user, { headers: header }).map(res => res.json());
     }
     storeUserData(token, user) {
@@ -89,7 +89,7 @@ export class AuthService {
         let header = new Headers();
         header.append('Content-Type', 'application/json');
 
-        return this.http.post('http://localhost:3700/users/save-address', address, { headers: header }).map(res => res.json());
+        return this.http.post('http://localhost:8080/users/save-address', address, { headers: header }).map(res => res.json());
         // return this.http.post('users/save-address', address, { headers: header }).map(res => res.json());
     }
 
@@ -97,7 +97,7 @@ export class AuthService {
         let header = new Headers();
         header.append('Content-Type', 'application/json');
 
-        return this.http.post('http://localhost:3700/users/delete-address', address, { headers: header }).map(res => res.json());
+        return this.http.post('http://localhost:8080/users/delete-address', address, { headers: header }).map(res => res.json());
         // return this.http.post('users/delete-address', address, { headers: header }).map(res => res.json());
     }
 
@@ -105,24 +105,24 @@ export class AuthService {
         let header = new Headers();
         header.append('Content-Type', 'application/json');
 
-        return this.http.post('http://localhost:3700/users/update-address', address, { headers: header }).map(res => res.json());
+        return this.http.post('http://localhost:8080/users/update-address', address, { headers: header }).map(res => res.json());
         // return this.http.post('users/delete-address', address, { headers: header }).map(res => res.json());
     }
 
     getUserAddressses(user_id){
-        return this.http.get('http://localhost:3700/users/get-address/' + user_id).map(res => res.json());
+        return this.http.get('http://localhost:8080/users/get-address/' + user_id).map(res => res.json());
         // return this.http.get('users/get-address/' + user_id).map(res => res.json());
     }
 
     postOrder(order) {
         let header = new Headers();
         header.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3700/users/post-order', order, { headers: header }).map(res => res.json());
+        return this.http.post('http://localhost:8080/users/post-order', order, { headers: header }).map(res => res.json());
         // return this.http.post('users/post-order', order, { headers: header }).map(res => res.json());
     }
 
     getUserRewards(user_id){
-        return this.http.get('http://localhost:3700/users/get-user-rewards/' + user_id).map(res => res.json());
+        return this.http.get('http://localhost:8080/users/get-user-rewards/' + user_id).map(res => res.json());
         // return this.http.get('users/get-user-rewards/' + user_id).map(res => res.json());
     }
 
