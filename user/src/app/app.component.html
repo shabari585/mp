@@ -120,8 +120,10 @@
             <input type="text" id="d-signup-email" placeholder="Email" [(ngModel)]="regEmail">
             <input type="password" name="name" id="d-signup-pwd" placeholder="Password" [(ngModel)]="regPassword">
             
+            <span class="form-err signup-err" id="serr"></span> 
+
             <button id="signup-submit-btn" (click)="SignUp()">SIGN UP</button>
-            <p class="form-err signup-err">*First name is required</p> 
+
 
             <h5 class="nor">OR</h5>
             <div class="social-icons">

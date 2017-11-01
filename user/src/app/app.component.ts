@@ -5,6 +5,8 @@ import { Router, NavigationEnd } from "@angular/router";
 import { AuthService } from "./services/auth.service";
 import { ValidateService } from "./services/validate.service";
 
+declare var $:any;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -32,6 +34,8 @@ export class AppComponent implements OnInit {
   regPassword:string;
 
   ngOnInit(){
+
+    // $('body').hide();
 
   }
 
@@ -77,6 +81,7 @@ export class AppComponent implements OnInit {
     this.showAuthorSignUp = !bool;
   }
   SignUp(event){
+    
     this.regRole;
     this.regFirstName;
     this.regLastName;
@@ -92,22 +97,37 @@ export class AppComponent implements OnInit {
     }
     // Validate
 
-    if(this.validateService.validateInput(this.regRole) || this.validateService.validateInput(this.regFirstName) || this.validateService.validateInput(this.regLastName) || this.validateService.validateInput(this.regEmail) || this.validateService.validateInput(this.regPassword)){
+    if(this.validateService.validateInput(this.regRole) && this.validateService.validateInput(this.regFirstName) && this.validateService.validateInput(this.regLastName) && this.validateService.validateInput(this.regEmail) && this.validateService.validateInput(this.regPassword)){
+      
+      if(this.validateService.validateEmail(this.regEmail)){
+        
+        // send the above values to backed for registration
+        this.authService.registerUser(newUser).subscribe(res=>{
+          if(res.success){
+
+          }else{
+            console.log(res);
+          }
+        });
+      }else{
+
+      }
+      
 
     }else{
+      // alert('else');
+      switch (false) {
+        case this.validateService.validateInput(this.regFirstName):
+          $('#d-signup-f-name').css({'border-color':'#f00'});
+          // $('#d-signup-f-name').hide();
+          break;
+      
+        default:
+          break;
+      }
       
     }
 
-    // send the above values to backed for registration
-    this.authService.registerUser(newUser).subscribe(res=>{
-      if(res.success){
-        // Registration successful
-
-      }else{
-        // Registration failed
-
-      }
-    });
     
   }
 }

@@ -2562,7 +2562,7 @@ label {
 }
 
 .form-err {
-  display: none;
+  display: block;
   color: red;
   font-size: 70%;
 }

@@ -4,6 +4,9 @@ import { Router, NavigationEnd } from "@angular/router";
 import Typed from 'typed.js';
 declare var $:any;
 
+
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
