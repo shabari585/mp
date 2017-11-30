@@ -246,6 +246,7 @@ body {
     display: flex;
     display: -webkit-flex;
     height: 400px;
+    width: 100vw;
     justify-content: center;
     -webkit-justify-content: center;
     align-items: center;
@@ -1520,4 +1521,16 @@ body {
     color: rgba(0, 0, 0, 0.5);
   }
 }
-
+@media screen and (min-width:220px) and (max-width:740px) {
+  .dir-desc {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    left: -8%;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 90%;
+  }
+  .a-faq-div p{
+    text-align: justify;
+  }
+}

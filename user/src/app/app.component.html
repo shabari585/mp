@@ -1,4 +1,49 @@
 <!-- Login Sign up -->
+<!-- Header for mobiles and smaller devices -->
+<header style="background-color:#303132" class="mob-main-header visible-sm visible-xs">
+    <button style="background-color:#303132;border-color:#303132" type="button" class="mob-menu-trig-btn">
+        <i style="color:white;padding:10px" class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <div class="mob-main-logo" routerLink='/home'>
+      <img src="../../assets/logo/logo.png">
+    </div>
+  <span *ngIf="!authService.loggedIn()" (click)='loginSignupTrigger()'>
+    <i style="color:white;font-size:20px;float:right;padding:20px;" class="fa fa-user-o" aria-hidden="true"></i>
+  </span>
+  </header>
+
+
+<div class="mob-menu visible-sm visible-xs">
+    <ul class="list-unstyled">
+      <a routerLink='/home'>
+      <li class="reward-pts-trig-btn" (click)='closeMobMenu()'>
+        HOME
+      </li>
+      </a>
+      <a routerLink='/categories'>
+      <li class="reward-pts-trig-btn" (click)='closeMobMenu()'>
+        CATEGORIES
+      </li>
+      </a>
+      <a routerLink='/about'>
+        <li class="reward-pts-trig-btn" (click)='closeMobMenu()'>
+          ABOUT
+        </li>
+        </a>
+        <a routerLink='/account'>
+          <li class="reward-pts-trig-btn" (click)='closeMobMenu()'>
+            ACCOUNT
+          </li>
+          </a>
+          <a routerLink='/terms'>
+          <li class="reward-pts-trig-btn" (click)='closeMobMenu()'>
+            TERMS
+          </li>
+          </a>
+          
+    </ul>
+  </div>
+<!--SIDE HEADER ENDS HERE-->
 
 <div *ngIf='showDarkBack'>
 
@@ -268,10 +313,11 @@
 
 <!-- Header -->
 <!-- When not logged in -->
+<div class="header1 header2">
 <label for="res-men-check" class="visible-xs visible-sm t-check"><span><i class="fa fa-bars res-menu-ico" aria-hidden="true"></i><input type="checkbox" id="res-men-check" name="res-men-check"></span></label>
 <div class="res-menu visible-xs visible-sm">
   <ul>
-    <li id="res-title">Market place</li>
+    <li  id="res-title">Market place</li>
     <li><a routerLink='/home'><i class="fa fa-home res-menu-icons" aria-hidden="true"></i>Home</a></li>
     <li id="res-categories-div">
       <div class="res-cat-head"><i class="fa fa-bars res-menu-icons" aria-hidden="true"></i>CATEGORIES <i class="fa fa-caret-down" style="margin-left:20px"></i></div>
@@ -291,7 +337,7 @@
     <li><a routerLink='/how-it-works'><i class="res-menu-icons fa fa-question-circle-o" aria-hidden="true"></i>How it works</a></li>
     <li><a routerLink='/become-an-author'><i class="res-menu-icons fa fa-user" aria-hidden="true"></i>Become an Author</a></li>
     <li id="res-register-btn"><a><i class="res-menu-icons fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-    <li id="res-sign-in-btn"><a><i class="res-menu-icons fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+    <li  id="res-sign-in-btn"><a><i class="res-menu-icons fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
   </ul>
 </div>
 <header class="main-header visible-md visible-lg">
@@ -471,6 +517,224 @@
     </ul>
   </div>
 </header>
+</div>
+
+<!-- When Logged in -->
+<div class="loggedin">
+ <nav class="main-header navbar navbar-inverse">
+      
+          <img src="../assets/img/m_logo.png" class="img-fluid img1">
+
+  <div>
+<ul class="nav navbar-nav">
+
+    <ul class="horizantal-ul left-float-ul list-unstyled">
+    <li>
+        <div class="dropdown">
+          <button style="color:white" class="dropbtn" id="main-cat-btn"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; &nbsp;CATEGORIES </button>
+          <div class="dropdown-content">
+            <div class="menu-sub-menu-div">
+              <div class="sub-sub-menu" id="br-all-sub">
+                <ul>
+                  <li><a>Accounting</a></li>
+                  <li><a>Administration & Office Support</a></li>
+                  <li><a>Advertising, Arts & Media</a></li>
+                  <li><a>Banking & Financial Services</a></li>
+                  <li><a>Call Centre & Customer Service</a></li>
+                  <li><a>CEO & General Management</a></li>
+                  <li><a>Construction</a></li>
+                  <li><a>Consulting & Strategy</a></li>
+                  <li><a>Design & Architecture</a></li>
+                  <li><a>Education & Training</a></li>
+                  <li><a>Engineering</a></li>
+                  <li><a>Farming, Animals & Conservation</a></li>
+                  <li><a>Government & Defence</a></li>
+                </ul>
+                <ul>
+                  <li><a>Healthcare & Medical</a></li>
+                  <li><a>Hospitality & Tourism</a></li>
+                  <li><a>HR & Recruitment</a></li>
+                  <li><a>Information & Communication Technology</a></li>
+                  <li><a>Legal</a></li>
+                  <li><a>Manufacturing & Logistics</a></li>
+                  <li><a>Marketing</a></li>
+                  <li><a>Real Estate & Property</a></li>
+                  <li><a>Retail & Consumer Products</a></li>
+                  <li><a>Sales</a></li>
+                  <li><a>Science & Technology</a></li>
+                  <li><a>Self Employment</a></li>
+                  <li><a>Sports & Recreation</a></li>
+                </ul>
+              </div>
+              <div class="sub-sub-menu" id="res-sub">
+                <ul>
+                  <li><a>Accounting</a></li>
+                  <li><a>Administration & Office Support</a></li>
+                  <li><a>Advertising, Arts & Media</a></li>
+                  <li><a>Banking & Financial Services</a></li>
+                  <li><a>Call Centre & Customer Service</a></li>
+                  <li><a>CEO & General Management</a></li>
+                  <li><a>Construction</a></li>
+                  <li><a>Consulting & Strategy</a></li>
+                  <li><a>Design & Architecture</a></li>
+                  <li><a>Education & Training</a></li>
+                  <li><a>Engineering</a></li>
+                  <li><a>Farming, Animals & Conservation</a></li>
+                  <li><a>Government & Defence</a></li>
+                </ul>
+                <ul>
+                  <li><a>Healthcare & Medical</a></li>
+                  <li><a>Hospitality & Tourism</a></li>
+                  <li><a>HR & Recruitment</a></li>
+                  <li><a>Information & Communication Technology</a></li>
+                  <li><a>Legal</a></li>
+                  <li><a>Manufacturing & Logistics</a></li>
+                  <li><a>Marketing</a></li>
+                  <li><a>Real Estate & Property</a></li>
+                  <li><a>Retail & Consumer Products</a></li>
+                  <li><a>Sales</a></li>
+                  <li><a>Science & Technology</a></li>
+                  <li><a>Self Employment</a></li>
+                  <li><a>Sports & Recreation</a></li>
+                </ul>
+              </div>
+              <div class="sub-sub-menu" id="on-sub">
+                <ul>
+                  <li><a>Accounting</a></li>
+                  <li><a>Administration & Office Support</a></li>
+                  <li><a>Advertising, Arts & Media</a></li>
+                  <li><a>Banking & Financial Services</a></li>
+                  <li><a>Call Centre & Customer Service</a></li>
+                  <li><a>CEO & General Management</a></li>
+                  <li><a>Construction</a></li>
+                  <li><a>Consulting & Strategy</a></li>
+                  <li><a>Design & Architecture</a></li>
+                  <li><a>Education & Training</a></li>
+                  <li><a>Engineering</a></li>
+                  <li><a>Farming, Animals & Conservation</a></li>
+                  <li><a>Government & Defence</a></li>
+                </ul>
+                <ul>
+                  <li><a>Healthcare & Medical</a></li>
+                  <li><a>Hospitality & Tourism</a></li>
+                  <li><a>HR & Recruitment</a></li>
+                  <li><a>Information & Communication Technology</a></li>
+                  <li><a>Legal</a></li>
+                  <li><a>Manufacturing & Logistics</a></li>
+                  <li><a>Marketing</a></li>
+                  <li><a>Real Estate & Property</a></li>
+                  <li><a>Retail & Consumer Products</a></li>
+                  <li><a>Sales</a></li>
+                  <li><a>Science & Technology</a></li>
+                  <li><a>Self Employment</a></li>
+                  <li><a>Sports & Recreation</a></li>
+                </ul>
+              </div>
+              <div class="sub-sub-menu" id="vr-sub">
+                <ul>
+                  <li><a>Accounting</a></li>
+                  <li><a>Administration & Office Support</a></li>
+                  <li><a>Advertising, Arts & Media</a></li>
+                  <li><a>Banking & Financial Services</a></li>
+                  <li><a>Call Centre & Customer Service</a></li>
+                  <li><a>CEO & General Management</a></li>
+                  <li><a>Construction</a></li>
+                  <li><a>Consulting & Strategy</a></li>
+                  <li><a>Design & Architecture</a></li>
+                  <li><a>Education & Training</a></li>
+                  <li><a>Engineering</a></li>
+                  <li><a>Farming, Animals & Conservation</a></li>
+                  <li><a>Government & Defence</a></li>
+                </ul>
+                <ul>
+                  <li><a>Healthcare & Medical</a></li>
+                  <li><a>Hospitality & Tourism</a></li>
+                  <li><a>HR & Recruitment</a></li>
+                  <li><a>Information & Communication Technology</a></li>
+                  <li><a>Legal</a></li>
+                  <li><a>Manufacturing & Logistics</a></li>
+                  <li><a>Marketing</a></li>
+                  <li><a>Real Estate & Property</a></li>
+                  <li><a>Retail & Consumer Products</a></li>
+                  <li><a>Sales</a></li>
+                  <li><a>Science & Technology</a></li>
+                  <li><a>Self Employment</a></li>
+                  <li><a>Sports & Recreation</a></li>
+                </ul>
+              </div>
+            </div>
+            <table class="cat-tables bb no-padding">
+              <tr>
+                <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns b-all-btn">Browse all Products</span></a></td>
+              </tr>
+              <tr>
+                <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns res-btn">Resumes and Cover Letters</span></a></td>
+              </tr>
+              <tr>
+                <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns on-btn">Online Resumes</span></a></td>
+              </tr>
+              <tr>
+                <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns vr-btn">Visual Resumes</span></a></td>
+              </tr>
+              <tr>
+                <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns lp-btn">LinkedIn Profile</span></a></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </li>
+      </ul>
+
+
+    <li routerLink='/how-it-works'>
+      <input style="color:white" type="button" class="main-nav-btns" id="how-it-works-btn" value="HOW IT WORKS">
+    </li>
+    <li routerLink='/become-an-author'>
+      <input style="color:white" type="button" class="main-nav-btns" id="become-an-author-btn" value="BECOME AN AUTHOR">
+    </li>
+    <div class="right">
+<li>
+    <i style="font-size:25px;color:#999999;position:absolute;" class="fa fa-envelope-o" aria-hidden="true"></i> 
+    <div style="background-color:#00C7E4;border-radius:4px;height:15px;width:15px;color:white;left:-10%;top:-5%;transform:translate(-50%,-30%)" class="notify">
+        <p style="text-align:center;font-size:12px;">!</p>
+      </div>
+    
+    
+</li>
+<li>
+    <i style="font-size:25px;color:#999999;position:absolute;" class="fa fa-cog" aria-hidden="true"></i> 
+    <div style="background-color:#00D7B5;border-radius:4px;height:15px;width:25px;color:white;left:-10%;top:-5%;transform:translate(-50%,-30%)" class="notify">
+      <p style="text-align:center;font-size:12px;">49</p>
+    </div>
+    
+</li>
+<li>
+    <img src="../../assets/img/pro-pic.jpg" class="img-fluid img-circle"  alt="img" width="35px" height="35px">  
+</li>  
+</div>
+
+    
+</ul>  
+</div>
+</nav>
+
+<div class="navbar navbar-stacked">
+    <ul class="border">
+      <li style="background-color:#FF5341;color:white;">Your popularity<h3>very low</h3></li>
+      <li>Profile Page</li>
+      <li>Account Settings</li>
+      <li>Your Purchases</li>
+      <li>Sales Statement</li>
+      <li>Buy Credits</li>
+      <li>Withdrawls</li>
+      <li>Upload Item</li>
+      <li>Manage Items</li>
+      <li>Logout</li>
+    </ul>
+  </div>
+    </div>  
+
+
 
 <router-outlet>
 
@@ -478,7 +742,7 @@
 
 <div style="clear:both"></div>
 <div class="clear-both"></div>
-<footer class="main-footer">
+<!--<footer class="main-footer">
   <div class="footer-cover">
     <div class="w-control">
       <div id="featured-div">
@@ -487,8 +751,8 @@
       </div>
       <div class="clear-both"></div>
       <div class="footer-core">
-        <h3>86% OF THE FORTUNE 100 <br>USE MARKET PLACE</h3>
-        <div class="footer-nav">
+        <h3 class="row align-items-start">86% OF THE FORTUNE 100 <br>USE MARKET PLACE</h3>
+        <div class="footer-nav row align-items-center">
           <div class="footer-navs">
             <ul class="footer-nav-ul">
               <li class="footer-nav-heads">MARKET PLACE</li>
@@ -539,14 +803,14 @@
           </div>
         </div>
       </div>
-      <div class="footer-main-title">
+      <div class="footer-main-title row align-items-end">
         <h2>Market place</h2>
         <h6>&copy;2015-2016 Marketplace software, Inc. All rights reserved. Market place is a registered trademark of Market
           place software, Inc.</h6>
       </div>
     </div>
   </div>
-</footer>
+</footer>-->
 
 
 

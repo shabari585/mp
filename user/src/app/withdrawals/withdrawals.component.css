@@ -1,3 +1,4 @@
+
 .m-core {
   position: relative;
   display: block;
@@ -269,4 +270,43 @@
   color: #000 !important;
   text-align: right !important;
 }
-
+@media screen and (min-width:220px) and (max-width:740px) {
+  .pay-summary {
+    position: relative;
+    display: block;
+    flex-direction: row;
+    width: 100%;
+    height: 120px;
+    }
+    .w-earnings-div {
+      position: relative;
+      width: 100%;
+      float: left;
+      top: 30%;
+      transform: translate(0,30%);
+      border: 1px solid #EEECEB;
+      padding: 10px 20px;
+    }
+    .w-history-div {
+      position: relative;
+      width: 100%;
+      float: left;
+      top: 90%;
+      transform: translate(0,100%);
+      border: 1px solid #EEECEB;
+      padding: 10px 20px;
+    }
+    .w-history-div table td {
+      position: relative;
+      display: flex;
+      vertical-align: middle;
+      color: #817F79;
+      font-size: 90%;
+    }
+     .m-core{
+       height: 100%;
+     }
+     .w-control{
+       width: 330px;
+     }
+}

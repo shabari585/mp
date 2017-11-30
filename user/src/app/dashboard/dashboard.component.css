@@ -369,3 +369,36 @@ html {
   display: block;
 }
 
+
+@media screen and (min-width:220px) and (max-width:740px) {
+  .dash-left {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    
+  }
+  .dash-right {
+    position: relative;
+    width: 100%;
+  }
+  #dash-welcome-div h3 {
+    position: relative;
+    display: inline-block;
+    display: -webkit-inline-block;
+    margin-left: 20px;
+    font-size: 100%;
+    color: #75787d;
+    
+  }
+  #to-do-head {
+    position: relative;
+    display: inline-block;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    font-size: 125%;
+  }
+  .w-control{
+    width: 310px;
+  }
+}

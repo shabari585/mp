@@ -1,0 +1,176 @@
+<div class="first-vp">
+<div class="main-image">
+  <div class="dark-cover"></div>
+  <div class="left-center w-control">
+    <h2>Welcome to Market Place</h2>
+    <h3>We help <span class="ele">ele</span></h3>
+    <div id="top-vp-btns-div">
+      <button id="play-vid-btn">Play video</button>
+      <button id="get-started-button" (click)='navToCategories()'>Get Started</button>
+    </div>
+  </div>
+</div>
+</div>
+<div class="second-vp">
+<div class="w-control">
+  <h3 id="second-vp-head">It has everything you <br> need for amazing design</h3>
+  <div class="second-vp-core-div">
+
+  </div>
+</div>
+</div>
+<div class="third-vp">
+<div class="w-control">
+  <h2>What do you need designed ?</h2>
+  <div class="tzo">
+    <img src="../../assets/img/201.png" id="timg">
+    <h3 class="th3">Experienced authors from India and all around the world</h3>
+  </div>
+  <div class="icon-menu-div w-control">
+    <a routerLink='/categories'>
+      <span class="menu-icons">
+        <i class="fa fa-file" id="logo-design-icon" aria-hidden="true"></i>
+        <h4 class="menu-icon-names">Resumes and <br>cover letters</h4>
+      </span>
+    </a>
+    <a routerLink='/categories'>
+      <span class="menu-icons">
+        <i class="fa fa-globe" id="car-wrap-design-icon" aria-hidden="true"></i>
+        <h4 class="menu-icon-names">Online Resumes</h4>
+      </span>
+    </a>
+    <a routerLink='/categories'>
+      <span class="menu-icons">
+        <i class="fa fa-eye" id="logo-website-icon" aria-hidden="true"></i>
+        <h4 class="menu-icon-names">Visual resumes</h4>
+      </span>
+    </a>
+    <a routerLink='/categories'>
+      <span class="menu-icons">
+        <i class="fa fa-user" id="packaging-design-icon" aria-hidden="true"></i>
+        <h4 class="menu-icon-names">LinkedIn Profile</h4>
+      </span>
+    </a>
+    <a routerLink='/categories'>
+      <span class="menu-icons">
+        <i class="fa fa-book" id="brand-identity-icon" aria-hidden="true"></i>
+        <h4 class="menu-icon-names">Placeholder</h4>
+      </span>
+    </a>
+    <a routerLink='/categories'>
+      <span class="menu-icons">
+        <i class="fa fa-anchor" id="t-shirt-icon" aria-hidden="true"></i>
+        <h4 class="menu-icon-names">Placeholder</h4>
+      </span>
+    </a>
+  </div>
+  <hr class="menu-ico-hr w-control">
+  <div class="w-control">
+    <div class="gigs-div">
+
+      <span *ngIf='loggedIn == false'>
+        <!-- <a class="w-s-gig-link">
+          <div class="we-saved-div">
+            We saved a spot for your logo & brand identity pack design contest.
+            <button type="button" id="w-s-g-s-btn">Get Started now</button>
+          </div>
+        </a> -->
+      </span>
+      
+      
+          <a class="gig-links">
+
+            <div class="gig">
+
+              <div class="gig-pic"></div>
+              <div class="gig-dets">
+                <h4>
+                  Title
+                </h4>
+                <h5 class="gig-credits">
+                  Seller
+                </h5>
+              </div>
+
+              <div class="gig-footer">
+                  <div class="dets">Details</div>
+                  <div class="cost">$ 200</div>
+              </div>
+
+            </div>
+            <div class="gig-details-container">
+              <div class="gig-dets-top">
+
+              </div>
+              <div class="gig-dets-btm">
+                <button class="dets-add-to-cart-btn">
+                  Add to cart
+                </button>
+
+                <button class="dets-add-fav-btn">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+
+            <a class="empty-gigs"></a>
+            <a class="empty-gigs"></a>
+            <a class="empty-gigs"></a>
+            <a class="empty-gigs"></a>
+            <a class="empty-gigs"></a>
+    </div>
+  </div>
+  
+  <a routerLink='/categories'>
+    <div id="browse-all-products-btn">BROWSE ALL PRODUCTS</div>
+  </a>
+</div>
+</div>
+<!--</div>
+</div>-->
+<div class="fourth-vp">
+<div class="w-control">
+  <h3 class="vp-heads">Get on the radar with companies you <br> would love to work for</h3>
+  <div class="f-div">
+    <div class="f-divs">
+      <div class="f-div-img"><img src="../../assets/img/fone.jpg"></div>
+      <h5>Be the boss of your career</h5>
+      <h6>Own your data and control who has access to your profile.</h6>
+    </div>
+    <div class="f-divs">
+      <div class="f-div-img"><img src="../../assets/img/ftwo.jpg"></div>
+      <h5>Connect on your terms</h5>
+      <h6>Join the live talent Communities of the companies you'd love to work for.</h6>
+    </div>
+    <div class="f-divs">
+      <div class="f-div-img"><img src="../../assets/img/fthree.jpg"></div>
+      <h5>Connect direct</h5>
+      <h6>Receive job invites and chat with Hiring Managers.</h6>
+    </div>
+  </div>
+</div>
+</div>
+<div class="fifth-vp">
+<h2>Join our growing marketplace!</h2>
+<h6>Ever wanted to sell your digital goods? Sign up with us and we'll help you distribute your prodcuts to a wide audience.
+  Get started earning money today! </h6>
+<a routerLink='/become-an-author'>
+  <div id="ready-to-start-btn" class="container-fluid">READY TO START? &nbsp;BECOME AN AUTHOR TODAY !</div>
+</a>
+<div class="ff w-control">
+  <table>
+    <tr>
+      <td>
+        <div class="ffs"><img src="../../assets/img/ff-book.png"><span class="ff-h"><h3>7000 +</h3><h4>writers</h4></span></div>
+      </td>
+      <td>
+        <div class="ffs"><img src="../../assets/img/ff-heart.png"><span class="ff-h"><h3>98%</h3><h4>of content accepted by clients</h4></span></div>
+      </td>
+      <td>
+        <div class="ffs"><img src="../../assets/img/ff-tick.png"><span class="ff-h"><h3>Millions</h3><h4>Paid to writers</h4></span></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>

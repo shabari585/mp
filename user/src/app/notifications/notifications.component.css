@@ -1,0 +1,81 @@
+
+.m-core {
+    position: relative;
+    display: block;
+    margin-top: 11vh;
+    height: 100vh;
+  }
+  #orders-title {
+    position: relative;
+    display: block;
+    text-align: left;
+    font-size: 190%;
+    color: #000;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+  }
+  
+  #orders-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    height: 5px;
+    width: 40px;
+    background-color: #F9BF3B;
+    color: #F9BF3B;
+  }
+  
+  .btn-success{
+      float: right;
+      position: relative;
+      top: 10%;
+      transform: translate(0,80%);
+      background-color: #00DDB1;
+      border-color: #00DDB1;
+  }
+  
+  .reviews{
+      display: flex;
+      overflow: hidden;
+      padding: 20px
+  }
+  .reviews i{
+      position: absolute;
+      left: 90%;
+  }
+  .one{
+      background-color: #505A58;
+      border-radius: 2px;
+      color: white;
+      width: 25px;
+      height: 25px;
+      float: right;
+      text-align: center;
+      padding: 3px;
+      
+  }
+  .one:hover{
+      background-color: #00DDB1;
+  }
+  
+ 
+  @media screen and (min-width:220px) and (max-width:740px){
+    .reviews{
+        display: block;
+    }
+    .btn-success{
+        float: left;
+        position: relative;
+        top: 0%;
+        transform: translate(0,-50%)
+    }
+    #word{
+       white-space: normal !important;
+    }
+    .w-control{
+        width: 350px;
+    }
+  }

@@ -1024,6 +1024,7 @@ textarea {
 .almost-there-div h4 {
   font-size: 120%;
   color: #595959;
+  white-space: normal !important;
 }
 .almost-there-core p {
   position: relative;
@@ -1048,4 +1049,156 @@ textarea {
   color: #f00;
   margin: 5px 0;
 }
-
+@media screen and (min-width:220px) and (max-width:740px) {
+  .c-gig-title table {
+    position: relative;
+    
+    width: 100%;
+  }
+  #c-gig-one,
+  #c-gig-two,
+  #c-gig-three,
+  #c-gig-four,
+  #c-gig-five {
+    background-color: #fff;
+    min-height: 200px;
+    height: auto;
+    /*height:100vh;*/
+    /*max-height:200vh;*/
+    width: 100vw;
+    margin: 0 !important;
+    max-width: 1200px;
+    overflow: visible;
+  }
+  .helpers,
+  .two-helpers,
+  .three-helpers,
+  .four-helpers {
+    z-index: 50;
+    left: 0%;
+    position: relative;
+    display: block;
+    padding: 5px 10px;
+    min-height: 240px;
+    width: 100%;
+    border: 1px solid #999;
+    border-radius: 2px;
+    box-shadow: 3px 0px 5px 1px rgba(0, 0, 0, 0.03);
+    background-color: #fff;
+    transition: all 0.2s ease;
+    font-size: 100%;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+  .no-padding table {
+    position: relative;
+    margin: 0 !important;
+    float: left;
+    width: 50vw;
+  }
+  .almost-there-core {
+    position: relative;
+    display: block;
+    width: 100vw;
+    margin: 0 auto;
+    left: -2%;
+    background-color: #fff !important;
+  }
+  .almost-there-core p {
+    position: relative;
+    display: inline-block;
+    white-space: normal !important;
+    font-size: 80%;
+    margin: 0 !important;
+    
+  }
+  .thumb-core {
+    position: relative;
+    display: block;
+    padding: 0;
+    overflow: hidden;
+    height: 250px;
+    width: 92%;
+    border: 1px dashed teal;
+  }
+  .file-ch-span {
+    position: relative;
+    display: block;
+    display: -webkit-block;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    flex-direction: row;
+    /*min-height: 200px;*/
+    max-width: 100%;
+    border: 1px dashed #d9d9d9;
+    background-color: #fff;
+  }
+  .file-ch-span {
+    position: relative;
+    display: block;
+    display: -webkit-block;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    flex-direction: row;
+    height: 250px;
+    width: 100%;
+    border: 1px dashed #d9d9d9;
+    background-color: #fff;
+  }
+  
+  .table1{
+    overflow: scroll;
+  }
+  .days #days {
+    position: relative;
+    display: inline-block;
+    width: 80%;
+    color: #000;
+  }
+  .ext-cost .cost-input {
+    position: relative;
+    float: right;
+    width: 100%;
+    border: transparent;
+    padding-left: 2px;
+    color: #000;
+    text-align: center;
+    border-left:  1px solid #999;
+  }
+  .package-name h3{
+    font-size:100%;
+  }
+  .list {
+    position: relative;
+    display: block;
+    display: -webkit-block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .list label {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+  .ext-cost .days-input {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-left: 2px;
+    border: transparent;
+    color: #000;
+    text-align: center;
+    border-right: 1px solid #999;
+  }
+  .w-control{
+    width: 350px;
+  }
+}

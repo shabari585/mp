@@ -888,6 +888,7 @@
   background-image: url('../../assets/img/abs.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .footer-cover {
@@ -1048,6 +1049,7 @@
   color: #fff;
   font-size: 500%;
   font-weight: bold;
+  
 }
 
 .footer-main-title h6 {
@@ -2641,4 +2643,6 @@ label {
   margin-bottom: 20px;
   font-size: 90%;
 }
+
+
 

@@ -1,0 +1,521 @@
+.width-desktop {
+  padding-top: 30px;
+}
+
+.char-count {
+  position: relative;
+  display: block;
+  text-align: right;
+  font-size: 80%;
+  color: #f00;
+}
+
+.conf-back-div {
+  z-index: 1004;
+  position: fixed;
+  display: flex;
+  display: -webkit-flex;
+  display: none;
+  top: 0;
+  left: 0;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.conf-core {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 40px;
+}
+
+.conf-core h5 {
+  position: relative;
+  display: block;
+  color: #000;
+  font-size: 120%;
+  margin-bottom: 40px;
+}
+
+.conf-btns {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  width: 100%;
+}
+
+.conf-btns button {
+  height: 40px;
+  width: 120px;
+  background-color: #8470ff;
+  color: #fff;
+  border: none;
+}
+
+.conf-btns button:hover {
+  background-color: #6959cc;
+}
+
+.width-desktop {
+  margin: 40px auto;
+}
+
+.settings-container {
+  position: relative;
+  display: block;
+  width: 100vw;
+  margin-top: 11vh;
+  padding-bottom: 30px;
+  background-color: #f9f9f9;
+  font-size: 100%;
+  color: rgba(0, 0, 0, 0.5);
+}
+.l-f-div {
+  position: relative;
+  float: left;
+  width: 20%;
+  font-size: 90%;
+}
+.r-f-div {
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  width: 75%;
+  margin-left: 5%;
+  border-radius: 2px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.09);
+}
+.r-f-div .headings {
+  position: relative;
+  display: block;
+  color: #000;
+  font-weight: bold;
+  margin-top: 4% !important;
+  width: 80%;
+  margin: 4% auto auto auto;
+  font-size: 210% !important;
+}
+.p-need {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+}
+.l-f-div table {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.l-f-div table tbody {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.l-f-div table tr {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.l-f-div table td {
+  position: relative;
+  display: inline-block;
+  height: 60px;
+  width: 100%;
+  vertical-align: middle;
+}
+.l-f-t-d-div {
+  position: relative;
+  display: inline-block;
+  height: 50px;
+  width: 100%;
+  font-size: 110%;
+  text-align: left !important;
+  transition: 0.4 all;
+}
+.l-f-t-d-div:hover {
+  cursor: pointer;
+  background-color: #84aff0;
+  color: #fff;
+  border-radius: 2px;
+  transition: 0.4 all;
+}
+.l-f-t-d-div:hover .l-f-td-words {
+  color: #fff !important;
+}
+.l-f-td-words {
+  position: absolute;
+  display: inline-block;
+  top: 35%;
+  left: 10%;
+  text-align: left;
+  color: #84a !important;
+}
+hr {
+  position: relative;
+  display: block;
+  visibility: hidden;
+  color: rgba(0, 0, 0, 0);
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.top-hr {
+  position: relative;
+  display: block !important;
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.09);
+  color: rgba(0, 0, 0, 0.09);
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+h4 {
+  font-size: 120% !important;
+  margin-bottom: 10px !important;
+}
+#c-p-p {
+  display: none;
+}
+.custom-p-p {
+  position: relative;
+  display: inline-block;
+  height: auto;
+  width: auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.name-div .p-l-f-div {
+  position: relative;
+  float: left;
+  width: 45%;
+  margin-right: 10%;
+}
+.p-f-titles {
+  color: #000 !important;
+}
+.r-f-div input {
+  height: 35px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  border: 1px solid #ddd;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.name-div input {
+  height: 35px;
+  width: 100%;
+  margin-top: 10px;
+}
+.name-div .p-r-f-div {
+  position: relative;
+  display: inline-block;
+  width: 45%;
+}
+.address-div input {
+  width: 100%;
+}
+.address-div .p-l-f-div {
+  position: relative;
+  float: left;
+  width: 40%;
+}
+.address-div .p-l-f-div input {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.address-div .p-r-f-div {
+  position: relative;
+  display: inline-block;
+  width: 40%;
+  margin-left: 10%;
+}
+#setup-sec-number {
+  position: relative;
+  display: inline-block;
+  height: 40px;
+}
+#setup-sec-number:hover {
+  cursor: pointer;
+}
+.save-btn-area {
+  clear: both;
+  position: relative;
+  display: inline-block;
+  height: 100px;
+  width: 100%;
+  background-color: #fafafa !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.09);
+}
+.save-button {
+  position: relative;
+  display: inline-block;
+  margin-top: 25px !important;
+  margin-left: 140px;
+  height: 45px !important;
+  width: 120px;
+  color: #fff !important;
+  background-color: #82B541 !important;
+  border: transparent !important;
+  border-radius: 2px;
+  font-size: 90%;
+}
+.save-button:hover {
+  cursor: pointer;
+  background-color: #6D9837 !important;
+}
+.selected {
+  background-color: #84a;
+}
+.selected .l-f-td-words {
+  color: #fff !important;
+}
+.profile-photo-div {
+  position: relative;
+  display: block;
+  width: 80%;
+  margin: 0px auto;
+  margin-bottom: 20px !important;
+}
+.p-p-div-title {
+  position: relative;
+  display: block;
+  font-size: 85%;
+}
+.p-p-div-pic {
+  position: relative;
+  display: block;
+  width: 70%;
+  float: left;
+  overflow: hidden;
+  white-space: normal;
+  margin: 20px 0;
+}
+.name-div {
+  position: relative;
+  display: block;
+  clear: both;
+  margin-top: 40px !important;
+}
+#change-p-p {
+  position: relative;
+  float: left;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  margin-right: 10px;
+  white-space: normal;
+}
+#c-p-btn {
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+}
+#c-p-btn:hover {
+  cursor: pointer;
+}
+#s-ab-you-title {
+  position: relative;
+  float: left;
+  font-size: 100% !important;
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+textarea {
+  position: relative;
+  float: right;
+  height: 150px;
+  width: 400px;
+  padding: 10px;
+}
+.pwd-inputs {
+  width: 40%;
+}
+.payment-methods {
+  padding-bottom: 50px;
+}
+#payment-verified {
+  position: relative;
+  float: right;
+  font-size: 130%;
+  color: #008000 !important;
+}
+#change-paypal-input {
+  width: 50%;
+}
+.imp-div {
+  position: relative;
+  display: block;
+  width: 90%;
+  background-color: #ecffce;
+  padding: 10px;
+  font-size: 80%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  white-space: normal !important;
+}
+.imp-div #imp {
+  position: relative;
+  width: 18%;
+  float: left;
+  font-weight: bold;
+  color: #606 !important;
+  font-size: 100%;
+}
+.imp-div p {
+  position: relative;
+  font-size: 110%;
+  width: 80%;
+  float: left;
+}
+.close-acc-div ul li {
+  list-style-type: disc;
+  line-height: 1.4;
+}
+.why-leave-div h4 {
+  position: relative;
+  float: left;
+}
+#y-leaving {
+  position: relative;
+  float: right;
+  width: 60%;
+  height: 40px;
+}
+.change-pwd-div input {
+  min-width: 240px;
+}
+.change-pwd-div h4 {
+  margin-bottom: 30px !important;
+  font-weight: bold;
+}
+.err {
+  position: relative;
+  display: block;
+  color: #f00;
+  margin-bottom: 20px;
+}
+#notif-table {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+#head-td {
+  font-size: 160%;
+  color: #000;
+  margin-bottom: 20px;
+}
+#notif-table tbody,
+#notif-table tr {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 10px 10px;
+}
+#notif-table td {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle !important;
+  text-align: left;
+  width: 50%;
+}
+#notif-table td ul li {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+#notif-table #resp-td {
+  display: none;
+}
+#notif-table td input {
+  margin: 0 10px 0 0 !important;
+}
+#notif-table td .r {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  text-align: left;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+}
+#y-leaving {
+  width: 60%;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 20px;
+  font-size: 110%;
+}
+#y-leaving option {
+  position: relative;
+  display: block;
+  padding-left: 20px;
+  font-size: 100%;
+  line-height: 2;
+}
+.why-leave-div {
+  clear: both;
+  position: relative;
+  display: block;
+  padding: 4% 10% 1% 10%;
+  max-width: 120%;
+  background-color: #fafafa !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.09);
+  overflow: hidden;
+}
+#close-act-title {
+  font-size: 103%;
+  font-weight: bold;
+}
+.close-acc-div {
+  position: absolute;
+  left: -10%;
+  line-height: 1.2;
+  font-size: 90%;
+}
+.close-acc-div ul {
+  position: relative;
+  left: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.close-acc-div a {
+  color: red;
+}
+#paypal-img {
+  float: left;
+}
+#why-title {
+  position: relative;
+  float: left;
+  font-size: 100% !important;
+  top: 10px;
+}
+#user-email {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+

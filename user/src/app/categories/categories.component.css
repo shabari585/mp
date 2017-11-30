@@ -709,4 +709,39 @@ input[type="checkbox"]:checked+label span {
 .cat-btns:hover {
   border-left: 4px solid #e43f4d;
 }
+@media screen and (min-width:220px) and (max-width:740px) {
+  .categories-div {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  .gigs-home {
+    position: relative;
+    /* display: inline-block; */
+    background-color: #f9f9f9 !important;
+    width: 100%;
+   overflow: visible;
+  }
+  .gigs-core {
+    left: 18%;
+    transform: translate(-5%,0);
+  }
+  
+  
+  
+  .h-gig {
+    position: relative;
+    display: block;
+    height: 180px;
+    width: 100%;
+    margin: 0 !important;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+    overflow: hidden;
+  }
+  .w-control{
+    width: 310px;
+  }
+}
 

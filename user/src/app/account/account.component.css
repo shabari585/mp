@@ -9,3 +9,50 @@
   width: 80% !important;
   margin: 0 auto !important;
 }
+@media screen and (min-width:220px) and (max-width:740px){
+  .name-div .p-r-f-div {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .r-f-div {
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+    left: -5%;
+    top: 40%;
+    transform: translate(0,40%)
+  }
+  .headings {
+    width: 100%;
+    float: left;
+    
+  }
+  
+  .name-div .p-l-f-div {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin: 0 !important;
+  }
+  .why-leave-div h4 {
+    position: relative;
+    text-align: center
+  }
+  #y-leaving {
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 0px;
+    font-size: 110%;
+  }
+  
+  .close-acc-div ul {
+    position: relative;
+    left:0% !important;
+    
+  }
+  .bold{
+    white-space: normal !important;
+  }
+}

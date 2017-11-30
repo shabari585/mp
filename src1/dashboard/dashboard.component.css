@@ -1,0 +1,371 @@
+body,
+html {
+  z-index: 2;
+  transition: all 0.3s;
+  background-color: #f9f9f9;
+}
+.user-dash-core {
+  position: relative;
+  font-size: 100% !important;
+  margin-top: 11vh;
+  margin-bottom: 30px;
+}
+.main-body {
+  transition: all 0.3s;
+}
+.back-body {
+  z-index: -1;
+  position: relative;
+  height: 500px;
+  width: 500px;
+}
+.whole-dash {
+  position: relative;
+  display: block;
+  height: auto;
+  margin: 30px auto 60px auto;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+.account-warning-div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  color: #365dea !important;
+  background-color: #82edf0;
+  padding: 20px 0px;
+  white-space: normal;
+  margin-bottom: 30px;
+}
+#war-pad {
+  position: relative;
+  display: block;
+  margin-left: 10px;
+}
+.account-warning-div .fa{
+  position: relative;
+  display: block;
+  margin-left: 20px;
+  font-size: 160%;
+}
+.account-warning-div a {
+  font-size: 102%;
+  font-weight: bold;
+  text-decoration: underline !important;
+  margin-left: 30px;
+}
+.dash-left {
+  position: relative;
+  width: 27%;
+  overflow: hidden;
+  float: left;
+}
+.dash-right {
+  position: relative;
+  float: right;
+  width: 68%;
+}
+.user-tech-details {
+  position: relative;
+  display: block;
+  float: left;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  padding: 1px 30px;
+  width: 100%;
+  white-space: normal;
+  overflow: hidden;
+}
+.user-tech-details #user-img {
+  position: relative;
+  display: block;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  box-shadow: 0 0 2px 0.1px teal;
+  margin: 40px 15px 10px 15px;
+}
+.tech-det-top {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  height: auto;
+  width: 98%;
+  margin: 10px 10px;
+  overflow: hidden;
+}
+#u-name {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 0px auto 10px auto;
+  color: #000;
+  font-size: 106%;
+  font-weight: bold;
+}
+#designation {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 0px auto 20px auto !important;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 100%;
+}
+.tech-det-tabs {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 120%;
+}
+.tech-det-tabs ul {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+.tech-det-tabs ul>li {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  height: auto;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 90%;
+  overflow: hidden;
+}
+#lan {
+  position: relative;
+  display: inline-block;
+}
+#lan li {
+  position: relative;
+  display: block;
+  height: auto;
+  min-height: 10px;
+  margin-top: 5px;
+  border-bottom: none;
+}
+#flex-col {
+  flex-direction: column !important;
+  -webkit-flex-direction: column !important;
+  align-items: flex-start !important;
+  -webkit-align-items: flex-start !important;
+  padding-bottom: 20px;
+}
+#bio-title {
+  position: relative;
+  display: block;
+  text-align: left;
+  margin: 30px 0px 20px 0px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.bio-desc {
+  position: relative;
+  display: block;
+  text-align: left;
+  color: #999;
+  font-size: 80%;
+  line-height: 1.7;
+}
+.t-d-tabs-name {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.6);
+}
+.t-d-tabs-value {
+  position: relative;
+  display: inline-block;
+  color: #333;
+  font-weight: bold;
+}
+#lan {
+  position: relative;
+  display: block;
+  margin: 0px 0;
+}
+#lan li {
+  position: relative;
+  display: block;
+  height: auto;
+  margin: 6px 0;
+  padding: 0;
+  border-bottom: none;
+  text-align: right !important;
+}
+#lan li:first-child{
+  margin-top: 0px;
+}
+#dash-welcome-div {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  justify-content: center;
+  -webkit-justify-content: center;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  height: 100px;
+}
+#dash-welcome-div h2 {
+  position: relative;
+  display: block;
+  margin-left: 20px;
+  font-size: 140%;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 0px;
+}
+#dash-welcome-div h3 {
+  position: relative;
+  display: block;
+  margin-left: 20px;
+  font-size: 100%;
+  color: #75787d;
+}
+#create-project-div {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  height: 300px;
+  width: 100%;
+  border: 1px dashed #ddd;
+  background-color: #f7f7f7;
+  margin: 20px 0;
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+  color: #75787d;
+}
+#create-project-div h3 {
+  position: relative;
+  display: block;
+  font-size: 150%;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+#create-project-div h5 {
+  position: relative;
+  display: block;
+  width: 30%;
+  font-size: 110%;
+  font-weight: bold;
+  text-align: center;
+  white-space: normal;
+}
+.to-dos {
+  position: relative;
+  float: left;
+  margin-top: 30px;
+  height: auto;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+  overflow: hidden;
+}
+.to-dos table,
+.to-dos tbody {
+  position: relative;
+  display: block;
+  height: 100% !important;
+  ;
+  width: 100%;
+}
+.to-dos table tr {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.to-dos td {
+  position: relative;
+  display: block;
+  height: 70px;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+#to-do-head {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  font-size: 125%;
+}
+.to-dos .to-do-header {
+  position: relative;
+  /* display: block; */
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  vertical-align: middle;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.to-dos img {
+  position: relative;
+  float: left;
+  height: 50px;
+  margin: 10px;
+}
+.to-dos .to-do {
+  position: relative;
+  display: inline-block;
+  margin: 10px 10px 5px 5px;
+  font-size: 120%;
+}
+.to-dos .to-do-new {
+  position: relative;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 5px;
+}
+.to-dos .to-do-left {
+  position: relative;
+  float: left;
+}
+.to-dos .rev-btn {
+  position: relative;
+  display: none;
+  float: right;
+  margin-top: 15px;
+  margin-right: 20%;
+  height: 40px;
+  width: 140px;
+  border: none;
+  background-color: #82B541;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 100%;
+  font-weight: 100;
+  transition: all 0.2s;
+}
+.to-dos .rev-btn:hover {
+  cursor: pointer;
+  background-color: #6D9837;
+}
+.to-dos table td:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.to-dos table td:hover .rev-btn {
+  display: block;
+}
+

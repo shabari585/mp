@@ -39,6 +39,7 @@ body {
   display: block;
   font-size: 140%;
   color: #fff;
+  line-height: 2;
 }
 .how-con-core {
   position: relative;
@@ -188,6 +189,7 @@ body {
   text-align: center;
   font-size: 180%;
   color: rgba(0, 0, 0, 0.95);
+  white-space: normal !important;
 }
 #disc-div h5 {
   position: relative;
@@ -248,4 +250,126 @@ body {
   margin: 0px auto -20px auto;
   border-top: 1px solid rgba(0, 0, 0, 0.5);
 }
-
+@media screen and (min-width:220px) and (max-width:770px) {
+  .def-div{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0px 0;
+    margin: 0 !important;
+    overflow: hidden;
+  }
+  .menu-icons {
+    flex-direction: row;
+    position: relative;
+  }
+  .def-desc-div {
+    position: relative;
+    text-align: left;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    padding-right:0px !important;
+  }
+  .h-options {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0px 0px !important;
+    overflow: hidden;
+  }
+  #h-h-options-div
+   {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #fff !important;
+    padding: 0px 0 !important;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+  }
+  .h-opt-desc {
+    position: relative;
+    text-align: left;
+    width: 100%;
+    margin:0 !important;
+    float: left;
+  }
+  .h-opt-desc h2 {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 0;
+    color: #000;
+    font-size: 140%;
+    font-weight: bold;
+    white-space: normal !important;
+  }
+  .h-opt-desc p {
+    font-size: 100%;
+    line-height: 1.3;
+    width: 100%;
+    white-space: normal !important;
+    word-wrap: normal;
+  }
+  
+  .icon-menu-div {
+    position: relative;
+    display: block;
+    display: -webkit-block;
+    margin: 0 !important;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content:center;
+    -webkit-justify-content: center;
+    flex-direction: row;
+    overflow: hidden;
+    left: 35%;
+  }
+  .menu-icons {
+    position: relative;
+    display:block;
+    display: -webkit-block;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-direction: row;
+    height: 150px;
+    color: rgba(0, 0, 0, 0.6);
+    width: auto;
+    cursor: pointer;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+  }
+  #h-t-desc {
+    position: relative;
+    display: block;
+    font-size: 140%;
+    color: #fff;
+    line-height: 2;
+    text-align: center;
+    white-space: normal !important;
+  }
+  .h-opt-icons img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  #h-table,
+  #s-table {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0 5%;
+  }
+  #h-table td,
+  #s-table td {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .w-control{
+    width: 330px;
+  }
+}

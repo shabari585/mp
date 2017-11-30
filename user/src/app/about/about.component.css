@@ -1,3 +1,7 @@
+.w-control1{
+  width:1800px;
+  margin: 0 auto;
+}
 .a-f-vp {
   position: relative;
   display: block;
@@ -91,6 +95,7 @@
   background-image: url(../../assets/img/ph.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   text-align: center;
   color: #fff;
   overflow: hidden;
@@ -127,6 +132,12 @@
   height: 60vh;
   overflow: hidden;
   background-color: #F8F8F4;
+}
+.a-s-vp h3{
+  text-align: justify;
+}
+.a-s-vp p{
+  text-align: justify;
 }
 
 .a-t-vp {
@@ -277,6 +288,7 @@
   background-image: url('../../assets/img/pro-pic.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .a-pic-div h3 {
@@ -300,7 +312,7 @@
   flex-direction: column;
   background-color: #F8F8F4;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: visible;
   padding-bottom: 30px;
 }
 .a-faq-div h2{
@@ -311,8 +323,8 @@
 }
 .a-faq-div .a-width-desktop {
   position: relative;
-  display: flex;
-  display: -webkit-flex;
+  display: block;
+  display: -webkit-block;
   justify-content: space-between;
   -webkit-justify-content: space-between;
   align-items: center;
@@ -352,7 +364,7 @@
   color: #463933;
   font-size: 105%;
   line-height: 1.5;
-  text-align: left;
+  text-align: justify;
 }
 
 
@@ -520,5 +532,61 @@ ol p {
   padding: 0 0 40px 0;
   white-space: normal;
   overflow: hidden;
+}
+
+@media screen and (min-width:220px) and (max-width:740px) {
+  .a-pics-div {
+    position: relative;
+    left: -14%;
+    flex-direction: column;
+  }
+  .a-pic {
+    position: relative;
+    
+  }
+  .a-pic-div h3 {
+    font-weight: bold;
+    color: #444444;
+    font-size: 110%;
+    text-align: center;
+    
+  }
+  
+  .a-pic-div h4 {
+    color: #CCCCD5;
+    font-size: 90%;
+    font-weight: bold;
+    float: left;
+  }
+
+  .ab-b-t,
+  .ab-b-m,
+  .ab-b-b {
+    position: relative;
+    
+    flex-direction: column;
+    
+  }
+  .ab-b-t,.ab-b-m {
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+  }
+  .faq-divs {
+    position: relative;
+    display: block;
+    display: -webkit-block;
+    flex-direction: row;
+    width: 100%;
+  }
+  .a-faq-div {
+    position: relative;
+    display: block;
+    flex-direction: row;
+    
+  }
+  .a-faq-div .w-control{
+    width: 350px;
+  }
+  
 }
 

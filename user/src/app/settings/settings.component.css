@@ -518,4 +518,51 @@ textarea {
   margin-top: 10px;
   margin-left: 20px;
 }
+@media screen and (min-width:220px) and (max-width:740px) {
+  .l-f-div {
+    position: relative;
+    width: 100%;
+  }
+  .r-f-div {
+    position: relative;
+    display: block;
+    background-color: #fff;
+    width: 100%;
+    
+    }
+
+    .name-div .p-r-f-div {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+    .imp-div {
+      position: relative;
+      display: block;
+      width: 90%;
+      background-color: #ecffce;
+      padding: 10px;
+      font-size: 80%;
+      overflow: hidden;
+      margin-bottom: 20px;
+      white-space: normal !important;
+    }
+    .imp-div #imp {
+      position: relative;
+      width: 18%;
+      float: left;
+      font-weight: bold;
+      color: #606 !important;
+      font-size: 100%;
+    }
+    .imp-div p {
+      position: relative;
+      font-size: 110%;
+      width: 100%;
+      float: left;
+    }
+    .w-control{
+      width: 330px;
+    }
+  }
 

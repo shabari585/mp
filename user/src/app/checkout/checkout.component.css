@@ -338,6 +338,7 @@ h4 {
   font-size: 100% !important;
   margin: 20px 0 20px 15px;
   color: #777;
+  white-space: normal !important;
 }
 #h4 {
   position: relative;
@@ -459,5 +460,230 @@ h4 {
   background: url('../../assets/ico/yes.png') top no-repeat;
 }
 
+.paypal{
+  border: 0.5px solid #999;
+  border-radius: 3px;
+  width: 50%;
+}
+.code{
+  border:1px solid #999;
+  border-radius:3px;
+  width:170px;
+  height:40px;
+}
+.paypal button{
+  border:3px solid #F67D42;
+  border-radius:3px;
+  width:170px;
+  height:40px;
+  color:#F67D42;
+  font-weight:bolder; 
+}
+
+@media screen and (min-width:220px) and (max-width:740px) {
+  .featured-gig {
+  flex-direction: column;
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  }
+  
+  #job-title{
+    position: absolute;
+    left: 45%;
+  }
+  #order-dets {
+    position: relative;
+    display: block;
+    float: left;
+    width: 100%;
+  }
+  .order-dets-core{
+    position: relative;
+    display: block;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    top: 50%;
+    transform: translate(0,20%)
+    /* border: 1px solid #000; */
+  
+  }
+  
+  #pro-br-title{
+    top: 50%;
+  }
+  .imp_div {
+    position: relative;
+    display: block;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    background-color: #FAFAFA;
+    border: 1px dashed #999;
+    margin-right: 30px;
+    height: 200px;
+    width: 300px;
+  }
+  .imp_div h3 {
+    font-size: 110%;
+    font-weight: bold;
+    left: 40%;
+    transform: translate(10%,0)
+  }
+  .imp_div .imp_btn{
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0)
+  }
+  .imp_div h4 {
+    font-size: 100%;
+    left: 50%;
+    transform: translate(-50%,0)
+  }
+  .imp_div h6 {
+    font-size: 80%;
+    font-style: italic;
+    white-space: normal;
+    color: #888;
+    left: 40%;
+    transform: translate(10%,0)
+  }
+  .imp_div * {
+    max-width: 80%;
+    text-align: center;
+  }
+
+
+.imp_divs {
+  position: relative;
+  display: block;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+}
+
+#h3{
+  white-space: normal !important;
+}
+
+
+.pro-br-div {
+  position: relative;
+  display: block;
+  margin: 0 !important;
+  padding: 0;
+  top: 50%;
+  transform: translate(0,10%)
+}
+#brief {
+  position: relative;
+  display: block;
+  width: 30%;
+  height: 150px;
+  border: 1px solid #ddd;
+  margin: 20px 0;
+  resize: none;
+  padding: 10px;
+}
+#proceed-btn {
+  position: relative;
+  display: block;
+  width: 20%;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 110%;
+  background-color: #82B541;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  
+}
+#desc,#extra,#total {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+#desc{
+  border-bottom: 1px solid #ddd;
+}
+.desc-div{
+  width: 100%;
+  position: relative;
+  display: block;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  
+}
+.desc{
+  width: 70%;
+  display: block;
+  align-items: center;
+  justify-content: flex-start;
+}
+#total .desc{
+  display: flex;
+  width: auto;
+  text-align: left;
+  justify-content: flex-start;
+}
+#extra .desc-div{
+  border-bottom: 1px solid #ddd;
+  margin-top: 20px;   
+}
+#extra .desc{
+  position: relative;
+  display: block;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+#extra .desc .extra-check-div{
+  width: 10%;
+}
+#extra .desc p{
+  width: 80%;
+}
+.desc p{
+  white-space: normal;
+}
+
+.paypal {
+  width: 25%;
+}
+.code{
+  border:1px solid #999;
+  border-radius:3px;
+  width:120px;
+  height:40px;
+}
+.paypal button{
+  border:3px solid #F67D42;
+  border-radius:3px;
+  width:120px;
+  height:40px;
+  color:#F67D42;
+  font-weight:bolder; 
+}
+.space .h3{
+  word-break: break-all;
+}
+.space h2{
+  white-space: normal !important;
+}
+.w-control{
+  width: 500px;
+}
+}
 
 

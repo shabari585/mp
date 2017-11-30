@@ -2,7 +2,7 @@
         <h2 id="your-order-h2">Your Order</h2>
         <form class="" method="post" enctype="multipart/form-data">
         <div class="order-top-dets">
-            <h2 id="pro-br-title" class="sec-heads">
+            <h2  id="pro-br-title" class="sec-heads mob">
               1. Order Details
             </h2>
             <div class="left-float" id="order-img">
@@ -125,10 +125,10 @@
             <div class="clear-both"></div>
         </div>
         <div class="pro-br-div">
-          <h2 id="pro-br-title" class="sec-heads">
+          <h2 id="pro-br-title" class="sec-heads" >
             2.Provide your brief
           </h2>
-          <h3 id="h3">
+          <h3 class="h3" id="h3">
             If you have resume handy, we can use it to populate your profile and save you some typing
           </h3>
           <div class="imp_divs">
@@ -161,7 +161,35 @@
           </div>
           <output id="list"></output>
           <textarea id="brief" name="buyer-brief"></textarea>
-        </div>
+        </div><br><br>
+
+
+        <div class="container space">
+            <h2 id="pro-br-title" class="sec-heads" >
+              3.Payment Details
+            </h2>
+            <h3 class="h3" id="h3">
+               Your payment will be held securely by Marketplace until your job is successfully completed
+              </h3>
+
+              <div   class="row">
+                <div class="col-xs-12 paypal"><br>
+              <form>
+                <input type="radio" name="name">
+                <img src="../assets/img/paypal-logo.png" class="img-fluid" width="100px" height="30px">&nbsp;
+
+                <input type="radio" name="name">
+                <img src="../assets/img/paypal-logo.png" class="img-fluid" width="100px" height="30px"><br>
+              
+              <h5><b>Promotional Code</b></h5>
+
+               <input class="code"  type="text" placeholder="Coupon code">&nbsp;
+               <button class="coupon" class="btn btn-default">Apply Coupon</button>
+              <br>
+              <h2>Total Amount:$575 USD</h2>
+              </form><br>
+            </div></div>  </div><br>
+
         <input type="submit" name="submit" id="proceed-btn" value="Submit Order">
         </form>
         

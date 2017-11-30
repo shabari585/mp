@@ -1661,4 +1661,15 @@
     color: #797979;
   }
 }
+@media screen and (min-width:220px) and (max-width:740px) {
+  #t-close {
+    position: absolute;
+    display: inline-block;
+    top: 0%;
+    left: 88%;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+  }
+}
 

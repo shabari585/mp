@@ -34,10 +34,19 @@ import { PasswordComponent } from './password/password.component';
 import { FinancialsComponent } from './financials/financials.component';
 import { AccountComponent } from './account/account.component';
 import { EmailNotificationsComponent } from './email-notifications/email-notifications.component';
+import { MyGigsComponent } from './my-gigs/my-gigs.component';
+
 
 // Services
 import { AuthService } from "./services/auth.service";
 import { ValidateService } from "./services/validate.service";
+import { OrderDetailsComponent } from './order-details/order-details.component';
+import { LoginComponent } from './login/login.component';
+import { PaymentsComponent } from './payments/payments.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { PressComponent } from './press/press.component';
+import { MenuAfterLoginComponent } from './menu-after-login/menu-after-login.component';
+
 
 const appRoutes: Routes = [
   {
@@ -118,9 +127,48 @@ const appRoutes: Routes = [
     component: GigDetailsComponent
   },
   {
+    path: 'my-gigs',
+    component: MyGigsComponent
+  },
+  {
     path: 'withdrawals',
     component: WithdrawalsComponent
   },
+  {
+    path: 'manage-orders',
+    component: ManageOrdersComponent
+  },
+  {
+    path: 'manage-sales',
+    component: ManageSalesComponent
+  },
+  {
+    path: 'order-details',
+    component: OrderDetailsComponent
+  },
+  
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'payments',
+    component: PaymentsComponent
+  },
+  {
+    path: 'notifications',
+    component: NotificationsComponent
+  },
+  {
+    path: 'press',
+    component: PressComponent
+  },
+  {
+    path: 'menu-after-login',
+    component: MenuAfterLoginComponent
+  },
+
+
   {
     path: 'settings',
     component: SettingsComponent,
@@ -185,7 +233,16 @@ const appRoutes: Routes = [
     PasswordComponent,
     FinancialsComponent,
     AccountComponent,
-    EmailNotificationsComponent
+    EmailNotificationsComponent,
+    MyGigsComponent,
+    OrderDetailsComponent,
+    LoginComponent,
+    PaymentsComponent,
+    NotificationsComponent,
+    PressComponent,
+    MenuAfterLoginComponent,
+    
+   
   ],
   imports: [
     BrowserModule,

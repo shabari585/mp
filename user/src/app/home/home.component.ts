@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
       }
       window.scrollTo(0, 0)
   });
+
     var options = {
       strings: ["marketers build landing pages.", "landers build marketing pages.", "pages build landers and marketers."],
       typeSpeed: 30,
