@@ -107,33 +107,31 @@
           </div>
         </div>
         <div *ngIf='showLogin'>
-            <div class="login-div">
-                <div class="l-t-icon">
-          
+          <div class="login-div">
+              <div class="l-t-icon">
+        
+              </div>
+              <h3 id="login-head">LOGIN TO RESTORED</h3>
+              <input type="email" id="d-login-email" placeholder="Email" [(ngModel)]="loginEmail">
+              <p class="err" id="login-email-err"style="color:red"></p>
+              <input type="password" id="d-login-pwd" name="name" placeholder="Password" [(ngModel)]="loginPassword">
+              <a id="forgot-pad-btn" (click)="showFp(true)">Forgot?</a>
+              <p class="err" id="login-err"style="color:red"></p>
+              <button id="login-submit-btn" (click)="LoginSubmit(loginEmailInput,loginPasswordInput)">LOGIN</button>
+              <h5 class="nor">OR</h5>
+              <div class="social-icons">
+                <div class="social-icon facebook-icon">
+                  <i class="fa fa-facebook-f" aria-hidden="true"></i>
                 </div>
-                <h3 id="login-head">LOGIN TO RESTORED</h3>
-                <input type="email" id="d-login-email" placeholder="Email">
-                <input type="password" id="d-login-pwd" name="name" placeholder="Password">
-                <a id="forgot-pad-btn" (click)="showFp(true)">Forgot?</a>
-                <button id="login-submit-btn">LOGIN</button>
-                <p class="form-err" id="f-er-login-email">*Email is required</p>
-                <p class="form-err" id="l-em-n-exts">*That email is not registered with us.</p>
-                <p class="form-err" id="f-er-login-pwd">*Password is required</p>
-                <p class="form-err" id="wrng-cred">*Wrong Credentials</p>
-                <h5 class="nor">OR</h5>
-                <div class="social-icons">
-                  <div class="social-icon facebook-icon">
-                    <i class="fa fa-facebook-f" aria-hidden="true"></i>
-                  </div>
-                  <div class="social-icon google-icon">
-                    <i class="fa fa-google" aria-hidden="true"></i>
-                  </div>
-                  <div class="social-icon linkedin-icon">
-                    <i class="fa fa-linkedin" aria-hidden="true"></i>
-                  </div>
+                <div class="social-icon google-icon">
+                  <i class="fa fa-google" aria-hidden="true"></i>
+                </div>
+                <div class="social-icon linkedin-icon">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
                 </div>
               </div>
-        </div>
+            </div>
+      </div>
         <div *ngIf='showSignUp'>
           
           <div class="signup-div">
@@ -324,14 +322,14 @@
     </li>
     <div id="res-cats">
       <ul>
-        <li><a routerLink='/categories'><i class="res-menu-icons fa fa-globe" aria-hidden="true"></i>Browse all products</a>
+        <li><a (click)="get_gigs('all')"><i class="res-menu-icons fa fa-globe" aria-hidden="true"></i>Browse all products</a>
         </li>
-        <li><a routerLink='/categories'><i class="res-menu-icons fa fa-file" aria-hidden="true"></i>Resumes and Cover Letters</a></li>
-        <li><a routerLink='/categories'><i class="res-menu-icons fa fa-globe" aria-hidden="true"></i>Online Resumes</a></li>
-        <li><a routerLink='/categories'><i class="res-menu-icons fa fa-eye" aria-hidden="true"></i>Visual Resumes</a></li>
-        <li><a routerLink='/categories'><i class="res-menu-icons fa fa-linkedin" aria-hidden="true"></i>LinkedIn Profile</a></li>
-        <li><a routerLink='/categories'><i class="res-menu-icons fa fa-anchor" aria-hidden="true"></i>Place Holder 1</a></li>
-        <li><a routerLink='/categories'><i class="res-menu-icons fa fa-anchor" aria-hidden="true"></i>Place Holder 2</a></li>
+        <li><a (click)="get_gigs('rc')"><i class="res-menu-icons fa fa-file" aria-hidden="true"></i>Resumes and Cover Letters</a></li>
+        <li><a (click)="get_gigs('or')"><i class="res-menu-icons fa fa-globe" aria-hidden="true"></i>Online Resumes</a></li>
+        <li><a (click)="get_gigs('vr')"><i class="res-menu-icons fa fa-eye" aria-hidden="true"></i>Visual Resumes</a></li>
+        <li><a (click)="get_gigs('lp')"><i class="res-menu-icons fa fa-linkedin" aria-hidden="true"></i>LinkedIn Profile</a></li>
+        <li><a ><i class="res-menu-icons fa fa-anchor" aria-hidden="true"></i>Place Holder 1</a></li>
+        <li><a ><i class="res-menu-icons fa fa-anchor" aria-hidden="true"></i>Place Holder 2</a></li>
       </ul>
     </div>
     <li><a routerLink='/how-it-works'><i class="res-menu-icons fa fa-question-circle-o" aria-hidden="true"></i>How it works</a></li>
@@ -340,6 +338,7 @@
     <li  id="res-sign-in-btn"><a><i class="res-menu-icons fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
   </ul>
 </div>
+<div *ngIf="authService.loggedIn() == false">
 <header class="main-header visible-md visible-lg">
   <div class="header-control w-control">
     <a routerLink='/home'>
@@ -482,19 +481,19 @@
             </div>
             <table class="cat-tables bb no-padding">
               <tr>
-                <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns b-all-btn">Browse all Products</span></a></td>
+                <td class="bb no-padding"><a><span class="cat-btns b-all-btn" (click)="get_gigs('all')">Browse all Products</span></a></td>
               </tr>
               <tr>
-                <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns res-btn">Resumes and Cover Letters</span></a></td>
+                <td class="bb no-padding"><a><span class="cat-btns res-btn" (click)="get_gigs('rc')">Resumes and Cover Letters</span></a></td>
               </tr>
               <tr>
-                <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns on-btn">Online Resumes</span></a></td>
+                <td class="bb no-padding"><a><span class="cat-btns on-btn" (click)="get_gigs('or')">Online Resumes</span></a></td>
               </tr>
               <tr>
-                <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns vr-btn">Visual Resumes</span></a></td>
+                <td class="bb no-padding"><a><span class="cat-btns vr-btn" (click)="get_gigs('vr')">Visual Resumes</span></a></td>
               </tr>
               <tr>
-                <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns lp-btn">LinkedIn Profile</span></a></td>
+                <td class="bb no-padding"><a><span class="cat-btns lp-btn" (click)="get_gigs('lp')">LinkedIn Profile</span></a></td>
               </tr>
             </table>
           </div>
@@ -520,220 +519,164 @@
 </div>
 
 <!-- When Logged in -->
-<div class="loggedin">
- <nav class="main-header navbar navbar-inverse">
-      
-          <img src="../assets/img/m_logo.png" class="img-fluid img1">
+<div class="loggedin" *ngIf="authService.loggedIn() == true">
+    <header style="background-color:#2C373B;color:white" class="main-header visible-md visible-lg">
+        <div class="header-control w-control">
+          <a routerLink='/home'>
+            <img src="../assets/../assets/img/m_logo.png" alt="" class="logo-img">
+          </a>
+          <ul class="horizantal-ul left-float-ul list-unstyled">
+            <li>
+              <div class="dropdown">
+                <button style="color:white;" class="dropbtn" id="main-cat-btn"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; &nbsp;CATEGORIES </button>
+                <div class="dropdown-content">
+                  <div class="menu-sub-menu-div">
+                    <div class="sub-sub-menu" id="br-all-sub">
+                      <ul>
+                        <li><a>Accounting</a></li>
+                        <li><a>Administration & Office Support</a></li>
+                        
+                      </ul>
+                      <ul>
+                        <li><a>Healthcare & Medical</a></li>
+                        <li><a>Hospitality & Tourism</a></li>
+                        
+                      </ul>
+                    </div>
+                    <div class="sub-sub-menu" id="res-sub">
+                      <ul>
+                        <li><a>Accounting</a></li>
+                        <li><a>Administration & Office Support</a></li>
+                       
+                      </ul>
+                      <ul>
+                        <li><a>Healthcare & Medical</a></li>
+                        <li><a>Hospitality & Tourism</a></li>
+                       
+                      </ul>
+                    </div>
+                    <div class="sub-sub-menu" id="on-sub">
+                      <ul>
+                        <li><a>Accounting</a></li>
+                        <li><a>Administration & Office Support</a></li>
+                       
+                      </ul>
+                      <ul>
+                        <li><a>Healthcare & Medical</a></li>
+                        <li><a>Hospitality & Tourism</a></li>
+                       
+                      </ul>
+                    </div>
+                    <div class="sub-sub-menu" id="vr-sub">
+                      <ul>
+                        <li><a>Accounting</a></li>
+                        <li><a>Administration & Office Support</a></li>
+                       
+                      </ul>
+                      <ul>
+                        <li><a>Healthcare & Medical</a></li>
+                        <li><a>Hospitality & Tourism</a></li>
+                        <li><a>HR & Recruitment</a></li>
+                        <li><a>Information & Communication Technology</a></li>
+                        <li><a>Legal</a></li>
+                        <li><a>Manufacturing & Logistics</a></li>
+                        <li><a>Marketing</a></li>
+                        <li><a>Real Estate & Property</a></li>
+                        <li><a>Retail & Consumer Products</a></li>
+                        <li><a>Sales</a></li>
+                        <li><a>Science & Technology</a></li>
+                        <li><a>Self Employment</a></li>
+                        <li><a>Sports & Recreation</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <table class="cat-tables bb no-padding">
+                    <tr>
+                      <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns b-all-btn">Browse all Products</span></a></td>
+                    </tr>
+                    <tr>
+                      <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns res-btn">Resumes and Cover Letters</span></a></td>
+                    </tr>
+                    <tr>
+                      <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns on-btn">Online Resumes</span></a></td>
+                    </tr>
+                    <tr>
+                      <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns vr-btn">Visual Resumes</span></a></td>
+                    </tr>
+                    <tr>
+                      <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns lp-btn">LinkedIn Profile</span></a></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </li>
+            <li routerLink='/how-it-works'>
+              <input style="color:white;" type="button" class="main-nav-btns" id="how-it-works-btn" value="HOW IT WORKS">
+            </li>
+            <li routerLink='/become-an-author'>
+              <input style="color:white;" type="button" class="main-nav-btns" id="become-an-author-btn" value="BECOME AN AUTHOR">
+            </li>
+          </ul>
+          <ul class="horizantal-ul right-float-ul list-unstyled">
+              <div class="right">
+                  <li>
+                      <i style="font-size:25px;color:#999999;" class="fa fa-envelope-o" aria-hidden="true"></i> 
+                      <div style="background-color:#00C7E4;border-radius:4px;height:15px;width:15px;color:white;left:-10%;top:-10%;transform:translate(-210%,-80%)" class="notify">
+                          <p style="text-align:center;font-size:12px;">!</p>
+                        </div>
+                      
+                      
+                  </li>
+                  <li class="dropdown">
+                      <i style="font-size:25px;color:#999999;" class="fa fa-cog" aria-hidden="true"></i> 
+                      <div style="background-color:#00D7B5;border-radius:4px;height:15px;width:25px;color:white;left:-10%;top:-10%;transform:translate(-150%,-80%)" class="notify" (mouseover)="toZero()">
+                        <p style="text-align:center;font-size:12px;">{{unread_num}}</p>
+                      </div>
+                      <ul class="navbar-stacked dropdown-menu">
+                        <div *ngFor="let not of not_num">
+                          <div (click)="goto_order_det(not.link.replace('order-details?id=',''),not.not_id)">
+                          <li style="height:50px" ><img style="left:2%;transform:translate(0%,2%);position:absolute" src="http://localhost:3000{{not.image}}" class="img-fluid img-circle imgg"  alt="img" width="35px" height="35px"><span style="left:20%;transform:translate(15%,0%)">{{not.message}}...</span><span style="font-size:70%;color:#999;left:14%;top:10%;transform:translate(10%,50%);position:relative">{{not.date}}</span></li><br>
+                        </div>
+                        </div> 
+                          <!-- <li>Profile Page</li><br>
+                          <li>Profile Page</li><br>
+                          <li>Profile Page</li><br> -->
+                      </ul>
+                      
+                  </li>
+                  <li class="dropdown">
+                      <img src="../../assets/img/pro-pic.jpg" class="img-fluid img-circle imgg"  alt="img" width="35px" height="35px">  
 
-  <div>
-<ul class="nav navbar-nav">
+                      
+                          <ul class="navbar-stacked dropdown-menu">
+                            <li style="background-color:#FF5341;color:white;height:auto;min-height:60%;">Your popularity<h3>very low</h3></li><br>
+                            <li (click) ="gotoseller()">
+                                <a><span class="cat-btns b-all-btn">Profile</span></a>
+                            </li>
+                            <li><a routerLink="/settings"><span class="cat-btns b-all-btn">Account Settings</span></a></li><br>
+                            <li>Your Purchases</li><br>
+                            <li>Sales Statement</li><br>
+                            <li>Buy Credits</li><br>
+                            <li> <a routerLink="/categories"><span class="cat-btns b-all-btn">Withdrawals</span></a></li><br>
+                            <li>Upload Item</li><br>
+                            <li>Manage Items</li><br>
+                            <li> <a (click)='Logout()'><span class="cat-btns b-all-btn">Logout</span></a></li>
+                          </ul>
+                        
+                        </li>
 
-    <ul class="horizantal-ul left-float-ul list-unstyled">
-    <li>
-        <div class="dropdown">
-          <button style="color:white" class="dropbtn" id="main-cat-btn"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; &nbsp;CATEGORIES </button>
-          <div class="dropdown-content">
-            <div class="menu-sub-menu-div">
-              <div class="sub-sub-menu" id="br-all-sub">
-                <ul>
-                  <li><a>Accounting</a></li>
-                  <li><a>Administration & Office Support</a></li>
-                  <li><a>Advertising, Arts & Media</a></li>
-                  <li><a>Banking & Financial Services</a></li>
-                  <li><a>Call Centre & Customer Service</a></li>
-                  <li><a>CEO & General Management</a></li>
-                  <li><a>Construction</a></li>
-                  <li><a>Consulting & Strategy</a></li>
-                  <li><a>Design & Architecture</a></li>
-                  <li><a>Education & Training</a></li>
-                  <li><a>Engineering</a></li>
-                  <li><a>Farming, Animals & Conservation</a></li>
-                  <li><a>Government & Defence</a></li>
-                </ul>
-                <ul>
-                  <li><a>Healthcare & Medical</a></li>
-                  <li><a>Hospitality & Tourism</a></li>
-                  <li><a>HR & Recruitment</a></li>
-                  <li><a>Information & Communication Technology</a></li>
-                  <li><a>Legal</a></li>
-                  <li><a>Manufacturing & Logistics</a></li>
-                  <li><a>Marketing</a></li>
-                  <li><a>Real Estate & Property</a></li>
-                  <li><a>Retail & Consumer Products</a></li>
-                  <li><a>Sales</a></li>
-                  <li><a>Science & Technology</a></li>
-                  <li><a>Self Employment</a></li>
-                  <li><a>Sports & Recreation</a></li>
-                </ul>
-              </div>
-              <div class="sub-sub-menu" id="res-sub">
-                <ul>
-                  <li><a>Accounting</a></li>
-                  <li><a>Administration & Office Support</a></li>
-                  <li><a>Advertising, Arts & Media</a></li>
-                  <li><a>Banking & Financial Services</a></li>
-                  <li><a>Call Centre & Customer Service</a></li>
-                  <li><a>CEO & General Management</a></li>
-                  <li><a>Construction</a></li>
-                  <li><a>Consulting & Strategy</a></li>
-                  <li><a>Design & Architecture</a></li>
-                  <li><a>Education & Training</a></li>
-                  <li><a>Engineering</a></li>
-                  <li><a>Farming, Animals & Conservation</a></li>
-                  <li><a>Government & Defence</a></li>
-                </ul>
-                <ul>
-                  <li><a>Healthcare & Medical</a></li>
-                  <li><a>Hospitality & Tourism</a></li>
-                  <li><a>HR & Recruitment</a></li>
-                  <li><a>Information & Communication Technology</a></li>
-                  <li><a>Legal</a></li>
-                  <li><a>Manufacturing & Logistics</a></li>
-                  <li><a>Marketing</a></li>
-                  <li><a>Real Estate & Property</a></li>
-                  <li><a>Retail & Consumer Products</a></li>
-                  <li><a>Sales</a></li>
-                  <li><a>Science & Technology</a></li>
-                  <li><a>Self Employment</a></li>
-                  <li><a>Sports & Recreation</a></li>
-                </ul>
-              </div>
-              <div class="sub-sub-menu" id="on-sub">
-                <ul>
-                  <li><a>Accounting</a></li>
-                  <li><a>Administration & Office Support</a></li>
-                  <li><a>Advertising, Arts & Media</a></li>
-                  <li><a>Banking & Financial Services</a></li>
-                  <li><a>Call Centre & Customer Service</a></li>
-                  <li><a>CEO & General Management</a></li>
-                  <li><a>Construction</a></li>
-                  <li><a>Consulting & Strategy</a></li>
-                  <li><a>Design & Architecture</a></li>
-                  <li><a>Education & Training</a></li>
-                  <li><a>Engineering</a></li>
-                  <li><a>Farming, Animals & Conservation</a></li>
-                  <li><a>Government & Defence</a></li>
-                </ul>
-                <ul>
-                  <li><a>Healthcare & Medical</a></li>
-                  <li><a>Hospitality & Tourism</a></li>
-                  <li><a>HR & Recruitment</a></li>
-                  <li><a>Information & Communication Technology</a></li>
-                  <li><a>Legal</a></li>
-                  <li><a>Manufacturing & Logistics</a></li>
-                  <li><a>Marketing</a></li>
-                  <li><a>Real Estate & Property</a></li>
-                  <li><a>Retail & Consumer Products</a></li>
-                  <li><a>Sales</a></li>
-                  <li><a>Science & Technology</a></li>
-                  <li><a>Self Employment</a></li>
-                  <li><a>Sports & Recreation</a></li>
-                </ul>
-              </div>
-              <div class="sub-sub-menu" id="vr-sub">
-                <ul>
-                  <li><a>Accounting</a></li>
-                  <li><a>Administration & Office Support</a></li>
-                  <li><a>Advertising, Arts & Media</a></li>
-                  <li><a>Banking & Financial Services</a></li>
-                  <li><a>Call Centre & Customer Service</a></li>
-                  <li><a>CEO & General Management</a></li>
-                  <li><a>Construction</a></li>
-                  <li><a>Consulting & Strategy</a></li>
-                  <li><a>Design & Architecture</a></li>
-                  <li><a>Education & Training</a></li>
-                  <li><a>Engineering</a></li>
-                  <li><a>Farming, Animals & Conservation</a></li>
-                  <li><a>Government & Defence</a></li>
-                </ul>
-                <ul>
-                  <li><a>Healthcare & Medical</a></li>
-                  <li><a>Hospitality & Tourism</a></li>
-                  <li><a>HR & Recruitment</a></li>
-                  <li><a>Information & Communication Technology</a></li>
-                  <li><a>Legal</a></li>
-                  <li><a>Manufacturing & Logistics</a></li>
-                  <li><a>Marketing</a></li>
-                  <li><a>Real Estate & Property</a></li>
-                  <li><a>Retail & Consumer Products</a></li>
-                  <li><a>Sales</a></li>
-                  <li><a>Science & Technology</a></li>
-                  <li><a>Self Employment</a></li>
-                  <li><a>Sports & Recreation</a></li>
-                </ul>
-              </div>
-            </div>
-            <table class="cat-tables bb no-padding">
-              <tr>
-                <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns b-all-btn">Browse all Products</span></a></td>
-              </tr>
-              <tr>
-                <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns res-btn">Resumes and Cover Letters</span></a></td>
-              </tr>
-              <tr>
-                <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns on-btn">Online Resumes</span></a></td>
-              </tr>
-              <tr>
-                <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns vr-btn">Visual Resumes</span></a></td>
-              </tr>
-              <tr>
-                <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns lp-btn">LinkedIn Profile</span></a></td>
-              </tr>
-            </table>
-          </div>
+
+                        
+
+
+                  </div>
+
+                  
+          </ul>
         </div>
-      </li>
-      </ul>
-
-
-    <li routerLink='/how-it-works'>
-      <input style="color:white" type="button" class="main-nav-btns" id="how-it-works-btn" value="HOW IT WORKS">
-    </li>
-    <li routerLink='/become-an-author'>
-      <input style="color:white" type="button" class="main-nav-btns" id="become-an-author-btn" value="BECOME AN AUTHOR">
-    </li>
-    <div class="right">
-<li>
-    <i style="font-size:25px;color:#999999;position:absolute;" class="fa fa-envelope-o" aria-hidden="true"></i> 
-    <div style="background-color:#00C7E4;border-radius:4px;height:15px;width:15px;color:white;left:-10%;top:-5%;transform:translate(-50%,-30%)" class="notify">
-        <p style="text-align:center;font-size:12px;">!</p>
-      </div>
-    
-    
-</li>
-<li>
-    <i style="font-size:25px;color:#999999;position:absolute;" class="fa fa-cog" aria-hidden="true"></i> 
-    <div style="background-color:#00D7B5;border-radius:4px;height:15px;width:25px;color:white;left:-10%;top:-5%;transform:translate(-50%,-30%)" class="notify">
-      <p style="text-align:center;font-size:12px;">49</p>
-    </div>
-    
-</li>
-<li>
-    <img src="../../assets/img/pro-pic.jpg" class="img-fluid img-circle"  alt="img" width="35px" height="35px">  
-</li>  
-</div>
-
-    
-</ul>  
-</div>
-</nav>
-
-<div class="navbar navbar-stacked">
-    <ul class="border">
-      <li style="background-color:#FF5341;color:white;">Your popularity<h3>very low</h3></li>
-      <li>Profile Page</li>
-      <li>Account Settings</li>
-      <li>Your Purchases</li>
-      <li>Sales Statement</li>
-      <li>Buy Credits</li>
-      <li>Withdrawls</li>
-      <li>Upload Item</li>
-      <li>Manage Items</li>
-      <li>Logout</li>
-    </ul>
-  </div>
-    </div>  
-
+      </header> 
+</div>  
+  
 
 
 <router-outlet>

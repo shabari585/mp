@@ -42,37 +42,48 @@
 
 
 
-nav{
-  width: 100%;
-  height: 90px;
+.right img{
+  top: 5%;
+  transform: translate(0,10%)
 }
-nav .right{
-  padding: 20px;
-  position: relative;
-  left: 30%;
-  top: -10%;
-  transform: translate(0,-10%);
-  display: flex;
+.right i{
+  top: -5%;
+  transform: translate(0,-20%)
 }
-.navbar-inverse .nav{
-  position: relative;
-  left: 49%;
-  top: -10%;
-  transform: translate(-50%,20%)
+.right{
+  position: absolute;
+  left: -50%;
+  transform: translate(-100%,0)
+}
+.right li{
+  padding: 2px 3px;
 }
 
-ul li{
-  padding: 5px 15px;
+#main-cat-btn {
+  font-size: 90% !important;
+  padding: 0 20px;
+  border: 2px solid #999 !important;
+  border-radius: 7px;
 }
-.border{
+
+.navbar-stacked{
   border: 0.5px solid #dddddd;
   width: 250px;
-  box-shadow: 10px 10px 10px #dddddd;
-  transition: all 0.4s ease-in;
-  display: block;
+  display: none;
+  left: -50%;
+  transform: translate(-50%,0);
+  border-radius: 0 !important;
   
 }
-.border::before{
+.dropdown-menu{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.dropdown-menu{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.navbar-stacked::before{
   content: '';
   position: absolute;
   display: block;
@@ -84,7 +95,7 @@ ul li{
   border-top: 10px solid white;
   border-right: 10px solid transparent;
 }
-.border::after{
+.navbar-stacked::after{
   content: '';
   position: absolute;
   display: block;
@@ -97,358 +108,22 @@ ul li{
   border-right: 9px solid transparent;
 }
 
-.border li{
+.navbar-stacked li{
   border-bottom: 0.5px solid #dddddd;
-  line-height: 26px;
+  width: 100%;
+  line-height: 30px;
   font-size: 13px;
   font-weight: bolder;
+  color: black;
+  margin: 0 !important;
   
 }
-.navbar-stacked{
-  display: none; 
-  width: 250px;
- 
-}
-nav:hover  .navbar-stacked{
+.dropdown:hover>.navbar-stacked {
   display: block;
 }
 .loggedin{
-  display: none;
+  /* display: none; */
 }
-
-
-
-
-
-.main-header1 .img1 {
-  height: 80%;
-  width: auto;
-  position: absolute;
-  left: 5%;
-  transform: translate(0%,0)
-}
-.main-header1 .cat-tables1,
-.main-header1 .cat-table1 {
-width: 100%;
-font-size: 90%;
-background-color: #fff;
-}
-.main-header1 .cat-table1 td,
-.main-header1 .cat-table1 tr {
-padding: 0 !important;
-margin: 0 !important;
-}
-.main-header1 .bb1 {
-border-bottom: 1px solid rgba(128, 128, 128, 0.09);
-}
-
-.main-header1 .cat-tables1 td {
-padding: 3.2% 5%;
-}
-
-.main-header1 .categories-table1 .cat-header1 {
-height: 50px;
-background-color: #fff;
-text-align: left;
-vertical-align: middle;
-padding: 0;
-padding-left: 8%;
-font-size: 120%;
-border-bottom: 1px solid rgba(128, 128, 128, 0.09);
-}
-
-.main-header1 .cat-header2 {
-font-size: 90%;
-font-weight: 600;
-color: #000;
-}
-
-.main-header1 .categories-table1 a {
-display: block;
-float: left;
-color: rgba(0, 0, 0, 0.9);
-font-size: 100%;
-width: 100%;
-}
-
-.main-header1 .categories-table1 a:hover {
-color: rgba(128, 128, 128, 0.9);
-}
-
-.main-header1 .categories-div1 .left-float1 {
-float: right;
-font-size: 90%;
-color: rgba(128, 128, 128, 1);
-}
-
-.main-header1 .categories-div1 .right-float1 {
-float: left;
-color: #123456;
-}
-
-.main-header1 .cat-btns1 {
-position: relative;
-display: flex;
-display: -webkit-flex;
-align-items: center;
--webkit-align-items: center;
-height: 50px;
-width: 100%;
-background-color: transparent;
-/* font-family: 'Roboto',sans-serif !important; */
-border: none;
-cursor: pointer;
-transition: all 0.2s;
-text-align: left;
-/* font-weight: bold; */
-padding-left: 20px;
-}
-
-.main-header1 .cat-btns1:hover {
-border-left: 4px solid #e43f4d;
-background-color: #f7f7f7;
-}
-
-.main-nav-btns1 {
-position: relative;
-display: inline-block;
-height: 5vh;
-width: auto;
-color: #223c4a;
-background-color: rgba(255, 255, 255, 0);
-border: 1px solid rgba(255, 255, 255, 0);
-font-size: 95%;
-border-radius: 2px;
-transition: all 0.3s;
-overflow: visible !important;
-}
-.main-nav-btns1:hover {
-cursor: pointer;
-/* border: 1px solid #ffcce0; */
-color: #000;
-}
-
-
-
-
-
-
-.left-float-ul1 {
-  position: relative;
-  display: inline-flex;
-  display: -webkit-inline-flex;
-  align-items: center;
-  -webkit-align-items: center;
-  height: 100%;
-  margin-left: 20px;
-  margin-bottom: 0 !important;
-  width: auto;
-  float: left;
-  white-space: nowrap !important;
-}
-
-.left-float-ul1 li {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: auto;
-  padding-right: 5px;
-  margin-left: 30px;
-  white-space: nowrap !important;
-}
-.horizantal-ul1 li {
-  display: inline-block;
-}
-.left-float-ul1 li{
-  display: inline-flex;
-}
-.dropdown1 {
-  position: relative;
-  display: inline-block;
-}
-.dropdown-content1 {
-  z-index: 100;
-  display: none;
-  margin: 0;
-  margin-top: 1px;
-  position: absolute;
-  background-color: #fff;
-  color: #000 !important;
-  width: 200px;
-  box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.2);
-}
-.dropdown-content1::before {
-  content: '';
-  position: absolute;
-  display: block;
-  top: -20px;
-  left: 20px;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid #fff;
-  border-right: 10px solid transparent;
-  border-left: 10px solid transparent;
-}
-/* Links inside the dropdown */
-
-.dropdown-content1 a {
-  display: block;
-  color: #000;
-  text-decoration: none;
-  width: 100%;
-  transition: all 0.4s;
-  font-size: 90%;
-  overflow: hidden;
-}
-/* Change color of dropdown links on hover */
-.dropdown-content1 a:hover {
-  background-color: #fff;
-  color: #000 !important;
-}
-/* Show the dropdown menu on hover */
-.dropdown1:hover .dropdown-content1 {
-  display: block;
-  color: #000;
-}
-.dropbtn1 {
-  background-color: transparent;
-  color: #fff;
-  padding: 0px 16px;
-  height: 5vh;
-  font-size: 90%;
-  border: none;
-  cursor: pointer;
-  border-radius: 2px;
-}
-.dropbtn1:hover .c-down1 {
-  animation: cdownanime 0.1s linear forwards;
-}
-#main-cat-btn1 {
-  font-size: 90% !important;
-  padding: 0 20px;
-  border: 2px solid rgba(105, 104, 104, 0.5) !important;
-  border-radius: 7px;
-}
-
-.menu-sub-menu-div1 {
-  position: absolute;
-  display: block;
-  align-items: center;
-  justify-content: space-between;
-  /*display: none;*/
-  top: 0;
-  left: 100%;
-  height: 100%;
-  width: 430px;
-  background-color: #eaeaea;
-  border: 1px solid #ddd;
-  padding: 10px;
-  padding-top: 0;
-  padding-bottom: 0;
-  box-sizing: border-box;
-}
-
-.menu-sub-menu-div1 ul {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-}
-.menu-sub-menu-div1 ul li {
-  display: block;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  margin: 0;
-  line-height: 1.6;
-  padding: 0;
-  font-size: 80%;
-}
-
-.menu-sub-menu-div1 ul li a {
-  font-size: 100%;
-}
-.sub-sub-menu1 {
-  position: absolute;
-  display: flex;
-  display: -webkit-flex;
-  display: none;
-  align-items: center;
-  justify-content: space-around;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  overflow: hidden;
-  white-space: normal;
-}
-
-
-/* Dropdown Content (Hidden by Default) */
-
-.notif-dropdown-content1 {
-  z-index: 100;
-  display: none;
-  right: 0;
-  margin: 0;
-  margin-top: 1px;
-  position: absolute;
-  background-color: #fff;
-  color: #000 !important;
-  width: 200px;
-  box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.2);
-}
-
-.notif-dropdown-content1 .cat-btns1 {
-  height: 80px;
-}
-
-.notif-dropdown-content1::before {
-  content: '';
-  position: absolute;
-  display: block;
-  top: -20px;
-  left: 265px;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid #fff;
-  border-right: 10px solid transparent;
-  border-left: 10px solid transparent;
-}
-
-.notif-height-control1 {
-  max-height: 50vh;
-  overflow-y: scroll;
-}
-
-/* Links inside the dropdown */
-
-.notif-dropdown-content1 a {
-  display: block;
-  width: 100%;
-  color: #000;
-  text-decoration: none;
-  display: block;
-  transition: all 0.4s;
-  font-size: 90%;
-  overflow: hidden;
-}
-
-/* Change color of dropdown links on hover */
-
-.notif-dropdown-content1 a:hover {
-  background-color: #fff;
-  color: #000 !important;
-}
-
-/* Show the dropdown menu on hover */
-
-.notif-dropdown:hover1 .notif-dropdown-content1 {
-  display: block;
-  color: #000
-}
-
-
-
-
-
 
 
 

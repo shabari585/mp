@@ -32,32 +32,33 @@
                 <td colspan="2">CANCELLATIONS</td>
                 <td colspan="3"></td>
                 </tr> 
+                <tr *ngFor="let gig of final">
+                    
+                        <td><input type="checkbox" name="name"></td>
+                            <td><img src="http://localhost:3000{{gig.img}}" class="img-responsive click"  alt="img" width="30px" height="0px"></td>    
+                            <td>{{gig.title}}</td>
+                            <td>{{gig.or_num}}</td>
+                            <td>0%</td>
+                            <td colspan="4">
+                                <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="caret"></span>
+                                              </button>
+                                  
+                                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <li><a routerLink="" (click)="goto_gig_det(gig.gig_id)">PREVIEW</a></li>
+                                      <li><a routerLink="" (click)="goto_edit_gig(gig.gig_id)">EDIT</a></li>
+                                      <li><a >SHARE</a></li>
+                                      <li style="cursor:pointer"><a (click)="delete_gig(gig.gig_id)">DELETE</a></li>
+                                  </ul>
+                                </div>
+                            </td>
                 
-                <tr>
-                    <td><input type="checkbox" name="name"></td>
-                        <td><img src="../../assets/img/pro-pic.jpg" class="img-responsive click"  alt="img" width="30px" height="0px"></td>    
-                        <td>give you 5 resume, cover letter, references letter templates</td>
-                        <td>0</td>
-                        <td>0%</td>
-                        <td colspan="4">
-                            <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="caret"></span>
-                                          </button>
-                              
-                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <li>PREVIEW</li>
-                                  <li>EDIT</li>
-                                  <li>SHARE</li>
-                                  <li>DELETE</li>
-                              </ul>
-                            </div>
-                        </td>
-                        </tr> 
+                            </tr> 
                 </table>  
                 </div>
             </div>
-            <div class="image "><span ><i  class="fa fa-times " aria-hidden="true"></i></span>
+            <div class="image "><span (click)="hide_greeting()" ><i  class="fa fa-times " aria-hidden="true"></i></span>
 
                 <img  src="../../assets/img/u1998.png" class="img-responsive" alt="img">
                 <div class="text-img">
@@ -67,6 +68,15 @@
                 </div>
                 
             </div>
-        </div><br><br><br><br>
+            
+        </div>
+        <div class="pop-up">
+            <div class="pop-in">
+                <h2>Are You Sure !</h2>
+                <h3>Want To Delete This Gig ??</h3>
+                <button class="btn btn-danger" (click)="fin_delete_gig()">Ok</button>
+                <button class="btn btn-success" (click)="close_pop()">Cancel</button>
+            </div>
+        </div>
     </body>
 </html>

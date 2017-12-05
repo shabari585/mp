@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { AuthService} from '../services/auth.service';
+import { ValidateService} from '../services/validate.service';
+import { GigService } from "../services/gig.service";
+import {Router, ActivatedRoute, Params} from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -9,8 +13,82 @@ declare var $: any;
 })
 export class EditGigComponent implements OnInit {
 
-  constructor(private title: Title) { }
+  constructor(private title: Title,private authService: AuthService , private validateService: ValidateService , private router:Router, private gigService:GigService,private activateRoute:ActivatedRoute) { }
 
+  tabOneCheck = false;
+  tabTwoCheck = false;
+  tabThreeCheck = false;
+  tabFourCheck = false;
+
+// comp1
+user_id:string;
+  gig_category: string;
+  gig_title: string;
+  gig_description: string;
+  comp1: string;
+  email:boolean=false;
+  profiles= false;
+  sharing= false;
+  social_login:boolean= false;
+  rating= false;
+  mobile= false;
+
+// comp2
+comp2: string;
+pac_cos_sta: string;
+pac_cos_pre: string;
+pac_cos_pro: string;
+pac_det_sta: string;
+pac_det_pre: string;
+pac_det_pro: string;
+pac_del_sta: string;
+pac_del_pre: string;
+pac_del_pro: string;
+rev_sta: string;
+rev_pre: string;
+rev_pro: string;
+words_sta: string;
+words_pre: string;
+words_pro: string;
+sf_sta= false;
+sf_pre= false;
+sf_pro= false;
+hq_sta= false;
+hq_pre= false;
+hq_pro= false;
+
+// comp3::
+comp3: any;
+doller1: string;
+days1: string;
+check1=false;
+// check1:string;
+description2: string;
+doller2: string;
+days2: string;
+que1: string;
+ans1: string;
+
+// comp4
+comp4: any;
+img1: any;
+img2: any;
+img3: any;
+
+gig_id:string;
+
+email_s:boolean;
+profiles_s:boolean;
+sharing_s:boolean;
+social_login_s:boolean;
+rating_s:boolean;
+mobile_s:boolean;
+
+first_name:string;
+last_name:string;
+extra1_id:string;
+extra2_id:string;
+extras = [];
   ngOnInit() {
     this.title.setTitle('Edit Gig - Market Place');
 
@@ -18,536 +96,421 @@ export class EditGigComponent implements OnInit {
     $(".trl").click(function () {
       location.reload();
     });
-    // Customized text area
-    // tinymce.init({
-    //   selector: '#c-gig-desc',
-    //   plugins: "image",
-    //   toolbar: "image",
-    //   menubar: false,
-    //   statusbar: false,
-    //   toolbar: 'bold italic underline | bullist numlist | link image'
-    // });
-
-    //  Panel one
+     //  Panel one
     // Helpers
-    $("#c-gig-cat").focus(function () {
-      $(".helpers").hide();
-      $("#cat-helper").toggle();
-      // $("html,body").animate({scrollTop:$('#c-gig-one').offset().top});
+    $('#c-gig-cat').focus(function () {
+      $('.helpers').hide();
+      $('#cat-helper').toggle();
+      // $('html,body').animate({scrollTop:$('#c-gig-one').offset().top});
     });
-    $("#c-gig-cat").hover(function () {
-      $(".helpers").hide();
-      $("#cat-helper").toggle();
+    $('#c-gig-cat').hover(function () {
+      $('.helpers').hide();
+      $('#cat-helper').toggle();
     });
-    $("#title").focus(function () {
-      $(".helpers").hide();
-      $("#title-helper").toggle();
-      $("html,body").animate({
+    $('#title').focus(function () {
+      $('.helpers').hide();
+      $('#title-helper').toggle();
+      $('html,body').animate({
         scrollTop: $('#c-gig-cat').offset().top - 80
       });
     });
-    $("#title").hover(function () {
-      $(".helpers").hide();
-      $("#title-helper").toggle();
+    $('#title').hover(function () {
+      $('.helpers').hide();
+      $('#title-helper').toggle();
     });
-    $("#title").keydown(function () {
-      $(".helpers").hide();
-      $("#title-helper").toggle();
+    $('#title').keydown(function () {
+      $('.helpers').hide();
+      $('#title-helper').toggle();
     });
-    $(".mce-container").focus(function () {
-      $(".helpers").hide();
-      $("#desc-helper").toggle();
+    $('.mce-container').focus(function () {
+      $('.helpers').hide();
+      $('#desc-helper').toggle();
     });
-    $(".mce-container").hover(function () {
-      $(".helpers").hide();
-      $("#desc-helper").toggle();
+    $('.mce-container').hover(function () {
+      $('.helpers').hide();
+      $('#desc-helper').toggle();
     });
-    $(".mce-container").keydown(function () {
-      $(".helpers").hide();
-      $("#desc-helper").toggle();
+    $('.mce-container').keydown(function () {
+      $('.helpers').hide();
+      $('#desc-helper').toggle();
     });
-    $("#skills-req-table").hover(function () {
-      $(".helpers").hide();
-      $("#skills-helper").toggle();
+    $('#skills-req-table').hover(function () {
+      $('.helpers').hide();
+      $('#skills-helper').toggle();
     });
+      this.gig_id = this.activateRoute.queryParams['_value'].id;
+      // this.gig_id = "5a169f3f9f9b290368e0c082";
+      // console.log(this.gig_id);
+    this.gigService.get_gig_byId(this.gig_id).subscribe(gig => {
+      console.log(gig);
+      let g = gig.msg;
+      this.gig_category = g.category;
+      this.gig_title = g.title;
+      this.gig_description=g.description;
+    
+      this.email= g.email;
+      this.profiles= g.profiles;
+      this.sharing= g.sharing;
+      this.social_login= g.social_login;
+      this.rating= g.rating;
+      this.mobile= g.mobile;
+    this.pac_cos_sta = g.pac_cos_sta;
+    this.pac_cos_pre = g.pac_cos_pre;
+    this.pac_cos_pro = g.pac_cos_pro;
+    this.pac_det_sta = g.pac_det_sta;
+    this.pac_det_pre = g.pac_det_pre;
+    this.pac_det_pro = g.pac_det_pro;
+    this.pac_del_sta = g.pac_del_sta;
+    this.pac_del_pre = g.pac_del_pre;
+    this.pac_del_pro = g.pac_del_pro;
+    this.rev_sta = g.rev_sta;
+    this.rev_pre = g.rev_pre;
+    this.rev_pro = g.rev_pro;
+    this.words_sta = g.words_sta;
+    this.words_pre = g.words_pre;
+    this.words_pro = g.words_pro;
+    this.sf_sta = g.sf_sta;
+    this.sf_pre= g.sf_pre;
+    this.sf_pro= g.sf_pro;
+    this.hq_sta= g.hq_sta;
+    this.hq_pre= g.hq_pre;
+    this.hq_pro= g.hq_pro;
+       
+    this.que1 = g.que1;
+    this.ans1 = g.ans1;
+
+    this.img1 = g.img1;
+    this.img2 = g.img2;
+    this.img3 = g.img3;
+    });
+    this.gigService.get_gig_extrs(this.gig_id).subscribe(gig_ext => {
+      console.log(gig_ext);
+      let ext = gig_ext.msg;
+
+      for(let i=0;i<ext.length;i++){
+        if(ext[i].e_description == "I will deliver all work for an extra"){
+            this.check1 =true;
+            this.doller1 = ext[i].price;
+            this.days1 = ext[i].days;
+        }
+       else{
+          this.doller2 = ext[i].price;
+          this.days2 = ext[i].days;
+          this.description2 = ext[i].e_description;
+        }
+      }
+      
+    })
+
     // Body Scroll
-    // $("html,body").animate({scrollTop:$('#c-gig-two').offset().top-150});
 
     // Navigation button
-    // $("#f-n-btn").click(function () {
-    //   $(".helpers").hide();
-      // var res = cGigOneCheck();
-    //   if (res == true) {
-    //     $("#g-one-all-err").hide();
-    //     $("#c-gig-one").hide();
-    //     $("#c-gig-two").show();
-    //     $(".one-check").show();
-    //     $("#standard-price").focus();
-    //     $("html,body").animate({
-    //       scrollTop: $('#c-gig-two').offset().top - 150
-    //     });
-    //   } else {
-    //     $("#g-one-all-err").show();
-    //   }
-    // });
-    // Validations
-    // function cGigOneCheck() {
-    //   var cat = $("#c-gig-cat").val();
-    //   var title = $("#title").val();
-    //   var desc = tinymce.get('c-gig-desc').getContent();
-    //   //var desc = $("#c-gig-desc").val();
-    //   if (!cat || !title || !desc) {
-    //     return false;
-    //   } else {
-    //     return true;
-    //   }
-    // }
-
-    // Panel two
-    // Helpers
-    $("#package-cost-tr").hover(function () {
-      $(".two-helpers").hide();
-      $("#package-cost-helper").toggle();
-    });
-    $("#package-details-tr").hover(function () {
-      $(".two-helpers").hide();
-      $("#package-desc-helper").toggle();
-    });
-    $("#package-delivery-tr").hover(function () {
-      $(".two-helpers").hide();
-      $("#package-delivery-helper").toggle();
-    });
-    $("#package-revisions-tr").hover(function () {
-      $(".two-helpers").hide();
-      $("#package-revision-helper").toggle();
-    });
-    $("#package-words-tr").hover(function () {
-      $(".two-helpers").hide();
-      $("#package-words-helper").toggle();
-    });
-    $("#package-seperate-files-tr").hover(function () {
-      $(".two-helpers").hide();
-      $("#package-seperate-files-helper").toggle();
-    });
-    $("#package-hq-files-tr").hover(function () {
-      $(".two-helpers").hide();
-      $("#package-hq-files-helper").toggle();
-    });
-    // Body scroll
-    // $("#package-cost-tr input").click(function(){
-    //   $("html,body").animate({scrollTop:$('#c-gig-two').offset().top-1});
-    // });
-    $("#package-cost-tr input").keydown(function () {
-      $("html,body").animate({
-        scrollTop: $('#c-gig-two').offset().top
+    $('.one-nav-btn').click(function () {
+      $('.helpers').hide();
+      $('.c-gig-divs').hide();
+      $('#c-gig-one').show();
+      $('html,body').animate({
+        scrollTop: $('#c-gig-one').offset().top - 150
       });
     });
-    // Navigation button
-    $("#s-n-btn").click(function () {
-      $(".helpers").hide();
-      $("#g-2-all-err").hide();
-      var res = cGigTwoCheck();
-      if (res == true) {
-        $("#g-2-all-err").hide();
-        $("#c-gig-two").hide();
-        $("#c-gig-three").show();
-        // $(".two-check").show();
-        $("html,body").animate({
-          scrollTop: $('#c-gig-three').offset().top
-        });
-      } else {
-        if (res == "st-price") {
-          $("#st-price-er").show();
-        } else if (res == "pre-price") {
-          $("#pre-price-er").show();
-        } else if (res == "pro-price") {
-          $("#pro-price-er").show();
-        } else if (res == "st-name") {
-          $("#st-name-er").show();
-        } else if (res == "pre-name") {
-          $("#pre-name-er").show();
-        } else if (res == "pro-name") {
-          $("#pro-name-er").show();
-        } else if (res == "st-desc") {
-          $("#st-desc-er").show();
-        } else if (res == "pre-desc") {
-          $("#pre-desc-er").show();
-        } else if (res == "pro-desc") {
-          $("#pro-desc-er").show();
-        } else if (res == "st-del") {
-          $("#st-del-er").show();
-        } else if (res == "pre-del") {
-          $("#pre-del-er").show();
-        } else if (res == "pro-del") {
-          $("#pro-del-er").show();
-        } else if (res == "st-rev") {
-          $("#st-rev-er").show();
-        } else if (res == "pre-rev") {
-          $("#pre-rev-er").show();
-        } else if (res == "pro-rev") {
-          $("#pro-rev-er").show();
-        } else if (res == "st-words") {
-          $("#st-words-er").show();
-        } else if (res == "pre-words") {
-          $("#pre-words-er").show();
-        } else if (res == "pro-words") {
-          $("#pro-words-er").show();
-        }
-        $("#g-2-all-err").show();
-      }
-    });
-    // Validations
-    function cGigTwoCheck() {
-      var st_price = $("#standard-price").val();
-      var pre_price = $("#premium-price").val();
-      var pro_price = $("#pro-price").val();
-
-      var st_desc = $("#std-details").val();
-      var pre_desc = $("#pre-details").val();
-      var pro_desc = $("#pro-details").val();
-
-      var st_del = $("#standard-delivery").val();
-      var pre_del = $("#premium-delivery").val();
-      var pro_del = $("#pro-delivery").val();
-
-      var st_rev = $("#s-revisions").val();
-      var pre_rev = $("#pre-revisions").val();
-      var pro_rev = $("#pro-revisions").val();
-
-      var st_words = $("#std-words").val();
-      var pre_words = $("#pre-words").val();
-      var pro_words = $("#pro-words").val();
-
-      if (!st_price || !pre_price || !pro_price || !st_desc || !pre_desc || !pro_desc || !st_del || !
-        pre_del || !pro_del || !st_rev || !pre_rev || !pro_rev || !st_words || !pre_words || !
-        pro_words) {
-        if (!st_price) {
-          return "st-price";
-        } else if (!pre_price) {
-          return "pre-price";
-        } else if (!pro_price) {
-          return "pro-price";
-        } else if (!st_desc) {
-          return "st-dec";
-        } else if (!pre_desc) {
-          return "pre-dec";
-        } else if (!pro_desc) {
-          return "pro-dec";
-        } else if (!st_del) {
-          return "st-del";
-        } else if (!pre_del) {
-          return "pre-del";
-        } else if (!pro_del) {
-          return "pro-del";
-        } else if (!st_rev) {
-          return "st-rev";
-        } else if (!pre_rev) {
-          return "pre-rev";
-        } else if (!pro_rev) {
-          return "pro-rev";
-        } else if (!st_words) {
-          return "st-words";
-        } else if (!pre_words) {
-          return "pre-words";
-        } else if (!pro_words) {
-          return "pro-words";
-        }
-      } else {
-        return true;
-      }
-    }
-
-    // Panel Three
-    // Helpers
-
-    // Adding more extras
-    $("#add-more-extras-btn").click(function () {
-      $("#ex-core").append(
-        '<div class="ex-offer"><table class="ex-offer-table"><tr class="full-tr"><td class="offer-rest"><span class=""><a href="javascript:void(0)" class="cls-btn"><i class="fa fa-times"></i></a></span><input type="text" class="ex-offer-txt" name="ex-offer[]"></td><td class="offer-sm"><div class="ext-cost center"><span id="dlr">$</span><input type="text" class="cost-input" name="ex-cost[]"></div></td><td class="offer-xsm"><span class="center">in</span></td><td class="offer-mm"><div class="ext-cost days center"><input type="text" class="days-input"name="ex-days[]"><span id="days">days(s)</span></div></td></tr></table></div>'
-      );
-    });
-    // Closing extras
-    $(document).on("click", ".cls-btn", function (e) {
-      e.preventDefault();
-      // Clearing the values inside the inputs
-      $(this).parent().parent().parent().parent().parent().parent().hide();
-      $(this).parent().parent().parent().find('input.cost-input').val('');
-      $(this).parent().parent().parent().find('input.days-input').val('');
-      $(this).parent().parent().parent().find('input.ex-offer-txt').val('');
-    });
-    // Adding extra faq's
-    // $("#ad-faq-btn").click(function () {
-    //   var q = $.trim($(".faq_question").val());
-    //   var a = $.trim($(".faq_ans").val());
-    //   if (q == "" || a == "") {
-
-    //   } else {
-    //     $(".faq-core").prepend(
-    //       '<div class="faq"><h4 class="faq-head">Question</h4><input type="text" class="faq_question" name="faq_question[]" value=""><h4 class="faq-head">Answer</h4><textarea name="faq_answer[]" class="faq_ans" value=""></textarea></div></div>'
-    //     );
-    //   }
-    // });
-    // // Body scroll
-    // $("#first-faq").focus(function () {
-    //   $("html,body").animate({
-    //     scrollTop: $('.other-details').offset().top - 100
-    //   });
-    // });
-    // Navigation
-    // $("#t-n-btn").click(function () {
-    //   $(".helpers").hide();
-    //   if (cGigThreeCheck()) {
-    //     $("#c-gig-three").hide();
-    //     $("#c-gig-four").show();
-    //     $(".three-check").show();
-    //     $("html,body").animate({
-    //       scrollTop: $('#c-gig-four').offset().top
-    //     });
-    //   } else {
-
-    //   }
-    // });
-    // Validations
-
-    // Panel Four
-    // Navigation
-    // $("#fr-n-btn").click(function () {
-    //   $(".helpers").hide();
-    //   if (cGigFourCheck()) {
-    //     // Remove already existing related hidden inputs
-    //     $('.up_pics_class').remove();
-    //     // for each value in up_pic
-    //     for (var j = 0; j < up_pics.length; j++) {
-    //       // Append input hidden with sel_img_name name with array value as input value
-    //       $('.list').append('<input type="hidden" name="up_img_name[]" class="up_pics_class" value="' +
-    //         up_pics[j] + '"/>');
-    //     }
-    //     $("#c-gig-four").hide();
-    //     $("#c-gig-five").show();
-    //     $(".four-check").show();
-    //     $("html,body").animate({
-    //       scrollTop: $('#c-gig-five').offset().top
-    //     });
-    //   } else {
-    //     // $("#gig-4-all-err").show();
-    //   }
-    // });
-
-    // Validations
-    function cGigFourCheck() {
-      var images = $("#file").val();
-      var total_img = parseInt($("#pic_s_inp").val());
-      if (!images) {
-        if (total_img > 0) {
-          if ($('.selected').length == 0) {
-            $("#select-main-img-err").show();
-            return false;
-          } else {
-            return true;
-          }
-        } else {
-          $("#img-req-err").show();
-          return false;
-        }
-      } else {
-        if ($('.selected').length == 0) {
-          $("#select-main-img-err").show();
-          return false;
-        } else {
-          return true;
-        }
-      }
-    }
-
-    // Panel Five
-    // Validations
-    $("#fv-n-btn").click(function () {
-      $(".helpers").hide();
-      if (1 == 1) {
-        $("#c-gig-five").hide();
-        $("#c-gig-post-success").show();
-      } else {
-
-      }
-    });
-
-    $(".three-dot").click(function () {
-      $(".helpers").hide();
-      // if (cGigOneCheck() == true && cGigTwoCheck() == true) {
-      //   $(".c-gig-divs").hide();
-      //   $("#c-gig-three").show();
-      // }
-    });
-    $(".four-dot").click(function () {
-      $(".helpers").hide();
-      $(".c-gig-divs").hide();
-      $("#c-gig-four").show();
-    });
-    $(".five-dot").click(function () {
-      $(".helpers").hide();
-      $(".c-gig-divs").hide();
-      $("#c-gig-five").show();
-    });
-
-    // function cGigThreeCheck() {
-    //   return true;
-    // }
-    // var up_pics = [];
-    // var del_pics = [];
-    // var pinp = parseInt($("#pic_s_inp").val());
-    // $(".del_btn").click(function () {
-    //   var this_one = $(this);
-    //   var this_id = $(this).attr('id');
-    //   var favdata = "pic_id=" + this_id;
-    //   $.ajax({
-    //     type: 'POST',
-    //     async: 'true',
-    //     cache: 'false',
-    //     data: favdata,
-    //     url: 'functions/delete_pic_from_gig.php',
-    //     success: function (data) {
-    //       if (data == 'true') {
-    //         this_one.hide();
-    //         this_one.parent().hide();
-    //         // $("#" + this_id + "pic").hide();
-    //         var pinp = parseInt($("#pic_s_inp").val());
-    //         var re = pinp - 1;
-    //         $("#pic_s_inp").val(re);
-    //         if ($(".file-ch-span").length) {
-
-    //         } else {
-    //           max_files++;
-    //           if (max_files <= 3) {
-    //             $(".file-ch-span").hide();
-    //             $('.list').append(
-    //               '<label><input type="file" name="files[]" class="files" multiple="true" style="display:none"><span class="file-ch-span"><div style="text-align:center"><i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%"></i><br><br><div style="width:60%">You can upload ' + max_files + ' more files.</div></div></span></label>');
-    //           }
-    //         }
-    //       }
-    //       if (data == 'false') {
-    //         // Don't do nothing
-    //       }
-    //     }
-    //   });
-    // });
-    // $(document).on("click", ".dy-del-btn", function (e) {
-    //   var idnme = $(this).attr('id');
-    //   var parent = $(this).parent();
-    //   if (parent.find('.thumb').hasClass('selected')) {
-    //     $(".thumb").removeClass('selected');
-    //   }
-    //   idname = idnme.slice(0, -2);
-    //   // alert(idname);
-    //   fname = idname.slice(0, -4);
-    //   // Remove selection if selected
-    //   // Remove from up_pics array
-    //   if (jQuery.inArray(idname, up_pics) !== -1) {
-    //     var ind = jQuery.inArray(idname, up_pics);
-    //     up_pics.splice(ind, 1);
-    //   }
-    //   var file = $('#' + fname);
-    //   $('.' + fname + '_no_del_class').hide();
-    //   file.parent().hide();
-    //   max_files++;
-    //   if (max_files <= 3) {
-    //     $(".file-ch-span").hide();
-    //     $('.list').append(
-    //       '<label><input type="file" name="files[]" class="files" multiple="true" style="display:none"><span class="file-ch-span"><div style="text-align:center"><i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%"></i><br><br><div style="width:60%">You can upload ' + max_files + ' more files.</div></div></span></label>');
-    //   }
-    // });
-    // function imagesPreview(input, p) {
-    //   if (input.files) {
-    //     var filesAmount = input.files.length;
-    //     var files = input.files;
-    //     var id;
-    //     if (filesAmount == 3) {
-    //       id = 2;
-    //     } else if (filesAmount == 2) {
-    //       id = 1;
-    //     } else if (filesAmount == 1) {
-    //       id = 0;
-    //     }
-    //     for (i = 0; i < filesAmount; i++) {
-    //       var reader = new FileReader();
-    //       reader.onload = function (event) {
-    //         up_pics.push(files[id].name);
-    //         // alert(up_pics.toString());
-    //         var fname = files[id].name;
-    //         fname = fname.slice(0, -4);
-    //         // alert(fname);
-    //         $('.list').append('<div class="thumb-core"><img src="' + event.target.result + '" class="thumb" id="' + fname + '"><br><span class="dy-del-btn" id="' + files[id].name + 'id">Delete</span></div>');
-    //         // $($.parseHTML('<img class="thumb" id="'+fname+'">')).attr('src', event.target.result).appendTo(p);
-    //         // $('.list').append('<input type=\"checkbox\" class=\"'+fname+'_no_del_class\" name=\"no_del_img_name[]\" value=\"'+files[id].name+'\" style=\"display:none\" checked>');
-    //         $('.list').append('<input type=\"radio\" id=\"' + fname + 'i\" name=\"sel_img_name\" value=\"' + files[id].name + '\" style=\"display:none\">');
-    //         // $('.list').append('<input type=\"text\" value=\"'+fname+'\" style=\"display:block\">');
-    //         // $('.list').append('<input type=\"text\" value=\"'+id+'\" style=\"display:block\">');
-    //         id--;
-    //       }
-    //       reader.readAsDataURL(input.files[i]);
-    //     }
-    //   }
-    // };
-    // var max_files = 3 - parseInt(pinp);
-    // $(document).on("change", ".files", function (e) {
-    //   // e.preventDefault();
-    //   var n = this.files.length;
-    //   var num_files = parseInt(this.files.length);
-    //   // alert(num_files);
-    //   if (num_files == max_files) {
-    //     // hide label
-    //     for (var i = 0; i < this.files.length; i++) {
-    //       var f = this.files[i];
-    //       if ($.inArray(f.name, up_pics) !== -1) {
-    //         alert('You have uploaded ' + f.name + ' already. If it\'s another image, please rename and re-upload');
-    //       } else {
-    //         // max_files = parseInt(max_files) - parseInt(num_files);
-    //         $(".file-ch-span").hide();
-    //         imagesPreview(this, 'div.list');
-    //         break;
-    //       }
-    //     }
-    //   } else if (num_files > max_files) {
-    //     // Show warning
-    //     $(".file-ch-span").html(
-    //       '<h6 style="color:#f00; font-size:110%;width:60%;">Only three files are allowed!</h6>');
-    //   } else if (num_files < max_files) {
-    //     for (var i = 0; i < this.files.length; i++) {
-    //       var f = this.files[i];
-    //       if ($.inArray(f.name, up_pics) !== -1) {
-    //         alert('You have uploaded ' + f.name +
-    //           ' already. If it\'s another image, please rename and re-upload');
-    //       } else {
-    //         // max_files = parseInt(max_files) - parseInt(num_files);
-    //         $(".file-ch-span").hide();
-    //         // Show label with less max files
-    //         imagesPreview(this, 'div.list');
-    //         $('.list').append(
-    //           '<label><input type="file" name="files[]" class="files" multiple="true" style="display:none"><span class="file-ch-span"><div style="text-align:center"><i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%"></i><br><br><div style="width:60%">You can upload ' + max_files + ' more files.</div></div></span></label>');
-    //         break;
-    //       }
-    //     }
-    //   }
-    // });
-    $(document).on("click", ".thumb", function (e) {
-      e.preventDefault();
-      var n = $(this).attr('id');
-      alert(n);
-      $(".thumb").css({
-        border: '6px solid transparent'
+    $('.two-nav-btn').click(function () {
+      $('.helpers').hide();
+      $('.c-gig-divs').hide();
+      $('#c-gig-two').show();
+      $('html,body').animate({
+        scrollTop: $('#c-gig-two').offset().top - 150
       });
-      $(".thumb").removeClass('selected');
-      // $(".thumb").attr('name','otherImg');
-      $(this).css({
-        border: '6px solid #0362a2'
-      });
-      $(this).addClass('selected');
-      // var al = $(this).attr('id');
-      $("#" + n + "i").prop("checked", true);
-      // $("#"+al+"i").hide();
-      // console.log($(this));
-      // var nmm = $("#" + al + "i").attr('value');
-      // alert($("#"+al+"radio").attr('value'));
     });
+    $('.three-nav-btn').click(function () {
+      $('.helpers').hide();
+      $('.c-gig-divs').hide();
+      $('#c-gig-three').show();
+      $('html,body').animate({
+        scrollTop: $('#c-gig-three').offset().top - 150
+      });
+    });
+    $('.four-nav-btn').click(function () {
+      $('.helpers').hide();
+      $('.c-gig-divs').hide();
+      $('#c-gig-four').show();
+      $('html,body').animate({
+        scrollTop: $('#c-gig-four').offset().top - 150
+      });
+    });
+    // Validations
+
+
   }
 
+  gotoNexttab(gotoTab) {
+      switch (gotoTab) {
+        case 'first':
+          $('.helpers').hide();
+          $('.c-gig-divs').hide();
+          $('#c-gig-one').show();
+          $('html,body').animate({
+            scrollTop: $('#c-gig-one').offset().top - 150
+          });
+          break;
+        case 'second':
+
+          if (this.validateService.validateInput(this.gig_category) && this.validateService.validateInput(this.gig_title && this.validateService.validateInput(this.gig_description))){
+            const comp1 = {
+              category: this.gig_category,
+              title: this.gig_title,
+              description: this.gig_description,
+              email: this.email,
+              profiles: this.profiles,
+              sharing: this.sharing,
+              social_login: this.social_login,
+              rating: this.rating,
+              mobile: this.mobile
+            };
+            this.comp1 = JSON.stringify(comp1);
+            localStorage.setItem('comp1', this.comp1);
+
+
+            $('.helpers').hide();
+            $('.c-gig-divs').hide();
+            $('#c-gig-two').show();
+            $('html,body').animate({
+              scrollTop: $('#c-gig-two').offset().top - 150
+            });
+
+          }else{
+            $('#comp1-err').html('All fields must be filled !!');
+
+          }
+          break;
+
+        case 'third':
+
+        // console.log(this.rev_sta);
+          if (this.validateService.validateInput(this.pac_cos_sta) && this.validateService.validateInput(this.pac_cos_pre) && this.validateService.validateInput(this.pac_cos_pro) && this.validateService.validateInput(this.pac_det_sta) && this.validateService.validateInput(this.pac_det_pre) && this.validateService.validateInput(this.pac_det_pro) && this.validateService.validateInput(this.pac_del_sta) && this.validateService.validateInput(this.pac_del_pre) && this.validateService.validateInput(this.pac_del_pro) && this.validateService.validateInput(this.rev_sta) && this.validateService.validateInput(this.rev_pre) && this.validateService.validateInput(this.rev_pro) && this.validateService.validateInput(this.words_sta) && this.validateService.validateInput(this.words_pre) && this.validateService.validateInput(this.words_pro)) {
+
+            const comp2 = {
+              pac_cos_sta: this.pac_cos_sta,
+              pac_cos_pre: this.pac_cos_pre,
+              pac_cos_pro: this.pac_cos_pro,
+              pac_det_sta: this.pac_det_sta,
+              pac_det_pre: this.pac_det_pre,
+              pac_det_pro: this.pac_det_pro,
+              pac_del_sta: this.pac_del_sta,
+              pac_del_pre: this.pac_del_pre,
+              pac_del_pro: this.pac_del_pro,
+              rev_sta: this.rev_sta,
+              rev_pre: this.rev_pre,
+              rev_pro: this.rev_pro,
+              words_sta: this.words_sta,
+              words_pre: this.words_pre,
+              words_pro: this.words_pro,
+              sf_sta: this.sf_sta,
+              sf_pre: this.sf_pre,
+              sf_pro: this.sf_pro,
+              hq_sta: this.hq_sta,
+              hq_pre: this.hq_pre,
+              hq_pro: this.hq_pro
+            };
+            // console.log(comp2);
+            this.comp2 = JSON.stringify(comp2);
+            localStorage.setItem('comp2', this.comp2);
+            $('.helpers').hide();
+            $('.c-gig-divs').hide();
+            $('#c-gig-three').show();
+            $('html,body').animate({
+              scrollTop: $('#c-gig-three').offset().top - 150
+            });
+
+          } else{
+            $('#comp2-err').html('All fields must be filled and checked');
+          }
+
+          break;
+        case 'fourth':
+
+          // console.log(this.check1);
+        if (this.validateService.validateInput(this.doller1) && this.validateService.validateInput(this.days1) && this.validateService.validateInput(this.doller2) && this.validateService.validateInput(this.days2) && this.validateService.validateInput(this.que1) && this.validateService.validateInput(this.ans1) && this.validateService.validateInput(this.description2)){
+
+            const comp3 = {
+              check1: this.check1,
+              doller1: this.doller1,
+              days1: this.days1,
+              description2: this.description2,
+              doller2: this.doller2,
+              days2: this.days2,
+              que1: this.que1,
+              ans1: this.ans1
+            };
+            // console.log(this.check1);
+            
+            this.comp3 = JSON.stringify(comp3);
+            localStorage.setItem('comp3', this.comp3);
+           
+
+            $('.helpers').hide();
+              $('.c-gig-divs').hide();
+              $('#c-gig-four').show();
+              $('html,body').animate({
+                scrollTop: $('#c-gig-four').offset().top - 150
+              });
+          }else{
+              $('#comp3-err').html('All fields must be filled and checkboxes must be checked');
+          }
+          break;
+        case 'fifth':
+          if (this.validateService.validateInput(this.img1) || this.validateService.validateInput(this.img2) || this.validateService.validateInput(this.img3)){
+
+              $('.helpers').hide();
+              $('.c-gig-divs').hide();
+              $('#c-gig-five').show();
+              $('html,body').animate({
+                scrollTop: $('#c-gig-five').offset().top - 150
+              });
+          }else{
+            $('#image-err').html('Atleast one image is required');
+          }
+          break;
+
+        default:
+          break;
+      }
+ 
+
+  let u = localStorage.getItem('user');    
+  let user = JSON.parse(u);
+
+  this.user_id = user.id;
+  // console.log(user_id +""+"main user Id");
+  this.authService.getUser(this.user_id).subscribe(user => {
+    let us = user.msg;
+    this.first_name = us.first_name;
+    this.last_name = us.last_name;
+  })
+}
+
+handleChange(event){
+
+  switch (event.target.value){
+    case 'email':
+    this.email = event.target.checked;
+    // console.log(this.email);
+    break;
+    case 'profiles':
+    this.profiles = event.target.checked;
+    break;
+    case 'sharing':
+    this.sharing = event.target.checked;
+    break;
+    case 'socila-login':
+    this.social_login = event.target.checked;
+    break;
+    case 'rating':
+    this.rating = event.target.checked;
+    break;
+    case 'mobile':
+    this.mobile = event.target.checked;
+    break;
+  }
+}
+
+fileChange1(event){
+this.img1 = event.target.files[0];
+
+}
+
+fileChange2(event){
+this.img2 = event.target.files[0];
+// console.log(this.img2);
+}
+
+fileChange3(event){
+this.img3 = event.target.files[0];
+// console.log(this.img3);
+}
+
+// gig_id:any;
+
+extrasid=[];
+checked:boolean;
+savegig(){ 
+
+let formData = new FormData();
+  formData.append('user_id',this.user_id);
+  formData.append('gig_id',this.gig_id);
+  formData.append('first_name',this.first_name);
+  formData.append('last_name',this.last_name);
+  formData.append('category',this.gig_category);
+  formData.append('title',this.gig_title);
+  formData.append('description',this.gig_description);
+  formData.append('email',this.email.toString());
+  formData.append('profiles',this.profiles.toString());
+  formData.append('sharing',this.sharing.toString());
+  formData.append('social_login',this.social_login.toString());
+  formData.append('rating',this.rating.toString());
+  formData.append('mobile',this.mobile.toString());
+
+  formData.append('pac_cos_sta',this.pac_cos_sta);
+  formData.append('pac_cos_pre',this.pac_cos_pre);
+  formData.append('pac_cos_pro',this.pac_cos_pro);
+  formData.append('pac_det_sta',this.pac_det_sta);
+  formData.append('pac_det_pre',this.pac_det_pre);
+  formData.append('pac_det_pro',this.pac_det_pro);
+  formData.append('pac_del_sta',this.pac_del_sta);
+  formData.append('pac_del_pre',this.pac_del_pre);
+  formData.append('pac_del_pro',this.pac_del_pro);
+  formData.append('rev_sta',this.rev_sta);
+  formData.append('rev_pre',this.rev_pre);
+  formData.append('rev_pro',this.rev_pro);
+  formData.append('words_sta',this.words_sta);
+  formData.append('words_pre',this.words_pre);
+  formData.append('words_pro',this.words_pro);
+  formData.append('sf_sta',this.sf_sta.toString());
+  formData.append('sf_pre',this.sf_pre.toString());
+  formData.append('sf_pro',this.sf_pro.toString());
+  formData.append('hq_sta',this.sf_sta.toString());
+  formData.append('hq_pre',this.hq_pre.toString());
+  formData.append('hq_pro',this.hq_pro.toString());
+
+  if(this.checked || this.check1){
+
+      let ext1 = {
+        description:"I will deliver all work for an extra",
+        days:this.days1,
+        cost:this.doller1
+      }
+      this.extras.push(ext1);
+    }
+    let ext2 = {
+      description:this.description2,
+      days:this.days2,
+      cost:this.doller2
+    }
+    this.extras.push(ext2);
+    console.log(this.extras);
+
+  formData.append('que1',this.que1);
+  formData.append('ans1',this.ans1);
+
+  formData.append('img1', this.img1),
+  formData.append('img2', this.img2),
+  formData.append('img3', this.img3);
+
+this.gigService.update_gig(formData).subscribe(dat => {
+          console.log(dat);
+    if(dat.success == true){
+      this.gig_id = dat.msg._id;
+      
+    let ext= {
+      gig_id:this.gig_id,
+      extrs:this.extras
+    }        
+    this.gigService.update_gig_extrs(ext).subscribe(re => {
+      console.log(re)
+        if(re.success == true){
+          // this.router.navigate(['/gig'], { queryParams: {id:this.gig_id}});
+        }
+      })
+    }
+  })
+}
 }

@@ -5,24 +5,45 @@
   </div>
     
   <div class="col-lg-6 col-xs-12">
-    <button class="btn btn-success btn-sm">Mark all as read</button>
+    <button class="btn btn-success btn-sm" (click)="all_read()">Mark all as read</button>
     </div><br>
     <div class="clear-both"></div>
 
     </div>
+    <div *ngFor="let not of f_not_arr" >
+      <div *ngIf="not.status=='not_seen'">
     <div class="w-control">
-      <div class="row">
+      <a (click)="goto_order_det(not.link.replace('order-details?id=',''),not.not_id)" style="color:aliceblue">
+      <div class="row not-back">
         <div class="col-xs-12 border">
         <div class="reviews">
-            <p>2 hours ago</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <img src="../../assets/img/pro-pic.jpg" class="img-fluid img-circle"  alt="img" width="30px" height="30px">&nbsp;&nbsp;&nbsp;
-            <p id="word"><b>Megan V.</b> added <b>Pixel Daimond Gaming Shop</b> to favourites</p>
+            <p>{{not.date}}</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="http://localhost:3000{{not.image.replace('public','')}}" class="img-fluid img-circle"  alt="img" width="30px" height="30px">&nbsp;&nbsp;&nbsp;
+            <p id="word"><strong>{{not.message}}</strong></p>
             <i style="color:#00DCB1;font-size:25px;" class="fa fa-heart"></i>
           </div>
+        </div>
+      </div></a><div style="border-bottom:2px solid white" class="not-border"></div>
+    </div>
+  </div>
+  <div *ngIf="not.status=='seen'">
+      <div class="w-control">
+        <a (click)="goto_order_det(not.link.replace('order-details?id=',''),not.not_id)" style="color:rgb(11, 12, 12)">
+        <div class="row not-back-white">
+          <div class="col-xs-12 border">
+          <div class="reviews">
+              <p>{{not.date}}</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <img src="http://localhost:3000{{not.image.replace('public','')}}" class="img-fluid img-circle"  alt="img" width="30px" height="30px">&nbsp;&nbsp;&nbsp;
+              <p id="word"><strong>{{not.message}}</strong></p>
+              <i style="color:#00DCB1;font-size:25px;" class="fa fa-heart"></i>
+            </div>
           </div>
-          </div><br>
+        </div></a><div style="border-bottom:2px solid white" class="not-border"></div>
+      </div>
+    </div>
 
-          <div class="row">
+  </div><br>
+          <!-- <div class="row">
               <div class="col-xs-12 border">
               <div class="reviews">
                   <p>2 hours ago</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -31,7 +52,7 @@
                   <i style="color:#00DCB1;font-size:25px;" class="fa fa-heart"></i>
                 </div>
                 </div>
-                </div><br><br>
+                </div><br><br> -->
 
                 <div class="row">
                   <div class="col-xs-12">
@@ -52,5 +73,5 @@
                         </div>
                   </div>
                 </div>
-    </div>
+    
   </div>

@@ -30,22 +30,21 @@
             </p>
           </div>
         </div>
-        <div class="seller-core-container">
-          <div class="w-control">
+        <div class="seller-core-container w-control">
           <div class="seller-left">
-            <div class="seller-profile-pic-main"><img src="../../assets/img/pro-pic.jpg" class="seller-pic"></div>
+            <div class="seller-profile-pic-main"><img src="http://localhost:3000{{profile_pic}}" class="seller-pic"></div>
             <div class="seller-profile-icons">
               <table>
                 <tr>
-                  <td><i class="fa fa-globe" aria-hidden="true" style="margin-right:10px;"></i>From :
+                  <td><i class="fa fa-globe" aria-hidden="true" style="margin-right:10px;"></i>From :{{country}} , {{city}}
                   </td>
                 </tr>
                   <tr>
-                    <td><i class="fa fa-clock-o" aria-hidden="true" style="margin-right:10px;"></i>Member Since
+                    <td><i class="fa fa-clock-o" aria-hidden="true" style="margin-right:10px;"></i>Member Since: {{date}}
                     </td>
                   </tr>
                   <tr>
-                    <td><i class="fa fa-check-circle-o" aria-hidden="true" style="margin-right:10px;"></i>Email :
+                    <td><i class="fa fa-check-circle-o" aria-hidden="true" style="margin-right:10px;"></i>Email :{{email}}
                     </td>
                   </tr>
                   <tr>
@@ -55,13 +54,13 @@
             </div>
           </div>
           <div class="seller-middle">
-            <h2>Hey, I'm Siddhardha
+            <h2>Hey, I'm {{first_name}} {{last_name}}
             </h2>
             <h3>
               Multi Stack Engineer
             </h3>
             <p>
-                Lorem ipsum dolor sit amet, nemore hendrerit consetetur pri et. Vis eu labore maluisset tincidunt. An qui tempor dolorem, pri facilis quaestio ex. At viris theophrastus mea. Vix ne esse maiestatis complectitur, ridens antiopam imperdiet an vis.
+               {{description}}
             </p>
               <p><a id="sh-more">Show more</a></p>
                 <div id="s-middle-bottom">
@@ -98,7 +97,7 @@
                   </table>
                 </div>
           </div>
-          <div class="seller-right" >
+          <div class="seller-right">
             <table>
               <tr>
                 <td class="cbb">
@@ -115,13 +114,19 @@
               <tr>
                 <td>
                   <div class="tags-div">
-                      <!-- <div class="no-details">No skills</div> -->
-                      <span class="tags">skill</span>
+                    <div *ngIf="skill_exist == true">
+                      <label><span class="tags" *ngFor="let skills of sk"> {{skills}}</span></label>
+                                         
+                    </div>
+                    <div *ngIf="skill_exist == false">
+                      <div class="no-details">No skills</div>
+
+                    </div>
+
                   </div>
                 </td>
               </tr>
             </table>
-          </div>
           </div>
         </div>
         <div class="myservices-div w-control">
@@ -129,32 +134,30 @@
           <div class="ser-left">
             <div class="ser-cats">
               <ul id="ser-ul">
-                <li class="li cat-btns ser-selected" id="all-btn">
+                <li class="li cat-btns ser-selected" id="all-btn" (click)="gigs_get('all')">
                   <span class="float-left">All</span>
-                  <span class="float-right"></span>
+                  <span class="float-right">{{all_len}}</span>
                 </li>
-                <li class="li cat-btns" id="rc-btn">
+                <li class="li cat-btns" id="rc-btn" (click)="gigs_get('rc')">
                   <span class="float-left">Resumes and cover letters</span>
-                  <span class="float-right"></span>
+                  <span class="float-right">{{ rc_num }}</span>
                 </li>
-                <li class="li cat-btns" id="or-btn">
-                  <span class="float-left">Online Resumes</span>
-                  <span class="float-right"></span>
+                <li class="li cat-btns" id="or-btn" (click)="gigs_get('or')">
+                  <span class="float-left" >Online Resumes</span>
+                  <span class="float-right">{{or_num}}</span>
                 </li>
-                <li class="li cat-btns" id="vr-btn">
+                <li class="li cat-btns" id="vr-btn" (click)="gigs_get('vr')">
                   <span class="float-left">Visual Resumes</span>
-                  <span class="float-right"></span>
+                  <span class="float-right">{{vr_num}}</span>
                 </li>
-                <li class="li cat-btns" id="lp-btn">
+                <li class="li cat-btns" id="lp-btn" (click)="gigs_get('lp')">
                   <span class="float-left">LinkedIn Profiles</span>
-                  <span class="float-right">2</span>
+                  <span class="float-right">{{lp_num}}</span>
                 </li>
                   <li class='np-btn'><button id="req-custom-order">Request custom order</button></li>
                   <li class='np-btn'><button id="contact-shop-owner-btn">Contact Shop Owner</button></li>
               </ul>
-              
             </div>
-            
             <div class="auth-rep">
               <h3>Author's Reputation</h3>
               <hr>
@@ -181,41 +184,47 @@
               <button id="read-cust-rev-btn">Read all the Customer Reviews</button>
             </div>
           </div>
-          <div class="gigs-div">
-              <a class="gig-links">
-                <div class="gig">
+          <div class="gigs-div" >
+            <div *ngFor='let gig of gigs'>
+              <a class="gig-links" >
+                <div class="gig" (click)='gotoGig(gig._id)'>
     
-                  <div class="gig-pic"></div>
+                  <div class="gig-pic">
+                    <img src="http://localhost:3000{{gig.img1.replace('public','')}}" alt="" style="height:100%;width:auto;max-width:100%">
+                  </div>
                   <div class="gig-dets">
                     <h4>
-                      Title
+                      {{gig.title}}
                     </h4>
                     <h5 class="gig-credits">
-                      Seller
+                     {{first_name}} {{last_name}}
                     </h5>
                   </div>
     
                   <div class="gig-footer">
                       <div class="dets">Details</div>
-                      <div class="cost">$ 200</div>
+                      <div class="cost">$ {{gig.pac_cos_sta}}</div>
                   </div>
     
                 </div>
                 <div class="gig-details-container">
                   <div class="gig-dets-top">
-    
+                      <label>Category: {{gig.category}}</label><br>
+                      <label>Title: {{gig.title}}</label><br>
+                      <label>Description: {{gig.description}}</label>
                   </div>
                   <div class="gig-dets-btm">
                     <button class="dets-add-to-cart-btn">
                       Add to cart
                     </button>
     
-                    <button class="dets-add-fav-btn">
+                    <button class="dets-add-fav-btn" (click)= "addtoFav(gig._id)">
                         <i class="fa fa-heart-o" aria-hidden="true"></i>
                     </button>
                   </div>
                 </div>
               </a>
+            </div>
                   
                               <a class="empty-gigs"></a>
                               <a class="empty-gigs"></a>
@@ -300,33 +309,28 @@
                 </div>
               </div>
               
+              <div *ngFor="let rev of f_rev">
                 <div class="rev-div">
                   <table class="u-details">
                     <tr>
-                      <td colspan="2"><img src="" class="reviewer-pic">
-                        <div class="u-dets"><span class="u-name"></span><br><span class="posted-time">posted 16 days ago</span></div>
+                      <td colspan="2"><img src="http://localhost:3000{{rev.profile_pic.replace('public','')}}" class="reviewer-pic">
+                        <div class="u-dets"><span class="u-name"></span><br><span class="posted-time">posted on {{rev.date}}</span></div>
                       </td>
                     </tr>
                     <tr>
                       <td style="text-align:left">
-                        <select class="rrating">
-                  <option value=""></option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select></td>
+                       {{rev.score}}
                     </tr>
                     <tr>
                       <td>
                         <div class="u-review">
-                          Review
+                         {{rev.review}}
                         </div>
                       </td>
                     </tr>
                   </table>
                 </div>
+              </div>
             </div>
           </div>
         </div>

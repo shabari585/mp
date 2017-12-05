@@ -1,93 +1,93 @@
-      <div class="m-core">
-        
-          <div class="manage-orders-core">
-            
-              <div id="thanks-div">
-                <h3>Thank you for ordering</h3>
-                <h5>Your orders are now available to you below</h5>
-                <i id="t-close" class="fa fa-times" aria-hidden="true"></i>
-              </div>
-                <h2 id="orders-title">MY ORDERS</h2>
-                <div class="my-gigs-index">
-                  <button class="index-head">
-          Orders
-        </button>
-                  <button class="index-item" id="completed-btn">
-          Completed
-        </button>
-                  <button class="index-item" id="progress-btn">
-          In Progress
-        </button>
-                  <button class="index-item" id="cancelled-btn">
-          Cancelled
-        </button>
-                  <button class="index-item selected-index" id="all-btn">
-          All
-        </button>
-                </div>
-                <div class="orders-div">
-                  <div class="orders-core">
-                      <div class="order-item">
-                        <div class="oi-top">
-                          <table>
-                            <tr>
-                              <th>
-                                Ordered
-                              </th>
-                              <th>
-                                Seller
-                              </th>
-                              <th>
-                                Total
-                              </th>
-                            </tr>
-                            <tr>
-                              <td>
-                                day month
-                              </td>
-                              <td>
-                                <a routerLink='/seller'>
-                                  Seller
-                                </a>
-                              </td>
-                              <td>
-                                US $
-                                2000
-                              </td>
-                            </tr>
-                          </table>
-                        </div>
-                        <div class="oi-middle">
-                          <h3>
-                            Title
-                          </h3>
-                          <div class="milestone-back">
-                            <div class="milestone-main" style="width: 10%">
-                            </div>
-                          </div>
-                          <div class="milestone-dets">
-                            <div class="float-left">
-                              Month,day,year
-                            </div>
-                            <div class="float-right">
-                              Month,day,year
-                            </div>
-                          </div>
-                        </div>
-                        <div class="oi-bottom">
-                          <div class="oi-bottom-items">
-                            <i class="fa fa-comment-o" aria-hidden="true" style="margin-right:15px"></i>34
-                          </div>
-                          <div class="oi-bottom-items" id="oi-bottom-middle">
-                            <a routerLink='/gig-details'><i class="fa fa-eye" aria-hidden="true" style="margin-right:15px"></i>Quick View</a>
-                          </div>
-                          <div class="oi-bottom-items">
-                            <a routerLink='/order-details'><i class="fa fa-briefcase" aria-hidden="true" style="margin-right:15px"></i>Project</a>
-                          </div>
-                        </div>
+<div class="m-core">
+  
+    <div class="manage-orders-core">
+      
+        <div id="thanks-div">
+          <h3>Thank you for ordering</h3>
+          <h5>Your orders are now available to you below</h5>
+          <i id="t-close" class="fa fa-times" aria-hidden="true"></i>
+        </div>
+          <h2 id="orders-title">MY ORDERS</h2>
+          <div class="my-gigs-index">
+            <button class="index-head">
+    Orders
+  </button>
+            <button class="index-item" id="completed-btn">
+    Completed
+  </button>
+            <button class="index-item" id="progress-btn">
+    In Progress
+  </button>
+            <button class="index-item" id="cancelled-btn">
+    Cancelled
+  </button>
+            <button class="index-item selected-index" id="all-btn">
+    All
+  </button>
+          </div>
+          <div class="orders-div"  *ngFor="let order of all_orders">
+            <div class="orders-core">
+                <div class="order-item">
+                  <div class="oi-top">
+                    <table>
+                      <tr>
+                        <th>
+                          Ordered
+                        </th>
+                        <th>
+                          Seller
+                        </th>
+                        <th>
+                          Total
+                        </th>
+                      </tr>
+                      <tr>
+                        <td>
+                          {{order_date}}
+                        </td>
+                        <td>
+                          <a routerLink='/seller' (click)="gotoseller([order.seller_id])">
+                           {{order.seller_fname}}...
+                          </a>
+                        </td>
+                        <td>
+                          US $
+                          {{order.total_amount}}
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="oi-middle">
+                    <h3>
+                      Title
+                    </h3>
+                    <div class="milestone-back">
+                      <div class="milestone-main" style="width: 10%">
                       </div>
+                    </div>
+                    <div class="milestone-dets">
+                      <div class="float-left">
+                        {{order_date}}
+                      </div>
+                      <div class="float-right">
+                        {{pro_com_date}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="oi-bottom">
+                    <div class="oi-bottom-items">
+                      <i class="fa fa-comment-o" aria-hidden="true" style="margin-right:15px"></i>34
+                    </div>
+                    <div class="oi-bottom-items" id="oi-bottom-middle">
+                      <a routerLink='/gig-details'><i class="fa fa-eye" aria-hidden="true" style="margin-right:15px"></i>Quick View</a>
+                    </div>
+                    <div class="oi-bottom-items">
+                      <a routerLink='/order-details'><i class="fa fa-briefcase" aria-hidden="true" style="margin-right:15px"></i>Project</a>
+                    </div>
                   </div>
                 </div>
+            </div>
           </div>
-      </div>
-        
+    </div>
+</div>
+  

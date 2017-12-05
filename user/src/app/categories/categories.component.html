@@ -27,143 +27,49 @@
           </table>
           <table class="cat-tables bb no-padding">
             <tr>
-              <td class="bb no-padding"><input type="button" class="cat-btns" id="all-products-btn" value="Browse all Products">
+              <td class="bb no-padding"><input type="button" class="cat-btns" id="all-products-btn" value="Browse all Products" (click)="gigs_get('all')">
                 <div class="sub-cat-cats">
                   <ul>
                     <li><a href="">Accounting</a></li>
-                    <li><a href="">Administration & Office Support</a></li>
-                    <li><a href="">Advertising, Arts & Media</a></li>
-                    <li><a href="">Banking & Financial Services</a></li>
-                    <li><a href="">Call Centre & Customer Service</a></li>
-                    <li><a href="">CEO & General Management</a></li>
-                    <li><a href="">Construction</a></li>
-                    <li><a href="">Consulting & Strategy</a></li>
-                    <li><a href="">Design & Architecture</a></li>
-                    <li><a href="">Education & Training</a></li>
-                    <li><a href="">Engineering</a></li>
-                    <li><a href="">Farming, Animals & Conservation</a></li>
-                    <li><a href="">Government & Defence</a></li>
-                    <li><a href="">Healthcare & Medical</a></li>
-                    <li><a href="">Hospitality & Tourism</a></li>
-                    <li><a href="">HR & Recruitment</a></li>
-                    <li><a href="">Information & Communication Technology</a></li>
-                    <li><a href="">Legal</a></li>
-                    <li><a href="">Manufacturing & Logistics</a></li>
-                    <li><a href="">Marketing</a></li>
-                    <li><a href="">Real Estate & Property</a></li>
-                    <li><a href="">Retail & Consumer Products</a></li>
-                    <li><a href="">Sales</a></li>
-                    <li><a href="">Science & Technology</a></li>
-                    <li><a href="">Self Employment</a></li>
-                    <li><a href="">Sports & Recreation</a></li>
+                    <li><a href="">Administration & Office Support</a></li>                    
                   </ul>
                 </div>
               </td>
             </tr>
             <tr>
-              <td class="bb no-padding"><input type="button" class="cat-btns" id="rc-btn" value="Resumes and Cover Letters">
+              <td class="bb no-padding"><input type="button" class="cat-btns" id="rc-btn" value="Resumes and Cover Letters"  (click)="gigs_get('rc')">
                 <div class="sub-cat-cats">
                   <ul>
                     <li><a href="">Accounting</a></li>
-                    <li><a href="">Administration & Office Support</a></li>
-                    <li><a href="">Advertising, Arts & Media</a></li>
-                    <li><a href="">Banking & Financial Services</a></li>
-                    <li><a href="">Call Centre & Customer Service</a></li>
-                    <li><a href="">CEO & General Management</a></li>
-                    <li><a href="">Construction</a></li>
-                    <li><a href="">Consulting & Strategy</a></li>
-                    <li><a href="">Design & Architecture</a></li>
-                    <li><a href="">Education & Training</a></li>
-                    <li><a href="">Engineering</a></li>
-                    <li><a href="">Farming, Animals & Conservation</a></li>
-                    <li><a href="">Government & Defence</a></li>
-                    <li><a href="">Healthcare & Medical</a></li>
-                    <li><a href="">Hospitality & Tourism</a></li>
-                    <li><a href="">HR & Recruitment</a></li>
-                    <li><a href="">Information & Communication Technology</a></li>
-                    <li><a href="">Legal</a></li>
-                    <li><a href="">Manufacturing & Logistics</a></li>
-                    <li><a href="">Marketing</a></li>
-                    <li><a href="">Real Estate & Property</a></li>
-                    <li><a href="">Retail & Consumer Products</a></li>
-                    <li><a href="">Sales</a></li>
-                    <li><a href="">Science & Technology</a></li>
-                    <li><a href="">Self Employment</a></li>
-                    <li><a href="">Sports & Recreation</a></li>
+                    <li><a href="">Administration & Office Support</a></li>                   
                   </ul>
                 </div>
               </td>
             </tr>
             <tr>
-              <td class="bb no-padding"><input type="button" class="cat-btns" id="or-btn" value="Online Resumes">
+              <td class="bb no-padding"><input type="button" class="cat-btns" id="or-btn" value="Online Resumes" (click)="gigs_get('or')">
                 <div class="sub-cat-cats">
                   <ul>
                     <li><a href="">Accounting</a></li>
                     <li><a href="">Administration & Office Support</a></li>
-                    <li><a href="">Advertising, Arts & Media</a></li>
-                    <li><a href="">Banking & Financial Services</a></li>
-                    <li><a href="">Call Centre & Customer Service</a></li>
-                    <li><a href="">CEO & General Management</a></li>
-                    <li><a href="">Construction</a></li>
-                    <li><a href="">Consulting & Strategy</a></li>
-                    <li><a href="">Design & Architecture</a></li>
-                    <li><a href="">Education & Training</a></li>
-                    <li><a href="">Engineering</a></li>
-                    <li><a href="">Farming, Animals & Conservation</a></li>
-                    <li><a href="">Government & Defence</a></li>
-                    <li><a href="">Healthcare & Medical</a></li>
-                    <li><a href="">Hospitality & Tourism</a></li>
-                    <li><a href="">HR & Recruitment</a></li>
-                    <li><a href="">Information & Communication Technology</a></li>
-                    <li><a href="">Legal</a></li>
-                    <li><a href="">Manufacturing & Logistics</a></li>
-                    <li><a href="">Marketing</a></li>
-                    <li><a href="">Real Estate & Property</a></li>
-                    <li><a href="">Retail & Consumer Products</a></li>
-                    <li><a href="">Sales</a></li>
-                    <li><a href="">Science & Technology</a></li>
-                    <li><a href="">Self Employment</a></li>
-                    <li><a href="">Sports & Recreation</a></li>
+                   
                   </ul>
                 </div>
               </td>
             </tr>
             <tr>
-              <td class="bb no-padding"><input type="button" class="cat-btns" id="vr-btn" value="Visual Resumes">
+              <td class="bb no-padding"><input type="button" class="cat-btns" id="vr-btn" value="Visual Resumes" (click)="gigs_get('vr')">
                 <div class="sub-cat-cats">
                   <ul>
                     <li><a href="">Accounting</a></li>
                     <li><a href="">Administration & Office Support</a></li>
-                    <li><a href="">Advertising, Arts & Media</a></li>
-                    <li><a href="">Banking & Financial Services</a></li>
-                    <li><a href="">Call Centre & Customer Service</a></li>
-                    <li><a href="">CEO & General Management</a></li>
-                    <li><a href="">Construction</a></li>
-                    <li><a href="">Consulting & Strategy</a></li>
-                    <li><a href="">Design & Architecture</a></li>
-                    <li><a href="">Education & Training</a></li>
-                    <li><a href="">Engineering</a></li>
-                    <li><a href="">Farming, Animals & Conservation</a></li>
-                    <li><a href="">Government & Defence</a></li>
-                    <li><a href="">Healthcare & Medical</a></li>
-                    <li><a href="">Hospitality & Tourism</a></li>
-                    <li><a href="">HR & Recruitment</a></li>
-                    <li><a href="">Information & Communication Technology</a></li>
-                    <li><a href="">Legal</a></li>
-                    <li><a href="">Manufacturing & Logistics</a></li>
-                    <li><a href="">Marketing</a></li>
-                    <li><a href="">Real Estate & Property</a></li>
-                    <li><a href="">Retail & Consumer Products</a></li>
-                    <li><a href="">Sales</a></li>
-                    <li><a href="">Science & Technology</a></li>
-                    <li><a href="">Self Employment</a></li>
-                    <li><a href="">Sports & Recreation</a></li>
+                   
                   </ul>
                 </div>
               </td>
             </tr>
             <tr>
-              <td class="bb no-padding"><input type="button" class="cat-btns" id="lp-btn" value="LinkedIn Profile">
+              <td class="bb no-padding"><input type="button" class="cat-btns" id="lp-btn" value="LinkedIn Profile" (click)="gigs_get('lp')">
               </td>
             </tr>
             <tr>
@@ -240,47 +146,51 @@
             </ul>
           </div>
           <div class="gigs-core gigs-div">
-                <a class="gig-links">
-      
-                  <div class="gig">
-      
-                    <div class="gig-pic"></div>
-                    <div class="gig-dets">
-                      <h4>
-                        Title
-                      </h4>
-                      <h5 class="gig-credits">
-                        Seller
-                      </h5>
-                    </div>
-      
-                    <div class="gig-footer">
-                        <div class="dets">Details</div>
-                        <div class="cost">$ 200</div>
-                    </div>
-      
+            <div *ngFor="let gig of gigs">
+              <a class="gig-links">
+    
+                <div class="gig" (click)='gotoGig(gig._id)'>
+    
+                  <div class="gig-pic">
+                    <img src="http://localhost:3000{{gig.img1.replace('public','')}}" alt="" style="height:100%;width:auto;max-width:100%">
                   </div>
-                  <div class="gig-details-container">
-                    <div class="gig-dets-top">
-      
-                    </div>
-                    <div class="gig-dets-btm">
-                      <button class="dets-add-to-cart-btn">
-                        Add to cart
-                      </button>
-      
-                      <button class="dets-add-fav-btn">
-                          <i class="fa fa-heart-o" aria-hidden="true"></i>
-                      </button>
-                    </div>
+                  <div class="gig-dets">
+                    <h4>
+                      {{gig.title}}
+                    </h4>
+                    <h5 class="gig-credits">
+                      {{first_name}} {{last_name}}
+                    </h5>
                   </div>
-                </a>
-      
-                <a class="empty-gigs"></a>
-                <a class="empty-gigs"></a>
-                <a class="empty-gigs"></a>
-                <a class="empty-gigs"></a>
-                <a class="empty-gigs"></a>
+    
+                  <div class="gig-footer">
+                      <div class="dets">Details</div>
+                      <div class="cost">$ {{gig.pac_cos_sta}}</div>
+                  </div>
+    
+                </div>
+                <div class="gig-details-container">
+                  <div class="gig-dets-top">
+                    <label><strong>Title:</strong>{{gig.title}}</label><br>
+                    <label><strong>Description:</strong>{{gig.description}}</label>
+                  </div>
+                  <div class="gig-dets-btm">
+                    <button class="dets-add-to-cart-btn">
+                      Add to cart
+                    </button>
+    
+                    <button class="dets-add-fav-btn" (click)= "addtoFav(gig._id)">
+                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+              </a>
+            </div>
+              <a class="empty-gigs"></a>
+              <a class="empty-gigs"></a>
+              <a class="empty-gigs"></a>
+              <a class="empty-gigs"></a>
+              <a class="empty-gigs"></a>
           </div>
           <div class="h-gigs-div">
 

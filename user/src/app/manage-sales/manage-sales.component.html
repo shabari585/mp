@@ -72,65 +72,65 @@
               <div class="orders-core">
                
 
-                  <div class="order-item">
-                    <div class="oi-top">
-                      <table>
-                        <tr>
-                          <th>
-                            Ordered
-                          </th>
-                          <th>
-                            Buyer
-                          </th>
-                          <th>
-                            Total
-                          </th>
-                        </tr>
-                        <tr>
-                          <td>
-                            Day Month
-                          </td>
-                          <td>
-                            <a routerLink='/seller'>
-                              Seller
-                            </a>
-                          </td>
-                          <td>
-                            US $
-                            400
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
-                    <div class="oi-middle">
-                      <h3>
-                        Title
-                      </h3>
-                      <div class="milestone-back">
-                        <div class="milestone-main" style="width: 50%">
-                        </div>
-                      </div>
-                      <div class="milestone-dets">
-                        <div class="float-left">
-                          Month, Day, Year
-                        </div>
-                        <div class="float-right">
-                          Month, Day, Year
-                        </div>
+                <div class="order-item" *ngFor="let order of all_orders"> 
+                  <div class="oi-top">
+                    <table>
+                      <tr>
+                        <th>
+                          Ordered
+                        </th>
+                        <th>
+                          Buyer
+                        </th>
+                        <th>
+                          Total
+                        </th>
+                      </tr>
+                      <tr>
+                        <td>
+                          {{order_date}}
+                        </td>
+                        <td>
+                          <a routerLink="/seller" (click)="gotoseller([order.buyer_id])">
+                            {{order.buyer_fname}}...
+                          </a>
+                        </td>
+                        <td>
+                          US $
+                          {{order.total_amount}}
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="oi-middle">
+                    <h3>
+                      Title
+                    </h3>
+                    <div class="milestone-back">
+                      <div class="milestone-main" style="width: 50%">
                       </div>
                     </div>
-                    <div class="oi-bottom">
-                      <div class="oi-bottom-items">
-                        <i class="fa fa-comment-o" aria-hidden="true" style="margin-right:15px"></i>34
+                    <div class="milestone-dets">
+                      <div class="float-left">
+                        <!-- {{order_date}} -->
                       </div>
-                      <div class="oi-bottom-items" id="oi-bottom-middle">
-                        <a routerLink='/gig-details'><i class="fa fa-eye" aria-hidden="true" style="margin-right:15px"></i>Quick View</a>
-                      </div>
-                      <div class="oi-bottom-items">
-                        <a routerLink='/order-details'><i class="fa fa-briefcase" aria-hidden="true" style="margin-right:15px"></i>Project</a>
+                      <div class="float-right">
+                        <!-- {{pro_com_date}} -->
                       </div>
                     </div>
                   </div>
+                  <div class="oi-bottom">
+                    <div class="oi-bottom-items">
+                      <i class="fa fa-comment-o" aria-hidden="true" style="margin-right:15px"></i>34
+                    </div>
+                    <div class="oi-bottom-items" id="oi-bottom-middle">
+                      <a routerLink='/gig-details'><i class="fa fa-eye" aria-hidden="true" style="margin-right:15px"></i>Quick View</a>
+                    </div>
+                    <div class="oi-bottom-items">
+                      <a routerLink='/order-details'><i class="fa fa-briefcase" aria-hidden="true" style="margin-right:15px"></i>Project</a>
+                    </div>
+                  </div>
+                </div>
                     <!--<div class="order-item">
           <div class="oi-top">
             <table>

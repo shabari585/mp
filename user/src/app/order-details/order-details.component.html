@@ -40,13 +40,13 @@
       <table style="width:800px" class="table table-responsive table-striped">
           <tr>
               <th >
-                <img src="../../assets/img/pro-pic.jpg" class="img-fluid" alt="img" width="100px" height="auto">
+                <img src="http://localhost:3000{{img}}" class="img-fluid" alt="img" width="100px" height="auto">
               </th>
               <th>
-                <h4>Be your personal wordpress expert</h4>
-                <p>Seller:harrybest|Order:#FO533FGH555|November 11, 2015</p>
+                <h4>{{title}}</h4>
+                <p>Seller:<a (click)="goto_gig_det(gig_id)" style="cursor:pointer">{{name}}</a>&emsp;|&emsp;Order:{{order_id}}&emsp;|&emsp;{{date}}</p>
               </th>
-              <th>$21.00</th>
+              <th>${{total_amount}}</th>
             </tr>
         <tr>
           <th>Item</th>
@@ -55,15 +55,15 @@
           <th>Amount</th>
         </tr>
         <tr>
-          <td>Be your personal wordpress expert</td>
+          <td>{{title}}</td>
           <td>1</td>
-          <td>3 Days</td>
-          <td>$20.00</td>
+          <td>{{total_days}} Days</td>
+          <td>${{actual_amount}}</td>
         </tr>
         <tr>
           <td>Processing Fee(5%)</td>
           <td></td><td></td>
-          <td>$1.00</td>
+          <td>${{process_fee}}</td>
         </tr>
       </table>
 
@@ -72,7 +72,7 @@
           <th>BRIEF</th>
         
         <tr>
-          <td>Hi Sir, here's the offer</td>
+          <td>{{description}}</td>
         </tr>
         <tr><td></td></tr>
         

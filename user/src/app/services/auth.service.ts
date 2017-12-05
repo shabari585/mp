@@ -31,10 +31,10 @@ export class AuthService {
         // return this.http.post('users/update-user', user, { headers: header }).map(res => res.json());
     }
 
-    updatePassword(pwd){
+    updatePassword(user_det){
         let header = new Headers();
         header.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/users/update-pwd', pwd, { headers: header }).map(res => res.json());
+        return this.http.post('http://localhost:3000/users/update-pwd', user_det, { headers: header }).map(res => res.json());
         // return this.http.post('users/update-pwd', pwd, { headers: header }).map(res => res.json());
     }
 
@@ -57,7 +57,14 @@ export class AuthService {
         return this.http.get('http://localhost:3000/users/find-email/' + email).map(res => res.json());
         // return this.http.get('users/find-email/' + email).map(res => res.json());
     }
-
+    //password authenticate
+    authPassword(user_det){
+        let header = new Headers();
+        header.append('Content-Type', 'application/json');
+        // console.log(user_det);
+        return this.http.post('http://localhost:3000/users/authpassword/', user_det, { headers: header }).map(res => res.json());
+        // return this.http.post("users/authpassword", password).map(res => res.json());
+    }
     authenticateUser(user) {
         let header = new Headers();
         header.append('Content-Type', 'application/json');
@@ -73,6 +80,7 @@ export class AuthService {
         this.user = user;
 
     }
+
 
     loggedIn() {
         return tokenNotExpired('id_token');
@@ -126,5 +134,56 @@ export class AuthService {
         // return this.http.get('users/get-user-rewards/' + user_id).map(res => res.json());
     }
 
-    
+    getUser(user_id){
+        return this.http.get('http://localhost:3000/users/user_details/'+ user_id).map(res => res.json());
+        // return this.http.get('users/user_details'+ user_id).map(res => res.json());
+    }
+ 
+    authUpdateUser(user_det){
+        // let header = new Headers();
+        // header.append('Content-Type' , 'application/json');
+        // console.log(user_det.get('first_name'));
+        return this.http.post('http://localhost:3000/users/update_userdet',user_det).map(res =>res.json());
+        // return this.http.post('users/update_userdet',user_det, {headers:header}).map(res =>res.json());
+    }
+   
+    updateEmailNotification(user_en){
+        let header = new Headers();
+        header.append('Content-Type' , 'application/json');
+        return this.http.post("http://localhost:3000/users/update_email_notification", user_en, {headers:header}).map(res => res.json());
+        // return this.http.post("users/update_email_notification", user_en, {headers:header}).map(res => res.json());
+    }
+    getEmailNotificationStatus(user_id){
+        return this.http.get('http://localhost:3000/users/get_email_notifications/'+ user_id).map(res => res.json());
+        // return this.http.get('users/get_email_notifications/'+ user_id).map(res => res.json());
+    }
+
+    //delete User account
+    deleteUserAcc(user_del){
+        let header = new Headers();
+        header.append('Content-Type' , 'application/json');
+        return this.http.post("http://localhost:3000/users/deleteUserAccount", user_del,{headers:header}).map(res => res.json());
+        // return this.http.post("users/deleteUserAcc", user_del,{headers:header}).map(res => res.json());
+
+    }
+
+    authUpdateUser_paypal(pay_pal){
+        let header = new Headers();
+        header.append('Content-Type' , 'application/json');
+
+        return this.http.post("http://localhost:3000/users/update_paypal",pay_pal,{headers:header}).map(res => res.json());
+        // return this.http.post("users/update_paypal",pay_pal,{headers:header}).map(res => res.json());
+    }
+
+    auth_upload_gig(gig){
+        // let header = new Headers();
+        // header.append('content-type' , 'application/json');
+            // console.log(gig);
+        return this.http.post("http://localhost:3000/users/upload_gig_det", gig).map(res => res.json());
+        // return this.http.post("users/upload_gig_det", gig ,{ headers : header }).map(res => res.json());
+    }
+    get_gig_det(id){
+        return this.http.get("http://localhost:3000/users/get_gig_det/" +id).map(res => res.json());
+    }
+
 }

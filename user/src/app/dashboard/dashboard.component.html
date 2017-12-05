@@ -2,13 +2,13 @@
         <div class="user-dash-core">
             <div class="clear-both"></div>
             <div class="whole-dash w-control">
-                <div class="account-warning-div"><i class="fa fa-info-circle" aria-hidden="true"></i><span id="war-pad"> &nbsp; Your account is missing your details needed to indentify your account. <a routerLink='/settings'>Click here to update.</a></span></div>
+              <div class="account-warning-div" *ngIf = alert><i class="fa fa-info-circle" aria-hidden="true"></i><span id="war-pad"> &nbsp; Your account is missing your details needed to indentify your account. <a routerLink='/settings'>Click here to update.</a></span></div>
                   <div class="dash-left">
                     <div class="user-tech-details">
                       <div class="tech-det-top">
-                        <img src="../../assets/img/pro-pic.jpg" id="user-img">
+                        <img src="http://localhost:3000{{profile_pic}}" id="user-img">
                         <h3 id="u-name">
-                          Name
+                          {{first_name}} {{last_name}}
                         </h3>
                         <h4 id="designation">
                           Designation
@@ -22,7 +22,7 @@
                               From
                             </span>
                             <span class="t-d-tabs-value">
-                              Country
+                                {{country}}
                             </span>
                           </li>
                           <li>
@@ -39,7 +39,7 @@
                           <li id="flex-col"><span id="bio-title"><i class="fa fa-info-circle" aria-hidden="true" style="margin-right:10px"></i>Bio</span>
                             <span
                               class="bio-desc">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo fugit ea repudiandae amet architecto adipisci est aut tempore vero esse. Deserunt sapiente, incidunt porro quis inventore iste rem temporibus iusto.
+                               {{description}}
                               </span>
                           </li>
                         </ul>

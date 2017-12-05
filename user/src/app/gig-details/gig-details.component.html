@@ -2,23 +2,47 @@
           <input type="button" value="Order Service" id="res-order-btn">
           <div class="w-control">
             <h2 class="bold g-title">
-              Title periculis reprimique eos et, ei oporteat 
+              Title {{pac_title}}
             </h2>
             <div class="g-t-two-line">
-              <span class="by">by <a routerLink='/seller' class="bold">Seller</a></span>
+              <span class="by">by&emsp;<a routerLink='/seller' class="bold" (click)="gotoProfile(user_id)">{{first_name}}{{last_name}}</a></span>
             </div>
             <div class="g-t-three-line">
               <span class="bold" style="color:#8b809e;"><i class="fa fa-map-marker" aria-hidden="true" style="margin-right:10px;font-size:98%;"></i>Country</span>
                <a routerLink='/categories'><span class="name-category bold" style="margin-left:20px;color:#8b809e;"><i class="fa fa-tag" aria-hidden="true" style="margin-right:10px;font-size:98%;"></i>Category</span></a>
             </div>
             <div class="gig-top-main">
-              <div class="swiper-core">
-                <div class="slide-home">
-                  
-                </div>
+              <div id="container-core" class="swiper-core">
+                <div ng2-carouselamos class="slides-wrapper"
+                [items]="items"
+                [width]="900"
+                [$prev]="prev"
+                [$next]="next"
+                [$item]="item">
               </div>
+              
+                <ng-template #prev>
+                  <img src="assets/next1.png" id="left" style="margin-top:75px">
+                </ng-template>
+                 
+                <ng-template #next>
+                  <img src="assets/prev1.png" id="right" style="margin-top:75px">
+                </ng-template>
+                 
+                <ng-template #item let-item let-i="index">
+                    <div class="items">
+                        <img src="http://localhost:3000{{item.name}}" id="in-img">
+                      </div>
+                      <!-- <img src="assets/img2.jpg"> -->
+                </ng-template>      
+              </div>
+              <!-- <div class="swiper-core">
+                <div class="slide-home">
+                  <img src="http://localhost:3000{{img1}}" alt="gig-preview">
+                </div>
+              </div> -->
               <div class="g-other-dets">
-                <div class="cost-dets"><span class="small-red">FROM</span><span class="cost">$200</span></div>
+                <div class="cost-dets"><span class="small-red">FROM</span><span class="cost">${{pac_cos_sta}}</span></div>
                 <div class="av-options-btn-div"><input type="button" id="av-op-btn" value="See Available Packages"></div>
                 <hr>
                 <div class="g-table-div">
@@ -43,14 +67,15 @@
                   <a routerLink='/inbox'>
                     <div id="ask-qstn" style="color:rgba(0,0,0,0.7)">Ask a question</div>
                   </a>
-                    <button id="add-fav-btn">
-                    <i class="fa fa-heart" aria-hidden="true" style="color:#f00"></i>Added to favorites
+                    <button id="add-fav-btn" (click)="addtoFav()">
+                    <i class="fa fa-heart" aria-hidden="true" style="color:#f00" ></i>Added to favorites
             </button>
                 </div>
 
               </div>
             </div>
-          </div>
+          <!-- </div> -->
+      </div>
       </div>
       <div class="clear-both"></div>
       <div class="gig-s-vp">
@@ -65,11 +90,11 @@
             <li class="dets-li">
               <div class="order-service-div">
                 <h4 class="order-h-four">
-                  Dummy Title
+                  {{pac_title}}
                 </h4>
-
-                  <h5 class="order-from-cost">Total A$<span id="select-cost">0</span></h5>
-                  <button id="order-service-btn" class="f-menu-opt">ORDER SERVICE</button>
+                
+                  <h5 class="order-from-cost">Total A$<span id="select-cost">{{amount}}</span></h5>
+                  <button id="order-service-btn" class="f-menu-opt" (click)="order_service()">ORDER SERVICE</button>
                     <!-- <h5 class="order-from-cost">Total A$<span id="select-cost">0</span></h5>
                     <button id="dum-order-service-btn" class="f-menu-opt">Order Service</button>
                       <h5 class="order-from-cost">Total A$<span id="select-cost">0</span></h5>
@@ -90,39 +115,76 @@
               <tr>
                 <td class="left-t-header" rowspan="2"></td>
                 <td>
-                  <div class="t-left-align"><span class="package-cost">$<span id="std-p"></span></span><br><span class="package-name">Standard</span></div>
+                  <div class="t-left-align"><span class="package-cost">${{pac_cos_sta}}<span id="std-p"></span></span><br><span class="package-name">Standard</span></div>
                 </td>
                 <td>
-                  <div class="t-left-align"><span class="package-cost">$<span id="pre-p"></span></span><br><span class="package-name">Premium</span></div>
+                  <div class="t-left-align"><span class="package-cost">${{pac_cos_pre}}<span id="pre-p"></span></span><br><span class="package-name">Premium</span></div>
                 </td>
                 <td>
-                  <div class="t-left-align"><span class="package-cost">$<span id="pro-p"></span></span><br><span class="package-name">Pro</span></div>
+                  <div class="t-left-align"><span class="package-cost">${{pac_cos_pro}}<span id="pro-p"></span></span><br><span class="package-name">Pro</span></div>
                 </td>
               </tr>
               <tr>
-                <td><span class="package-details">Description one</span></td>
-                <td><span class="package-details">Description two</span></td>
-                <td><span class="package-details">Description three</span></td>
+                <td><span class="package-details">{{pac_det_sta}}</span></td>
+                <td><span class="package-details">{{pac_det_pre}}</span></td>
+                <td><span class="package-details">{{pac_det_pro}}</span></td>
               </tr>
               <tr>
                 <td class="left-t-header">
                   <div class="l-t-header">Seperate Files</div>
                 </td>
-                <td>
-                <td>
-                  <i class='fa fa-check' aria-hidden='true' style='color:#00b22d;'></i>
+                 <td>
+                   <span *ngIf="sf_sta == true">
+                     <i class='fa fa-check' aria-hidden='true' style='color:#00b22d;'></i>
+                    </span>
+                    <span *ngIf="sf_sta == false">
+                        -
+                    </span>
                 </td>
                 <td>
-                 <i class='fa fa-check' aria-hidden='true' style='color:#00b22d;'></i>
+                  <span *ngIf="sf_pre == true">
+                    <i class='fa fa-check' aria-hidden='true' style='color:#00b22d;'></i>
+                  </span>
+                  <span *ngIf="sf_pre == false">
+                    -
+                  </span>
+                </td>
+                <td>
+                    <span *ngIf="sf_pro == true">
+                        <i class='fa fa-check' aria-hidden='true' style='color:#00b22d;'></i>
+                      </span>
+                      <span *ngIf="sf_pro == false">
+                        -
+                      </span>
+                </td>
               </tr>
               <tr>
                 <td class="left-t-header">
                   <div class="l-t-header">HQ Files</div>
                 </td>
                 <td>
+                    <span *ngIf="hq_sta == true">
+                        <i class='fa fa-check' aria-hidden='true' style='color:#00b22d;'></i>
+                       </span>
+                       <span *ngIf="hq_sta == false">
+                           -
+                       </span>
+                </td>
                 <td>
+                    <span *ngIf="hq_pre == true">
+                        <i class='fa fa-check' aria-hidden='true' style='color:#00b22d;'></i>
+                       </span>
+                       <span *ngIf="hq_pre == false">
+                           -
+                       </span>
+                </td>
                 <td>
-                  -
+                    <span *ngIf="hq_pro == true">
+                        <i class='fa fa-check' aria-hidden='true' style='color:#00b22d;'></i>
+                       </span>
+                       <span *ngIf="hq_pro == false">
+                           -
+                       </span>
                 </td>
               </tr>
               <tr>
@@ -130,13 +192,13 @@
                   <div class="l-t-header">Word Included</div>
                 </td>
                 <td>
-                  Yes
+                  {{words_sta}}
                 </td>
                 <td>
-                  Yes
+                  {{words_pre}}
                 </td>
                 <td>
-                  Yes
+                  {{words_pro}}
                 </td>
               </tr>
               <tr>
@@ -144,13 +206,13 @@
                   <div class="l-t-header">Revisions</div>
                 </td>
                 <td>
-                  Yes
+                  {{rev_sta}}
                 </td>
                 <td>
-                  Yes
+                    {{rev_pre}}
                 </td>
                 <td>
-                  Yes
+                    {{rev_pro}}
                 </td>
               </tr>
               <tr>
@@ -158,78 +220,79 @@
                   <div class="l-t-header">Delivery Time</div>
                 </td>
                 <td>
-                  2 days
+                  {{pac_del_sta}}
                 </td>
                 <td>
-                  2 days
+                    {{pac_del_pre}}
                 </td>
                 <td>
-                  3 days
+                    {{pac_del_pro}}
                 </td>
               </tr>
               <tr>
                 <td class="left-t-header"></td>
                 <td>
-                  <button class="package-select-btns pack-selected" id="standard-select-btn">Selected <i class='fa fa-check' aria-hidden='true'></i></button>
+                  <button class="package-select-btns pack-selected" id="standard-select-btn" (click)="selected_package('standard')">Selected <i class='fa fa-check' aria-hidden='true'></i></button>
                 </td>
                 <td>
-                  <button class="package-select-btns" id="premium-select-btn">Select</button>
+                  <button class="package-select-btns" id="premium-select-btn" (click)="selected_package('premium')">Select</button>
                   <td>
-                    <button class="package-select-btns" id="pro-select-btn">Select</button>
+                    <button class="package-select-btns" id="pro-select-btn" (click)="selected_package('pro')">Select</button>
                   </td>
               </tr>
             </table>
           </div>
-            <div class="extras-div">
-              <h3 class="h">CHECKOUT MY GIG EXTRAS</h3>
+          <div class="extras-div">
+            <h3 class="h">CHECKOUT MY GIG EXTRAS</h3>
+              <div *ngFor="let extras of ext">
               <div class="extras-container">
                   <div class="extra">
                     <input type="text" style="display:none" value="" class="exid">
                     <input type="text" style="display:none" value="" class="ext-p">
                     <div class="extra-desc">
-                      <h4>
-                         DescDescDesc Desc DescDesc Desc DescDescDesc Desc DescDesc Desc
-                      </h4>
-                      <h6>in 3 days</h6>
+                      <h4>{{extras.e_description}}</h4>
+                      <h6>in{{extras.days}}days</h6>
                     </div>
                     <div class="add-btn-div">
-                      <button class="add-btn">
+                      <button class="add-btn" id="add-button-add" (click)="addToCheckout(extras._id,$event)">
                 <ul class="horizantal-ul" style="margin:0">
                   <li><span class="plus-area"><i class='fa fa-plus-circle' aria-hidden='true' style='width:auto; margin-right:6px'></i></span></li>
-                  <li>+A$20</li>
+                  <li>+A${{extras.price}}</li>
                 </ul>
               </button>
                     </div>
                   </div>
-                  <div class="extra">
+                </div>
+              </div>
+                  <!-- <div class="extra">
                     <input type="text" style="display:none" value="" class="exid">
                     <input type="text" style="display:none" value="" class="ext-p">
                     <div class="extra-desc">
                       <h4>
-                         DescDescDesc Desc DescDesc Desc
+                         {{description2}}
                       </h4>
-                      <h6>in 3 days</h6>
+                      <h6>in {{days2}} days</h6>
                     </div>
                     <div class="add-btn-div">
                       <button class="add-btn">
                 <ul class="horizantal-ul" style="margin:0">
                   <li><span class="plus-area"><i class='fa fa-plus-circle' aria-hidden='true' style='width:auto; margin-right:6px'></i></span></li>
-                  <li>+A$20</li>
+                  <li>+A${{doller2}}</li>
                 </ul>
               </button>
                     </div>
-                  </div>
-              </div>
+                  </div> -->
+             
             </div>
               <div class="about-gig-div">
                 <h3 class="h">ABOUT THIS GIG</h3>
                 <div class="about-gig">
-                   DescDescDesc Desc DescDesc Desc DescDescDesc Desc DescDesc Desc
+                   {{description}}
                 </div>
               </div>
               <div class="get-answers-div">
                 <h3 class="h">FAQS</h3>
-                <p style="text-align:justify" id="get-ans-exp">We love questions almost as much as we love providing answers. here are a few samples of what we're typically
+                <p id="get-ans-exp">We love questions almost as much as we love providing answers. here are a few samples of what we're typically
                   asked, along with our responses.</p>
                   <button class="acc_btn"><span class="tg-btn-q">faq</span><span class="tg-btn-ico"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></button>
                   <div class="panel">
@@ -237,15 +300,27 @@
                     </p>
                   </div>
               </div>
+              <div id="rating-show">
+              <div id ="raty"></div>
+              <input type="text" [(ngModel)]="review">
+              <input type="submit" (click)="submit_review()">
+            </div>
+                              
+              <!-- <script src="jquery.raty.js"></script> -->
+              
+              <!-- <span id="raty"></span> -->
+              <!-- <div id ="half"></div> -->
                 <div class="support-team">
                   <div class="sup-sup">
                     <h3 class="h">MEET THE TEAM</h3>
                     <div class="s-div">
                       <a href="">
                         <div class="support-person">
-                          <div class="support-team-img" style="background-image:url('../../assets/img/pro-pic.jpg')"></div>
+                          <div class="support-team-img">
+                            <img src="http://localhost:3000{{pro_pic}}" alt="profile_picture" style="width:120px">
+                          </div>
                           <h6 class="name">
-                            Firstname Lastname
+                            {{first_name}}{{last_name}}
                           </h6>
                           <hr class="half-hr">
                         </div>
@@ -323,36 +398,41 @@
                           </table>
                       </div>
                     </div>
+                    <div *ngFor="let rev of reviews">
+
+
                       <div class="rev-div">
                         <table class="u-details">
                           <tr>
-                            <td colspan="2"><img src="../../assets/img/pro-pic.jpg" class="reviewer-pic">
-                              <div class="u-dets"><span class="u-name">Name</span><br><span class="posted-time">posted 16 days ago</span></div>
+                            <td colspan="2"><img src="http://localhost:3000{{rev.pro_pic.replace('public','')}}" class="reviewer-pic">
+                              <div class="u-dets"><span class="u-name">{{rev.buyer_fname}}{{rev.buyer_lname}}</span><br><span class="posted-time">posted {{rev.date}}</span></div>
                             </td>
                           </tr>
                           <tr>
                             <td style="text-align:left">
-                              <select class="rrating">
-                  <option value=""></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select></td>
+                                <script src="jquery.raty.js">
+                                  $('#raty').raty({
+                                  starOn:'../assets/star-on.png', 
+                                  starOff:'../assets/star-off.png',
+                                  readOnly:    true,
+                                  score:rev.score,                                                          
+                                  });
+                                  </script>                                         
+                                  
+                                  <div id ="raty"></div>
+                             </td>
                           </tr>
                           <tr>
                             <td>
-                              <div style="text-align:justify" class="u-review">
-                                 Lorem ipsum dolor sit amet, vim assum soleat vocent ea, eu amet copiosae atomorum pro. Erant sensibus ad vis. Vivendo adversarium
-                                an his. Vix ornatus habemus id, primis scriptorem nam ad, vocent consulatu an eum. Ne ius
-                                nonumy euismod adversarium, nec cibo duis democritum an. Omnesque patrioque in cum, in saepe
-                                lucilius interesset sea, at tractatos laboramus nec
+                              <div class="u-review">
+                               {{rev.review}}
                               </div>
                             </td>
                           </tr>
                         </table>
                       </div>
+
+                    </div>
                   </div>
                 </div>
         </div>

@@ -8,50 +8,57 @@
             you can find some items you like?
           </p>
         </div>
-        <div class="gigs-core gigs-div col-xs-12">
+        <div class="gigs-core gigs-div" >
+          <div  *ngFor="let gig of fav">
+
+         
             <a class="gig-links">
   
               <div class="gig">
   
-                <div class="gig-pic"></div>
+                <div class="gig-pic">
+                  <img src="http://localhost:3000{{gig.img1.replace('public','')}}" alt="" style="height:100%;width:auto;max-width:100%">
+                </div>
                 <div class="gig-dets">
                   <h4>
-                    Title
+                    {{gig.title}}
                   </h4>
                   <h5 class="gig-credits">
-                    Seller
+                    {{first_name}} {{last_name}}
                   </h5>
                 </div>
   
                 <div class="gig-footer">
                     <div class="dets">Details</div>
-                    <div class="cost">$ 200</div>
+                    <div class="cost">$ {{gig.pac_cos_sta}}</div>
                 </div>
   
               </div>
+            
               <div class="gig-details-container">
                 <div class="gig-dets-top">
-  
+                    <label>Title: {{gig.title}}</label><br>
+                    <label>Description:{{gig.description}}</label>
                 </div>
                 <div class="gig-dets-btm">
                   <button class="dets-add-to-cart-btn">
                     Add to cart
                   </button>
   
-                  <button class="dets-add-fav-btn">
+                  <button class="dets-add-fav-btn" (click)= "addtoFav(gig._id)">
                       <i class="fa fa-heart-o" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
             </a>
   
-            <a class="empty-gigs"></a>
-            <a class="empty-gigs"></a>
-            <a class="empty-gigs"></a>
-            <a class="empty-gigs"></a>
-            <a class="empty-gigs"></a>
-      </div>
-
+          </div>
+          <a class="empty-gigs"></a>
+          <a class="empty-gigs"></a>
+          <a class="empty-gigs"></a>
+          <a class="empty-gigs"></a>
+          <a class="empty-gigs"></a>
+    </div>
     </div>
 </div>
       

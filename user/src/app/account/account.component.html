@@ -26,7 +26,7 @@
     </div>
     <div class="p-r-f-div">
       <form action="#" class="form" method="post">
-        <select id="y-leaving" name="y-leaving">
+        <select id="y-leaving" name="y-leaving" [(ngModel)]="UserReason">
           <option selected="true" disabled="disabled">Choose a reason</option>
           <option value="I no longer need this service">I no longer need this</option>
           <option value="Not happy with services">Not happy with services</option>
@@ -44,7 +44,7 @@
           </div>
         </div>
        <hr>
-       <input type="button" name="submit" class="save-button" value="Save Settings">
+       <input type="button" name="submit" class="save-button" value="Save Settings" (click)="saveUser()">
      </form>
     </div>
    </div>

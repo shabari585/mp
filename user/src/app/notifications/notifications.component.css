@@ -36,11 +36,18 @@
       background-color: #00DDB1;
       border-color: #00DDB1;
   }
-  
+  .not-back{
+    background-color: grey;
+  }
+  .not-back-white{
+      background-color: white;
+      border: 1px solid grey;
+  }
   .reviews{
       display: flex;
       overflow: hidden;
-      padding: 20px
+      padding: 20px;
+      
   }
   .reviews i{
       position: absolute;

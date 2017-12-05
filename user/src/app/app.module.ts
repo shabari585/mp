@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { HttpModule, Http } from "@angular/http";
+import { Ng2CarouselamosModule } from "ng2-carouselamos";
 import { RouterModule, Router, Routes } from "@angular/router"; 
 // External
 
@@ -35,17 +36,18 @@ import { FinancialsComponent } from './financials/financials.component';
 import { AccountComponent } from './account/account.component';
 import { EmailNotificationsComponent } from './email-notifications/email-notifications.component';
 import { MyGigsComponent } from './my-gigs/my-gigs.component';
-
-
-// Services
-import { AuthService } from "./services/auth.service";
-import { ValidateService } from "./services/validate.service";
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { LoginComponent } from './login/login.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { PressComponent } from './press/press.component';
 import { MenuAfterLoginComponent } from './menu-after-login/menu-after-login.component';
+
+
+// Services
+import { AuthService } from "./services/auth.service";
+import { ValidateService } from "./services/validate.service";
+import { GigService } from "./services/gig.service";
 
 
 const appRoutes: Routes = [
@@ -73,6 +75,18 @@ const appRoutes: Routes = [
   {
     path: 'error',
     component: ErrorComponent
+  },
+  {
+    path: 'edit-gig',
+    component: EditGigComponent
+  },
+  {
+    path: 'manage-sales',
+    component: ManageSalesComponent
+  },
+  {
+    path: 'manage-orders',
+    component: ManageOrdersComponent
   },
   {
     path: 'favorites',
@@ -133,14 +147,6 @@ const appRoutes: Routes = [
   {
     path: 'withdrawals',
     component: WithdrawalsComponent
-  },
-  {
-    path: 'manage-orders',
-    component: ManageOrdersComponent
-  },
-  {
-    path: 'manage-sales',
-    component: ManageSalesComponent
   },
   {
     path: 'order-details',
@@ -249,8 +255,9 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
+    Ng2CarouselamosModule
   ],
-  providers: [AuthService,ValidateService],
+  providers: [AuthService,ValidateService,GigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

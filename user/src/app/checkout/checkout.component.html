@@ -11,22 +11,22 @@
                 <div class="f-gig-top">
 
                 </div>
-                <div class="f-gig-pic" style="background-image:url('../../assets/img/gig-pic.png')">
+                <div class="f-gig-pic"> <span><img src="http://localhost:3000{{img1}}" alt="" style="height:100%;width:auto;max-width:100%"></span>
 
                 </div>
                 <div class="f-gig-dets">
                   <div class="f-gig-title">
                     <h6>
-                        Title is the title
-                    </h6>
-                  </div>
-                  <div class="f-gig-dets-dets">
-                    <div>
-                      by Lucy
-                    </div> 
-                    <div class="cost-format-div">
-                      <span class="dlr">$</span>
-                      <span class="cost-num">200</span>
+                      <strong>{{gig_title}}</strong>
+                  </h6>
+                </div>
+                <div class="f-gig-dets-dets">
+                  <div>
+                    by <strong>{{seller_fname}} {{seller_lname}}</strong>
+                  </div> 
+                  <div class="cost-format-div">
+                    <span class="dlr">$</span>
+                    <span class="cost-num">{{selected_price}}</span>
                     </div> 
                   </div>
                 </div>
@@ -43,13 +43,13 @@
                   <div class="desc-div">
                     <div class="desc">
                       <p>
-                          Lorem ipsum dolor sit amet, ad quo dictas repudiandae, debet graeci partiendo usu at. Possit reformidans ne mei, mel natum doctus cu. Ut salutatus consequuntur duo. Cum ne alia esse, at erant ponderum mei. Populo comprehensam ea cum.
+                        {{description}}
                       </p>
                     </div>
                     <div class="price-div">
                         <div class="cost-format-div">
                             <span class="dlr">$</span>
-                            <span class="cost-num">200</span>
+                            <span class="cost-num">{{selected_price}}</span>
                         </div> 
                     </div>
                   </div>
@@ -58,11 +58,30 @@
 
 
                 <section id="extra">
-                    <div class="t-heads-div">
-                        <h4 class="t-heads">EXTRA</h4>
-                        <h5 class="t-sec-heads"></h5>
+                    <div *ngFor="let extra of selected_extras">
+                        <div class="t-heads-div">
+                            <h4 class="t-heads">EXTRA</h4>
+                            <h5 class="t-sec-heads"></h5>
+                          </div>
+                          <div class="desc-div">
+                            <label>
+                              <div class="desc">
+                                  <div class="extra-check-div">
+                                      <input type="checkbox" name="" id="checked" value="{{extra._id}}" (change)="onchange($event)" [checked]="true">
+                                  </div>&emsp;
+                                  <strong>{{extra.e_description}}</strong>
+                              </div>
+                            </label>
+                            <div class="price-div">
+                                <div class="cost-format-div">
+                                    <span class="dlr">$</span>
+                                    <span class="cost-num">{{extra.price}}</span>
+                                </div> 
+                            </div>
+                          </div>
                       </div>
-                      <div class="desc-div">
+                    </section>
+                      <!-- <div class="desc-div">
                         <label>
                           <div class="desc">
                               <div class="extra-check-div">
@@ -79,29 +98,14 @@
                                 <span class="cost-num">10</span>
                             </div> 
                         </div>
-                      </div>
-                      
-                      <div class="desc-div">
-                        <label>
-                          <div class="desc">
-                              <div class="extra-check-div">
-                                  <input type="checkbox" name="" id="">
-                              </div>
-                              <p>
-                                  Lorem ipsum dolor sit amet, ad quo dictas repudiandae, debet graeci partiendo usu at. Possit reformidans ne mei, mel natum doctus cu. Ut salutatus consequuntur duo. Cum ne alia esse, at erant ponderum mei. Populo comprehensam ea cum.
-                              </p>
-                          </div>
-                        </label>
-                        <div class="price-div">
-                            <div class="cost-format-div">
-                                <span class="dlr">$</span>
-                                <span class="cost-num">10</span>
-                            </div> 
-                        </div>
-                      </div>
-                </section>
+                      </div> -->
+               
 
                 <section id="total">
+                  <div>
+                    <h5><strong> processing Fee(5%) of total amount </strong></h5><h2></h2>
+                  </div>
+
                   <div class="t-heads-div">
                       <h4 class="t-heads">TOTAL</h4>
                       <h5 class="t-sec-heads"></h5>
@@ -113,11 +117,11 @@
                         </p>
                       </div>
                       <div class="price-div">
-                          <div class="cost-format-div">
-                              <span class="dlr">$</span>
-                              <span class="cost-num">200</span>
-                          </div> 
-                      </div>
+                        <div class="cost-format-div">
+                            <span class="dlr">$</span>
+                            <span class="cost-num">{{total_amount}}</span>
+                        </div> 
+                    </div>
                     </div>
                 </section>
               </div>
@@ -139,7 +143,7 @@
               <label for="buyer_files" class="imp_btn">
                 Choose file
               </label>
-              <input type="file" id="buyer_files" name="buyer_files[]" style="display:none" multiple="multiple">
+              <input type="file" id="buyer_files" name="buyer_files[]" style="display:none"(change)="filechange($event)" multiple="multiple">
               <h4>
                 Drag your CV here
               </h4>
@@ -160,7 +164,7 @@
             </div>
           </div>
           <output id="list"></output>
-          <textarea id="brief" name="buyer-brief"></textarea>
+          <textarea id="brief" name="buyer-brief" [(ngModel)]="order_description"></textarea>
         </div><br><br>
 
 
@@ -190,7 +194,7 @@
               </form><br>
             </div></div>  </div><br>
 
-        <input type="submit" name="submit" id="proceed-btn" value="Submit Order">
+            <input type="submit" name="submit" id="proceed-btn" value="Submit Order" (click)="placeOrder()">
         </form>
         
       </div>
