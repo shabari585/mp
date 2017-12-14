@@ -79,7 +79,8 @@
 
           <!-- User message input box -->
           <div class="user-msgs-btm">
-
+            <textarea class="msg-box" [(ngModel)]="msg"></textarea>
+            <button class="btn btn-success" (click)="send_msg()">Send</button>
           </div>
         </div>
 

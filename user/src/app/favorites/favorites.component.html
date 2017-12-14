@@ -1,7 +1,7 @@
 <div class="m-core">
     <div class="manage-orders-core my-fav-div  w-control">
       <h2 id="orders-title">My Favorites</h2>
-        <div class="no-fav-div">
+        <div class="no-fav-div" *ngIf="favorites_length">
           <h3>You have no favorites</h3>
           <p>
             Instead of feeling empty, why don't you <a routerLink='/categories'>browse Marketplace</a> to see if

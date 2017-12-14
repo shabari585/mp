@@ -43,6 +43,7 @@ export class ProfileComponent implements OnInit {
   // alert(user_id);
     this.authService.getUser(user_id).subscribe(data => {
       if(data.success){
+        console.log(data);
         let us = data.msg;
         this.first_name = us.first_name;
         this.last_name = us.last_name;
@@ -52,7 +53,7 @@ export class ProfileComponent implements OnInit {
         this.user_city = us.city;
         this.user_country = us.country;
         this.user_description = us.description;
-        this.user_img = us.profile_pic.replace("public","http://localhost:3000");
+        this.user_img = us.profile_pic.replace('public','');
         console.log(this.user_img);
 
       }else{

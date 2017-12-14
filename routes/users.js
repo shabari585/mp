@@ -13,6 +13,7 @@ var moment = require('moment');
 const multer = require('multer');
 const parseFormdata = require('parse-formdata');
 const Path = require('path');
+var shortid  = require('shortid');
 
 var tokens;
 
@@ -25,6 +26,8 @@ const extras = require('../models/gig_extras');
 const order = require('../models/order_details');
 const review = require('../models/reviews');
 const notification = require('../models/notifications');
+const conv = require('../models/conversation');
+const inbox = require('../models/messages');
 
  //multer disk storage
  const storage = multer.diskStorage({
@@ -112,7 +115,7 @@ router.post("/authenticate",(req,res,next) => {
                 }
             });
         });
-});
+}); 
 
 
 // find user by email
@@ -287,14 +290,10 @@ router.post("/deleteUserAccount",(req,res,next) =>{
                     }
                 });
             }
-        })
-
-        // user_id = req.body.user_id;
-        
+        })        
 })
 
 //authenticate Password
-
 router.post("/authPassword",(req,res,next) =>{
 
     const user_id = req.body.user_id;
@@ -353,7 +352,6 @@ router.post("/authPassword",(req,res,next) =>{
 });
 
 //update pay_pal
-
 router.post("/update_paypal",(req,res,next) => {
     // console.log(req.body);
     pay_pal = req.body.pay_palEmail;
@@ -373,7 +371,6 @@ router.post("/update_paypal",(req,res,next) => {
 });
 
 //upload gig details
-
 router.post("/upload_gig_det",(req,res,next) => {
 
     upload(req,res,(err) => {
@@ -436,7 +433,6 @@ router.post("/upload_gig_det",(req,res,next) => {
     });
     
 //post gig etras
-
 router.post("/post_gig_extrs",(req,res,next) => {
     console.log(req.body);
 
@@ -640,7 +636,6 @@ router.post("/add_to_fav",(req,res,next) => {
 
     favorites.find({gig_id:gig_id,user_id:user_id},(err,fav_gig) => {
         if(fav_gig){ 
-            console.log(fav_gig);
             if(fav_gig.length > 0){
                 favorites.remove({gig_id:gig_id},(er,success) => {
                     if(success){
@@ -655,7 +650,7 @@ router.post("/add_to_fav",(req,res,next) => {
                
                 newFav.save((e,saved_fav) => {
                     if(saved_fav){
-                        res.json({success:true,msg:"added to favorites"});
+                        res.json({success:true,msg1:"added to favorites",msg2:saved_fav});
                         
                     }else{
                         res.json({success:false,msg:e});
@@ -674,12 +669,9 @@ router.post("/add_to_fav",(req,res,next) => {
 })
 
 // get_favorites
-
 router.get("/get_fav/:user_id",(req,res) => {
-
     uid = req.params.user_id;
     console.log(uid);
-
     favorites.find({user_id: uid},(err,user) => {
         if(user){
             res.json({success:true,msg:user});
@@ -688,11 +680,22 @@ router.get("/get_fav/:user_id",(req,res) => {
         }
     })
 })
+// remove fav
+// router.get("/remove_fav/:user_id",(req,res) => {
+//     uid = req.params.user_id;
+//     console.log(uid);
+//     favorites.remove({user_id: uid},(err,user) => {
+//         if(user){
+//             res.json({success:true,msg:"removed"});
+//         }else{
+//             res.json({success:false,msg:err});
+//         }
+//     })
+// })
 // get fav gig
-router.get("/get_fav_gig/:gig_id/:user_id",(req,res) => {
+router.get("/get_fav_gig/:conv",(req,res) => {
     const gig_id = req.params.gig_id;
     const user_id = req.params.user_id;
-    console.log(gig_id,user_id);
     favorites.find({gig_id:gig_id,user_id:user_id},(err,gig) => {
         if(gig){
             if(gig.length == 0){
@@ -705,8 +708,8 @@ router.get("/get_fav_gig/:gig_id/:user_id",(req,res) => {
         }
     })
 })
-// get gig extrs
 
+// get gig extrs
 router.get("/get_gig_extrs/:gig_id",(req,res,next) => {
 
     const gig_id = req.params.gig_id;
@@ -820,7 +823,6 @@ router.get("/get_orderby_id/:order_id",(req,res,next) => {
 
 router.post("/post_review",(req,res,next) => {
     
-    // console.log(req.body);
     var date = moment();
     let newReview = new review({
             buyer_id:req.body.buyer_id,
@@ -864,6 +866,7 @@ router.post("/post_not",(req,res,next) => {
         date:not.date,
         status:not.status,
         image:not.image,
+        destination:not.destination,
         link:not.link
     })
     // console.log(new_not);
@@ -911,5 +914,69 @@ router.post("/mark_all_read",(req,res,next) => {
             res.json({success:false,msg:err});
         }
     });
+});
+
+// search for conversation id
+router.post("/check_conv",(req,res,next) => {
+    let from_id = req.body.from;
+    let to_id = req.body.to;
+    let user1;
+    let user2;
+   conv.find({user1:from_id,user2:to_id},(err1,conv1) => {
+       if(conv1){
+           res.json({success:true,msg:conv1});          
+       }else{
+        conv.find({user1:to_id,user2:from_id},(err2,conv2) => {
+            if(conv2){
+                res.json({success:true,msg:conv2});
+            }else{
+                // res.json({success:false,msg:"noconversation"}); 
+                let newconv = new conv({
+                    conv_id:shortid.generate(),
+                    user1:from_id,
+                    user2:to_id
+                });
+                newconv.save((err3,conv3) => {
+                    if(conv3){
+                        res.json({success:true,msg:conv3});
+                    }else{
+                        res.json({success:false,msg:err});
+                    }
+                });
+            }
+        });
+       }
+   })
+})
+// router.get("/find_conv/:conv_id",(req,res)=>{
+//     let conv_id = "rJ0Lly3bf";
+//     conv.remove({conv_id:conv_id},(err,user) => {
+//         if(user){
+//             res.json({success:true});
+//         }else{
+//             res.json({success:false});
+//         }
+//     })
+// })
+// send message
+router.post("/send_msg",(req,res,next) => {
+    console.log(req.body);
+   let u = req.body;
+   let newMsg = new inbox({
+       conv_id:u.conv_id,
+       sender_id:u.sender,
+       to_id:u.to,
+       message:u.message,
+       time:u.time,
+       status:u.status
+   });
+   newMsg.save((err,msg) => {
+       if(msg){
+           res.json({success:true,msg:msg});
+       }else{
+           res.json({success:false,msg:err});
+       }
+   })
+
 })
 module.exports = router; 

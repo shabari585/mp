@@ -1,0 +1,10 @@
+.row-down{
+    margin-top: 20%;
+}
+.login-width{
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    left: 70%;
+    transform: translate(100%,0)
+}

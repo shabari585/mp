@@ -123,9 +123,9 @@
                 <div class="social-icon facebook-icon">
                   <i class="fa fa-facebook-f" aria-hidden="true"></i>
                 </div>
-                <div class="social-icon google-icon">
-                  <i class="fa fa-google" aria-hidden="true"></i>
-                </div>
+                <span class="social-icon google-icon" (click)="googleLogin()">
+                  <i class="fa fa-google" aria-hidden="true"></i>                      
+                </span>
                 <div class="social-icon linkedin-icon">
                   <i class="fa fa-linkedin" aria-hidden="true"></i>
                 </div>
@@ -170,12 +170,14 @@
 
             <h5 class="nor">OR</h5>
             <div class="social-icons">
-              <div class="social-icon facebook-icon">
+              <span class="social-icon facebook-icon" (click)="FBlogin()">
                 <i class="fa fa-facebook-f" aria-hidden="true"></i>
-              </div>
-              <div class="social-icon google-icon">
-                <i class="fa fa-google" aria-hidden="true"></i>
-              </div>
+              </span>
+              
+              <span class="social-icon google-icon" (click)="googleSignup()">
+                <i class="fa fa-google" aria-hidden="true"></i>                      
+              </span>
+
               <div class="social-icon linkedin-icon">
                 <i class="fa fa-linkedin" aria-hidden="true"></i>
               </div>
@@ -592,19 +594,19 @@
                   </div>
                   <table class="cat-tables bb no-padding">
                     <tr>
-                      <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns b-all-btn">Browse all Products</span></a></td>
+                      <td class="bb no-padding"><a><span class="cat-btns b-all-btn" (click)="get_gigs('all')">Browse all Products</span></a></td>
                     </tr>
                     <tr>
-                      <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns res-btn">Resumes and Cover Letters</span></a></td>
+                      <td class="bb no-padding"><a><span class="cat-btns res-btn" (click)="get_gigs('rc')">Resumes and Cover Letters</span></a></td>
                     </tr>
                     <tr>
-                      <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns on-btn">Online Resumes</span></a></td>
+                      <td class="bb no-padding"><a><span class="cat-btns on-btn" (click)="get_gigs('or')">Online Resumes</span></a></td>
                     </tr>
                     <tr>
-                      <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns vr-btn">Visual Resumes</span></a></td>
+                      <td class="bb no-padding"><a><span class="cat-btns vr-btn" (click)="get_gigs('vr')">Visual Resumes</span></a></td>
                     </tr>
                     <tr>
-                      <td class="bb no-padding"><a routerLink="/categories"><span class="cat-btns lp-btn">LinkedIn Profile</span></a></td>
+                      <td class="bb no-padding"><a><span class="cat-btns lp-btn" (click)="get_gigs('lp')">LinkedIn Profile</span></a></td>
                     </tr>
                   </table>
                 </div>
@@ -628,13 +630,15 @@
                       
                   </li>
                   <li class="dropdown">
-                      <i style="font-size:25px;color:#999999;" class="fa fa-cog" aria-hidden="true"></i> 
+                   
+                      <span (click)="go_to_not()"><i style="font-size:25px;color:#999999;" class="fa fa-cog" aria-hidden="true"></i></span> 
                       <div style="background-color:#00D7B5;border-radius:4px;height:15px;width:25px;color:white;left:-10%;top:-10%;transform:translate(-150%,-80%)" class="notify" (mouseover)="toZero()">
-                        <p style="text-align:center;font-size:12px;">{{unread_num}}</p>
+                        <p style="text-align:center;font-size:12px;" (mouseover)="toZero()">{{unread_num}}</p>
                       </div>
-                      <ul class="navbar-stacked dropdown-menu">
-                        <div *ngFor="let not of not_num">
-                          <div (click)="goto_order_det(not.link.replace('order-details?id=',''),not.not_id)">
+                    
+                      <ul class="navbar-stacked dropdown-menu" id="not_down">
+                        <div *ngFor="let not of f_not_num">
+                          <div (click)="goto_order_det(not.dest,not.link,not.not_id)">
                           <li style="height:50px" ><img style="left:2%;transform:translate(0%,2%);position:absolute" src="http://localhost:3000{{not.image}}" class="img-fluid img-circle imgg"  alt="img" width="35px" height="35px"><span style="left:20%;transform:translate(15%,0%)">{{not.message}}...</span><span style="font-size:70%;color:#999;left:14%;top:10%;transform:translate(10%,50%);position:relative">{{not.date}}</span></li><br>
                         </div>
                         </div> 

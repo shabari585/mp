@@ -4,6 +4,7 @@ import { Router, NavigationEnd , ActivatedRoute} from "@angular/router";
 
 import { AuthService } from "../services/auth.service";
 import { GigService } from "../services/gig.service";
+import * as moment from 'moment';
 import Typed from 'typed.js';
 
 declare var $:any;
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit {
   user_id:string;
   first_name:string;
   last_name:string;
+  seller_id:string;
   all_gigs;
   rc_gigs=[];
   or_gigs=[];
@@ -69,9 +71,9 @@ export class HomeComponent implements OnInit {
               this.lp_gigs.push(element);
             }
           });
-        this.user_id = this.gigs[0].user_id;           
+        this.seller_id = this.gigs[0].user_id;           
         // console.log(user_id);
-        this.authService.getUser(this.user_id).subscribe(re => {
+        this.authService.getUser(this.seller_id).subscribe(re => {
           // console.log(re);
           let us = re.msg;
           this.first_name = us.first_name;
@@ -91,12 +93,14 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/gig'], { queryParams: {id:id}});
   }
 
+buyer_id:string;
   addtoFav(gig_id){
- 
+    let user = localStorage.getItem('user');
+    let u = JSON.parse(user);
+    this.user_id = u.id;
     let fav ={
       gig_id:gig_id,
       user_id:this.user_id
-
     }
     this.gigService.add_to_fav(fav).subscribe(res => {
       console.log(res);

@@ -8,8 +8,11 @@ import { GigService } from "./services/gig.service";
 import { locales } from 'moment';
 import { PLATFORM_SERVER_ID } from '@angular/common/src/platform_id';
 declare var $:any;
-declare const gapi : any;
+
+// declare const gapi : any;
+import gapi from 'gapi-client';
 import * as moment from "moment";
+import { setInterval } from 'timers';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -53,35 +56,54 @@ export class AppComponent implements OnInit {
 not_arr = [];
 f_not_arr = [];
 not_num = [];
+f_not_num = [];
 unread_num:number;
-  ngOnInit(){
-    // $('body').hide();
-    // alert(this.authService.loggedIn());
+new_not_arr = [];
+
+  ngOnInit(){   
+// google login
     gapi.load('auth2', function () {
       gapi.auth2.init()
    });
+
+
    let user = localStorage.getItem('user');
    let u = JSON.parse(user);
       this.user_id = u.id;
-   this.gigService.get_notifications(this.user_id).subscribe(not => {
-    //  console.log(not);
-     this.not_arr = not.msg;
-     this.not_arr.forEach(element => {
-       if(element.status == "not_seen"){
-         this.not_num.push({
-          image:element.image.replace('public',''),
-          message:element.message.substr(0,17),
-          date:moment(element.date).fromNow(),
-          status:element.status,
-          link:element.link,
-          not_id:element._id
-         })
-       }
-     });
-     console.log(this.not_num);
-      this.unread_num = this.not_num.length;
-   })
+        this.gigService.get_notifications(this.user_id).subscribe(not => {
+          //  console.log(not);
+           this.not_arr = not.msg;
+           this.not_arr.forEach(element => {
+             if(element.status == "not_seen" || element.status == "seen"){
+               this.not_num.push({
+                image:element.image.replace('public',''),
+                message:element.message.substr(0,17),
+                date:moment(element.date).fromNow(),
+                status:element.status,
+                link:element.link,
+                not_id:element._id
+               })
+             }       
+           });          
+            this.f_not_num = this.not_num.reverse().slice(0,3);
+            console.log(this.f_not_num);
+            if(this.not_num.length === 0){
+              this.unread_num = 0;
+               $('#not_down').hide();
+            }else{
+              this.unread_num = this.f_not_num.length;
+            }                    
+         setInterval(()=>{
+          this.gigService.get_notifications(this.user_id).subscribe(new_not =>{
+              this.new_not_arr = new_not.msg;
+            if(this.new_not_arr.length != this.not_num.length){
+              this.f_not_num = this.new_not_arr.reverse().splice(0,3);
+            }
+          })
+         },5000);
+        });
   }
+
   showBackLogin(bool){
     this.showDarkBack = bool;
     this.showLoginDiv = bool;
@@ -124,7 +146,7 @@ unread_num:number;
     this.showAuthorSignUp = !bool;
   }
 name;
-  googleLogin() {
+  googleSignup() {
     let googleAuth = gapi.auth2.getAuthInstance();
     googleAuth.then(() => {
        googleAuth.signIn({scope: 'profile email'}).then(googleUser => {
@@ -133,15 +155,10 @@ name;
         // console.log('Name: ' + profile.getName().split(" "));
         // console.log('Image URL: ' + profile.getImageUrl());
         // console.log('Email: ' + profile.getEmail()); 
-          this.name = profile.getName().split(" ");
-
-          let newUser = {          
-            first_name : this.name[0],
-            last_name : this.name[1],
-            email : profile.getEmail(),
-            pay_pal : profile.getEmail(),               
-          }
-          // this.authService.gmail_login()
+          this.name = profile.getName().split(" ");         
+          this.regFirstName = this.name[0];
+          this.regLastName = this.name[1];
+          this.regEmail = profile.getEmail()               
        });
     });
  }
@@ -184,10 +201,17 @@ name;
       }
     }else{
       switch (false) {
-        case this.validateService.validateInput(this.regFirstName):
-          // $('#d-signup-f-name').css({'border-color':'#f00'});
-          $('#serr').html('Cannot be left');
-          // $('#d-signup-f-name').hide();
+        case this.validateService.validateInput(this.regFirstName):         
+          $('#serr').html('First name required');
+          break;
+          case this.validateService.validateInput(this.regLastName):         
+          $('#serr').html('Last name required');
+          break;
+          case this.validateService.validateInput(this.regEmail):         
+          $('#serr').html('Email required');
+          break;
+          case this.validateService.validateInput(this.regPassword):         
+          $('#serr').html('Password required');
           break;
       
         default:
@@ -196,6 +220,22 @@ name;
     }    
   }
   
+  googleLogin() {
+    let googleAuth = gapi.auth2.getAuthInstance();
+    googleAuth.then(() => {
+       googleAuth.signIn({scope: 'profile email'}).then(googleUser => {
+        var profile = googleUser.getBasicProfile();
+        // console.log('ID: ' + profile.getId()); 
+        // console.log('Name: ' + profile.getName().split(" "));
+        // console.log('Image URL: ' + profile.getImageUrl());
+        // console.log('Email: ' + profile.getEmail()); 
+          // this.name = profile.getName().split(" ");         
+          // this.regFirstName = this.name[0];
+          // this.regLastName = this.name[1];
+          this.loginEmail = profile.getEmail()               
+       });
+    });
+ }
   LoginSubmit(){
     if(this.validateService.validateInput(this.loginEmail) && this.validateService.validateInput(this.loginPassword)){
 
@@ -281,7 +321,9 @@ Logout(){
   }
 order_id:string;
 not_id:string;
-  goto_order_det(order_id,not_id){
+destination:string;
+  goto_order_det(destination,order_id,not_id){
+    this.destination = destination;
     this.not_id = not_id;
     this.order_id = order_id;
     let not = {
@@ -291,10 +333,24 @@ not_id:string;
       console.log(not);
     })
     // this.unread_num--;
-    this.router.navigate(['/order-details'],{queryParams:{order_id:this.order_id}});
+      switch (this.destination) {
+        case "order-details":
+        this.router.navigate(['/order-details'],{queryParams:{order_id:this.order_id}});
+          break;
+          case "gig":
+          this.router.navigate(['/gig'],{queryParams:{id:this.order_id}});
+        default:
+          break;
+      }
+    
   }
   toZero(){
       this.unread_num = 0;
       // alert("hii");
   }
+  go_to_not(){
+    this.router.navigate(['/notifications']);
+  }
+
+
 }

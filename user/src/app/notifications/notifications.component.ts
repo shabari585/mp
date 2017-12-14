@@ -25,28 +25,31 @@ order_id:string;
       let user = localStorage.getItem('user');
       let u = JSON.parse(user);
       this.user_id = u.id;
-      // alert(this.user_id);
-      this.gigService.get_notifications(this.user_id).subscribe(not => {
-        console.log(not);
-        this.not_arr = not.msg;
-        console.log(this.not_arr);
-        this.not_arr.forEach(element => {
-          this.f_not_arr.push({
-            image:element.image.replace('public',''),
-            message:element.message,
-            date:moment(element.date).fromNow(),
-            status:element.status,
-            link:element.link,
-            not_id:element._id
-          })
-        });
-        console.log(this.f_not_arr);
-      })
+        this.gigService.get_notifications(this.user_id).subscribe(not => {
+          console.log(not);
+          this.not_arr = not.msg;
+          console.log(this.not_arr);
+          this.not_arr.forEach(element => {
+            this.f_not_arr.push({
+              image:element.image.replace('public',''),
+              message:element.message,
+              date:moment(element.date).fromNow(),
+              status:element.status,
+              destination:element.destination,
+              link:element.link,
+              not_id:element._id
+            })
+          });    
+          this.f_not_arr.reverse();
+        })
+     
+      
 
   }
-  
-  goto_order_det(order_id,not_id){
+  destination:string;
+  goto_order_det(destination,order_id,not_id){
       // alert(order_id+not_id);
+      this.destination = destination;
       this.not_id = not_id;
       this.order_id = order_id;
       let not = {

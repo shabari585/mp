@@ -78,7 +78,7 @@ export class GigDetailsComponent implements OnInit {
     this.authService.get_gig_det(this.gig_id).subscribe(res => {
       console.log(res);
       let g = res.msg;
-    
+      
       this.pac_cos_sta = g.pac_cos_sta;
       this.pac_title = g.title;
       this.pac_cos_pre = g.pac_cos_pre;
@@ -157,8 +157,11 @@ export class GigDetailsComponent implements OnInit {
               });
             });
             
+          }        
+          if(this.seller_id == this.user_id){
+            $('#rating-show').hide();
+            $('#order-service-btn').hide();
           }
-          // console.log(this.reviews.buyer_id);
         })
         
         
@@ -174,7 +177,8 @@ export class GigDetailsComponent implements OnInit {
 
   
   });
-  
+   
+
     $('#standard-select-btn').click(function(){
       $('.package-select-btns').removeClass('pack-selected');
       $('.package-select-btns').html('Select');
@@ -213,8 +217,8 @@ export class GigDetailsComponent implements OnInit {
         this.score = score;
         localStorage.setItem('score',this.score);
     }
-  
-  });    
+  });
+     
   }
       gotoProfile(id){
         this.router.navigate(['/seller'], { queryParams: {id:id}});
@@ -297,6 +301,9 @@ export class GigDetailsComponent implements OnInit {
               $('#rating-show').hide();
             }
           })
+    }
+    go_to_inbox(){
+      this.router.navigate(['/inbox'],{queryParams:{seller_id:this.seller_id}});
     }
   }
     

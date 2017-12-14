@@ -59,7 +59,7 @@ process_fee:number;
             this.order_id=or._id,
             this.gig_title = gig.msg.title,
             this.total_days = parseInt(or.total_ext_days)+parseInt(or.assigned_days),
-            this.total_amount = or.total_amount,
+            this.total_amount = or.total_amount.toFixed(2),
             this.date = moment(or.date).format("MMM Do YY"),
             this.description = or.description,
             this.actual_amount = or.total_amount/1.05,

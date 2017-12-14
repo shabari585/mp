@@ -19,6 +19,7 @@ export class FavoritesComponent implements OnInit {
   first_name:string;
   last_name:string;
   length:boolean;
+  favorites_length:boolean;
 
   ngOnInit() {
     this.title.setTitle('Favorites - Market Place');
@@ -42,37 +43,37 @@ export class FavoritesComponent implements OnInit {
     }else{
       this.length = false;
     }
-
     this.gigService.get_fav(this.user_id).subscribe(dat => {
-      this.fav_det = dat.msg;
-      console.log(this.fav_det);
-      this.fav_det.forEach(element => {
-        console.log(element['gig_id']);
-        this.authService.get_gig_det(element['gig_id']).subscribe(favs => {
-          console.log(favs);
-          if(favs.msg != null){
-            this.fav.push(favs.msg);
-          }
-         
-        })
-      });
-     
+      console.log(dat);
+      if(dat.msg.length == 0){
+        this.favorites_length = true;
+        console.log(this.favorites_length);
+      }else{
+        this.fav_det = dat.msg;
+        this.fav_det.forEach(element => {
+          this.authService.get_gig_det(element['gig_id']).subscribe(favs => {
+            console.log(favs);
+            if(favs.msg != null){
+              this.fav.push(favs.msg);
+              this.favorites_length = false; 
+              console.log(this.favorites_length);
+            }
+          })
+        }); 
+      }
+        
       this.authService.getUser(this.user_id).subscribe(dat =>{ 
-        // console.log(dat);
         let us = dat.msg;
         this.first_name = us.first_name;
         this.last_name = us.last_name;
       })
     });
-    console.log(this.fav);
     
   }
-  addtoFav(gig_id){
-    
+  addtoFav(gig_id){    
        let fav ={
          gig_id:gig_id,
-         user_id:this.user_id
-   
+         user_id:this.user_id   
        }
        this.gigService.add_to_fav(fav).subscribe(res => {
          console.log(res);

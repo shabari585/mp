@@ -1,0 +1,17 @@
+<div class="container">
+<div class="row row-down">
+  <div class="col-xs-12">
+    <div class="login-width">
+      <div class="form-group">
+        <input type="text" class="form-control" id="login" placeholder="Email@****.com" style="font-size:18px" [(ngModel)]="email"><br>
+          <span class="email-err" style="color:red"></span>
+      </div>
+      <div class="form-group">
+          <input type="text" class="form-control" id="password" placeholder="Password" style="font-size:18px" [(ngModel)]="password"><br>
+          <span class="pass-err" style="color:red"></span>
+        </div>
+        <button class="btn btn-success" (click)="submit()"><span style="font-size:18px">Login</span></button>
+      </div>
+  </div>
+</div>
+  </div>

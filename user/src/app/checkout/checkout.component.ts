@@ -121,6 +121,8 @@ export class CheckoutComponent implements OnInit {
             break;
         }      
         this.finalvalue = this.selected_price;
+        this.total_amount = parseInt(this.finalvalue) + (this.finalvalue/100)*5;
+        
         // console.log(this.finalvalue);
         this.authService.getUser(this.seller_id).subscribe(seller => {
       let s = seller.msg;
@@ -233,40 +235,41 @@ export class CheckoutComponent implements OnInit {
         this.resume = event.target.files[0];
       }
         
-      tot_ext_cost={};
-      placeOrder(){
+tot_ext_cost={};
+placeOrder(){
         
-        let formData = new FormData();
-        formData.append('resume',this.resume);
-        formData.append('selected_pac',this.pack);
-        formData.append('selected_price',this.selected_price);
-        formData.append('assigned_days',this.assigned_days);
-        formData.append('total_amount',JSON.stringify(this.total_amount));
-        formData.append('total_ext_days',JSON.stringify(this.total_ext_days));
-        formData.append('buyer_fname',this.buyer_fname);
-        formData.append('buyer_lname',this.buyer_lname);
-        formData.append('seller_fname',this.seller_fname);
-        formData.append('seller_lname',this.seller_lname);
-        formData.append('order_description',this.order_description);
-        formData.append('gig_id',this.gig_id);
-        formData.append('buyer_id',this.buyer_id);
-        formData.append('seller_id',this.seller_id);
-        formData.append('extras',JSON.stringify(this.cur_extras));
+      let formData = new FormData();
+      formData.append('resume',this.resume);
+      formData.append('selected_pac',this.pack);
+      formData.append('selected_price',this.selected_price);
+      formData.append('assigned_days',this.assigned_days);
+      formData.append('total_amount',JSON.stringify(this.total_amount));
+      formData.append('total_ext_days',JSON.stringify(this.total_ext_days));
+      formData.append('buyer_fname',this.buyer_fname);
+      formData.append('buyer_lname',this.buyer_lname);
+      formData.append('seller_fname',this.seller_fname);
+      formData.append('seller_lname',this.seller_lname);
+      formData.append('order_description',this.order_description);
+      formData.append('gig_id',this.gig_id);
+      formData.append('buyer_id',this.buyer_id);
+      formData.append('seller_id',this.seller_id);
+      formData.append('extras',JSON.stringify(this.cur_extras));  
           
     console.log(JSON.stringify(this.cur_extras));
         this.gigService.post_order_det(formData).subscribe(order => {
           console.log(order);
             let or = order.msg;
-             let order_id = order.msg._id;
+            let order_id = order.msg._id;
           if(order.success){
 
               let new_not_s = {
                 user_id:or.seller_id,
-                message:"your gig has has been purchased by"+ or.buyer_fname+or.buyer_lname,
+                message:"your gig has been purchased by"+ or.buyer_fname+or.buyer_lname,
                 date:or.date,
                 status:"not_seen",
                 image:this.buyer_img,
-                link:"order-details?id="+order_id
+                destination:"order-details",
+                link:order_id
               }
               this.gigService.post_notification(new_not_s).subscribe(not_s =>{
                 console.log(not_s);
@@ -278,7 +281,8 @@ export class CheckoutComponent implements OnInit {
                 date:or.date,
                 image:this.seller_img,
                 status:"not_seen",
-                link:"order-details?id="+order_id
+                destination:"order-details",
+                link:order_id
               }
               this.gigService.post_notification(new_not_b).subscribe(not_b => {
                 console.log(not_b)

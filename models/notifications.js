@@ -22,6 +22,10 @@ const notification_schema = schema({
         type:String,
         resuired:true
     },
+    destination:{
+        type:String,
+        required:true,
+    },
     link:{
         type:String,
         required:true

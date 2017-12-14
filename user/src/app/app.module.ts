@@ -7,6 +7,8 @@ import { RouterModule, Router, Routes } from "@angular/router";
 // External
 
 import { AppComponent } from './app.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AdminDashboardComponent } from "./admin-dashboard/admin-dashboard.component";
 import { HomeComponent } from './home/home.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
@@ -48,6 +50,8 @@ import { MenuAfterLoginComponent } from './menu-after-login/menu-after-login.com
 import { AuthService } from "./services/auth.service";
 import { ValidateService } from "./services/validate.service";
 import { GigService } from "./services/gig.service";
+import { AdminService } from './services/admin.service';
+
 
 
 const appRoutes: Routes = [
@@ -63,6 +67,14 @@ const appRoutes: Routes = [
   {
     path: 'account-deleted',
     component: AccountDeletedComponent
+  },
+  {
+    path: 'admin-login',
+    component: AdminloginComponent
+  },
+  {
+    path: 'admin-dashboard',
+    component: AdminDashboardComponent
   },
   {
     path: 'categories',
@@ -247,6 +259,8 @@ const appRoutes: Routes = [
     NotificationsComponent,
     PressComponent,
     MenuAfterLoginComponent,
+    AdminloginComponent,
+    AdminDashboardComponent,
     
    
   ],
@@ -257,7 +271,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     Ng2CarouselamosModule
   ],
-  providers: [AuthService,ValidateService,GigService],
+  providers: [AuthService,ValidateService,GigService,AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,7 +13,7 @@
     <div *ngFor="let not of f_not_arr" >
       <div *ngIf="not.status=='not_seen'">
     <div class="w-control">
-      <a (click)="goto_order_det(not.link.replace('order-details?id=',''),not.not_id)" style="color:aliceblue">
+      <a (click)="goto_order_det(not.destination,not.link,not.not_id)" style="color:aliceblue">
       <div class="row not-back">
         <div class="col-xs-12 border">
         <div class="reviews">
@@ -28,7 +28,7 @@
   </div>
   <div *ngIf="not.status=='seen'">
       <div class="w-control">
-        <a (click)="goto_order_det(not.link.replace('order-details?id=',''),not.not_id)" style="color:rgb(11, 12, 12)">
+        <a (click)="goto_order_det(not.destination,not.link,not.not_id)" style="color:rgb(11, 12, 12)">
         <div class="row not-back-white">
           <div class="col-xs-12 border">
           <div class="reviews">

@@ -11,7 +11,7 @@
       </div>
       <form method="POST" action="" enctype="multipart/form-data">
         <div class="p-p-div-pic">
-          <img src="{{user_img}}" id="change-p-p">
+          <img src="http://localhost:3000{{user_img}}" id="change-p-p">
           <label class="custom-p-p" for="c-p-p">CHOOSE PHOTO</label>
           <input type="file" value="CHOOSE PHOTO" id="c-p-p" name="c-p-p" (change)="fileChange($event)" accept=".jpg,.png"><br>
          

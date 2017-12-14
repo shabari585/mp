@@ -127,4 +127,17 @@ export class GigService {
         header.append('content-type','application/json');
         return this.http.post("http://localhost:3000/users/mark_all_read",user_id,{headers:header}).map(res => res.json());
     }
+
+    // check for conversation
+    check_conversation(conv){
+        let header = new Headers();
+        header.append('content-type','application/json');
+        return this.http.post("http://localhost:3000/users/check_conv",conv,{headers:header}).map(res => res.json());
+    }
+    // send inbox message
+    send_message(new_msg){
+        let header = new Headers();
+        header.append('content-type','application/json');
+        return this.http.post("http://localhost:3000/users/send_msg",new_msg,{headers:header}).map(res => res.json());
+    }
 }
