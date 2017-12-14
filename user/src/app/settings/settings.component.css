@@ -271,7 +271,7 @@ h4 {
   position: relative;
   display: inline-block;
   margin-top: 25px !important;
-  margin-left: 140px;
+  margin-left: 0px;
   height: 45px !important;
   width: 120px;
   color: #fff !important;
@@ -562,7 +562,16 @@ textarea {
       float: left;
     }
     .w-control{
-      width: 330px;
+      width: 315px;
     }
+    #payment-verified {
+      position: relative;
+      float: right;
+      font-size: 110%;
+      color: #008000 !important;
+      left: 27%;
+      transform: translate(0%,0%)
+    }
+    
   }
 

@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+.display{
+  display: flex;
+  position: relative;
+  
+}
 .mob-menu {
   z-index: 12;
   position: fixed;

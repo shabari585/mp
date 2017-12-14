@@ -291,10 +291,20 @@
       position: relative;
       width: 100%;
       float: left;
-      top: 90%;
-      transform: translate(0,100%);
+      top: 150%;
+      transform: translate(0,150%);
+      margin: 0 !important;
       border: 1px solid #EEECEB;
       padding: 10px 20px;
+    }
+    .w-history-div table {
+      position: relative;
+      display: block;
+      width: 100%;
+      float: left;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #EEEDEB;
+      overflow: scroll;
     }
     .w-history-div table td {
       position: relative;
@@ -303,10 +313,19 @@
       color: #817F79;
       font-size: 90%;
     }
-     .m-core{
-       height: 100%;
+    
+     .m-core {
+       height: auto;
+      
      }
      .w-control{
-       width: 330px;
+       width: 300px;
      }
+}
+@media screen and (min-width:750px) and (max-width:1024px) {
+  .w-control{
+    width: 100%;
+   
+  }
+  
 }

@@ -616,6 +616,7 @@
     position: relative;
     display: block;
     margin: 0 !important;
+    left: 5%;
   }
   .left-center h2 {
     font-size: 250%;
@@ -796,4 +797,15 @@
   }
   
   
+  .gig-links {
+    
+    left:0%;
+    transform: translate(-23%,0)
+  }
+}
+
+@media screen and (min-width:750px) and (max-width:1024px) {
+  .w-control{
+    width: 100%;
+  }
 }

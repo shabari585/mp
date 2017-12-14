@@ -174,63 +174,74 @@
   transform: translate(0,30%)
 }
   
-  @media screen and (min-width:220px) and (max-width:740px) {
-    .a-pics-div {
-      position: relative;
-      left: -14%;
-      flex-direction: column;
-    }
-    .a-pic {
-      position: relative;
-      
-    }
-    .a-pic-div h3 {
-      font-weight: bold;
-      color: #444444;
-      font-size: 110%;
-      text-align: center;
-      
-    }
+@media screen and (min-width:220px) and (max-width:740px) {
+  .a-pics-div {
+    position: relative;
+    left: -14%;
+    flex-direction: column;
+  }
+  .a-pic {
+    position: relative;
     
-    .a-pic-div h4 {
-      color: #CCCCD5;
-      font-size: 90%;
-      font-weight: bold;
-      float: left;
-    }
-  
-    .ab-b-t,
-    .ab-b-m,
-    .ab-b-b {
-      position: relative;
-      
-      flex-direction: column;
-      
-    }
-    .ab-b-t,.ab-b-m {
-      align-items: flex-start;
-      -webkit-align-items: flex-start;
-    }
-    .faq-divs {
-      position: relative;
-      display: block;
-      display: -webkit-block;
-      flex-direction: row;
-      width: 100%;
-    }
-    .a-faq-div {
-      position: relative;
-      display: block;
-      flex-direction: row;
-      
-    }
-    .container{
-      margin: 0px auto;
-      
-    }
-    .w-control{
-      width: 350px
-    }
+  }
+  .a-pic-div h3 {
+    font-weight: bold;
+    color: #444444;
+    font-size: 110%;
+    text-align: center;
+    
   }
   
+  .a-pic-div h4 {
+    color: #CCCCD5;
+    font-size: 90%;
+    font-weight: bold;
+    float: left;
+  }
+
+  .ab-b-t,
+  .ab-b-m,
+  .ab-b-b {
+    position: relative;
+    
+    flex-direction: column;
+    
+  }
+  .ab-b-t,.ab-b-m {
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+  }
+  .faq-divs {
+    position: relative;
+    display: block;
+    display: -webkit-block;
+    flex-direction: row;
+    width: 100%;
+  }
+  .a-faq-div {
+    position: relative;
+    display: block;
+    flex-direction: row;
+    
+  }
+  .container{
+    margin: 0px auto;
+    
+  }
+  .btn-inverse{
+    position: relative;
+    left: 30%;
+    background-color: #292D35;
+    color: white;
+}
+  .w-control{
+    width: 310px
+  }
+}
+@media screen and (min-width:750px) and (max-width:1024px) {
+  .w-control{
+    width: 90%
+  }
   
+}
+

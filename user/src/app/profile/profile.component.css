@@ -1,21 +1,21 @@
 @media screen and (min-width:220px) and (max-width:740px){
-    .r-f-div {
-        position: relative;
-        display: inline-block;
-        background-color: #fff;
-        left: -5%;
-        top: 17%;
-        transform: translate(0,17%)
-      }
-      .headings {
-        width: 100%;
-        float: left;
-        
-      }
-      .name-div input {
-        height: 35px;
-        width: 100%;
-        margin-top: 10px;
-      }
+  .r-f-div {
+      position: relative;
+      display: inline-block;
+      background-color: #fff;
+      left: -5%;
+      top: 17%;
+      transform: translate(0,17%)
+    }
+    .headings {
+      width: 100%;
+      float: left;
       
+    }
+    .name-div input {
+      height: 35px;
+      width: 100%;
+      margin-top: 10px;
+    }
+    
 }

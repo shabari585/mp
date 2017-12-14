@@ -168,17 +168,25 @@
       height: 120px;
       }
       
-       .m-core{
-         height: 100%;
-       }
+      .m-core {
+        height: 100%;
+        
+      }
        .container-table{
            position: relative;
            top: 65%;
            transform: translate(0,65%);
            overflow: auto;
        }
+
        .w-control{
          width: 310px;
        }
+  }
+  @media screen and (min-width:750px) and (max-width:1024px) {
+    .w-control{
+      width: 100%
+    }
+    
   }
   

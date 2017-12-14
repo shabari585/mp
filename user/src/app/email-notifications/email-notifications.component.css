@@ -11,7 +11,7 @@ label{
     left: -5%;
     margin-bottom: 20px;
   }
-@media screen and (min-width:220px) and (max-width:740px) {
+  @media screen and (min-width:220px) and (max-width:740px) {
     #notif-table {
         position: relative;
         display: block;
@@ -68,3 +68,9 @@ label{
         
       }
 }
+
+@media screen and (min-width:750px) and (max-width:1024px) {
+  .w-control{
+    width: 100%
+  }
+  }

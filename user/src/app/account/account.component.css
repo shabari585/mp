@@ -56,3 +56,8 @@
     white-space: normal !important;
   }
 }
+@media screen and (min-width:750px) and (max-width:1024px) {
+  .w-control{
+    width: 100%;
+  }
+}

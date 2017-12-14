@@ -51,6 +51,7 @@ import { AuthService } from "./services/auth.service";
 import { ValidateService } from "./services/validate.service";
 import { GigService } from "./services/gig.service";
 import { AdminService } from './services/admin.service';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 
 
 
@@ -185,6 +186,10 @@ const appRoutes: Routes = [
     path: 'menu-after-login',
     component: MenuAfterLoginComponent
   },
+  {
+    path: 'admin-page',
+    component: AdminPageComponent
+  },
 
 
   {
@@ -261,6 +266,7 @@ const appRoutes: Routes = [
     MenuAfterLoginComponent,
     AdminloginComponent,
     AdminDashboardComponent,
+    AdminPageComponent,
     
    
   ],

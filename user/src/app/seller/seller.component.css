@@ -847,89 +847,95 @@ body {
     color: rgba(0, 0, 0, 0.4);
   }
 
-@media screen and (min-width:220px) and (max-width:740px) {
-  .seller-left {
-    position: relative;
-    
-    line-height: 2;
-    width: 100%;
-    border-right: 1px solid rgba(0, 0, 0, 0.05);
-    text-align: center;
-  }
-  .seller-middle {
-    position: relative;
-    height: 300px;
-    width: 100%;
-   }
-   .seller-middle p {
-    position: relative;
-    display: block;
-    line-height: 1.2;
-    font-size: 93% !important;
-  }
-  .s-m-b-all {
-    position: relative;
-    display: block;
-    text-align: center;
-    width: 100%;
-    color: rgba(0, 0, 0, 0.8);
-  }
-  .s-m-b-num {
-    position: relative;
-    display: block;
-    text-align: center;
-    width: 100%;
-    line-height: 1;
-    margin-bottom: 0px;
-    font-size: 180%;
-    color: rgba(0, 0, 0, 0.7);
-    font-weight: bold
-  }
-  .ser-left {
-    position: relative;
-    height: auto;
-    width: 30%;
-    
-    
-    
-  }
-  .gigs-div {
-    position: relative;
-    display: block ;
-    left: 5%;
-    width: 100% !important;
-    height:auto;
-    min-height: 100px;
-    
-  }
-  #main-reviews-table #main-rating-div {
-    position: relative;
-    text-align: center;
-    width: 100%;
-    white-space: normal;
-    }
-    #contact-me-btn {
+  @media screen and (min-width:220px) and (max-width:740px) {
+    .seller-left {
       position: relative;
       
-     
-      height: 40px;
+      line-height: 2;
       width: 100%;
-      margin: 30px 15px 20px 15px;
-      /* background-color: #82B541; */
-      background-color: #ec5252;
-      border: none;
-      border-radius: 4px;
-      color: #fff;
-      font-size: 90%;
-      transition: all 0.1s;
+      border-right: 1px solid rgba(0, 0, 0, 0.05);
+      text-align: center;
     }
-    .seller-right {
+    .seller-middle {
+      position: relative;
+      height: 300px;
       width: 100%;
      }
-     .seller-core-container .w-control{
-       width: 330px;
-     }
+     .seller-middle p {
+      position: relative;
+      display: block;
+      line-height: 1.2;
+      font-size: 93% !important;
+    }
+    .s-m-b-all {
+      position: relative;
+      display: block;
+      text-align: center;
+      width: 100%;
+      color: rgba(0, 0, 0, 0.8);
+    }
+    .s-m-b-num {
+      position: relative;
+      display: block;
+      text-align: center;
+      width: 100%;
+      line-height: 1;
+      margin-bottom: 0px;
+      font-size: 180%;
+      color: rgba(0, 0, 0, 0.7);
+      font-weight: bold
+    }
+    .ser-left {
+      position: relative;
+      height: auto;
+      width: 30%;
+      
+      
+      
+    }
+    .gigs-div {
+      position: relative;
+      display: block ;
+      left: 5%;
+      width: 100% !important;
+      height:auto;
+      min-height: 100px;
+      
+    }
+    #main-reviews-table #main-rating-div {
+      position: relative;
+      text-align: center;
+      width: 100%;
+      white-space: normal;
+      }
+      #contact-me-btn {
+        position: relative;
+        
+       
+        height: 40px;
+        width: 100%;
+        margin: 30px 15px 20px 15px;
+        /* background-color: #82B541; */
+        background-color: #ec5252;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 90%;
+        transition: all 0.1s;
+      }
+      .seller-right {
+        width: 100%;
+       }
+       .seller-core-container .w-control{
+         width: 330px;
+       }
+      .w-control{
+         width: 1090px;
+       }
+  }
+  @media screen and (min-width:750px) and (max-width:1024px) {
     .w-control{
-       width: 1090px;
-     }
-}
+      width: 100%
+    }
+    
+  }
